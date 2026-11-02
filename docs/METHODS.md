@@ -184,6 +184,27 @@ per-item outcomes, with a percentile bootstrap CI resampled at the **item** leve
 level). The paired test has a hand-rolled tie-corrected normal-approximation fallback when SciPy is
 unavailable, and returns `p = 1.0` for identical samples rather than raising.
 
+> **The fallback is tested against the exact test.** It only runs where SciPy is absent, which is
+> exactly where nobody can check it, so the CI suite asserts that it agrees with
+> `scipy.stats.wilcoxon` on samples of the size used here.
+
+### The split must be at the level of the item `[D6]`
+
+A probe fitted on (item, candidate) pairs and evaluated on those same pairs scores its own training
+data. The Phase-0 matrix summary was produced that way, and the resulting `margin-L20-a4 = 0.910`
+is largely memorisation: the out-of-fold value for the same arm is 0.695.
+
+**The rule, therefore, is that every reported accuracy for a probe-derived mechanism is
+cross-validated over *items*.** The probe may be fitted on the pairs of the training items; it may
+never be evaluated on a pair of an item it was trained on. `tools/analyze_heldout.py` does this
+with 5-fold cross-validation over items, so every item is scored by a probe that never saw it, and
+the bootstrap resamples over all 200 items.
+
+The statistic to report for a probe that must *choose between* candidates is the **3-way ranking
+accuracy**, not the pair-wise accuracy: the pair-wise question ("is the margin above zero for the
+belief-consistent candidate?") has a trivial baseline of 2/3, because two of an item's three
+candidates are negatives. Both are reported.
+
 ### Resume-ability
 
 The expensive base pass is cached to `results/base_cache.npz`, keyed by

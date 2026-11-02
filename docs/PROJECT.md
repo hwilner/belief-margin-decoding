@@ -121,7 +121,7 @@ Every undecided choice must record **both options** and a **selection rule fixed
 | F5 | `.github/ISSUE_TEMPLATE/task.md` | INFRA | DONE |
 | F6 | `.github/PULL_REQUEST_TEMPLATE.md` | INFRA | DONE |
 | F7 | `CONTRIBUTING.md`, `LICENSE`, `.gitignore` | INFRA | DONE |
-| F8 | `README.md` — headline is the **measured** result | DOC | TODO |
+| F8 | `README.md` — headline is the **measured** result | DOC | DONE |
 
 ---
 
@@ -129,13 +129,13 @@ Every undecided choice must record **both options** and a **selection rule fixed
 
 | ID | Task | Tags | Status |
 |---|---|---|---|
-| G1 | Run 1 — probe accuracy per layer (the **read** curve) | RES | TODO |
-| G2 | Run 2 — intervention effect per layer × mechanism (the **bite** curve) | RES | TODO |
-| G3 | Run 3 — base vs. prompt-injection vs. intervention ToM accuracy | RES | TODO |
+| G1 | Run 1 — probe accuracy per layer (the **read** curve) | RES | DONE |
+| G2 | Run 2 — intervention effect per layer × mechanism (the **bite** curve) | RES | DONE |
+| G3 | Run 3 — base vs. prompt-injection vs. intervention ToM accuracy | RES | DONE |
 | G4 | Run 4 — fluency guard: ΔPPL and MAUVE per arm | RES | TODO |
-| G5 | Run 5 — α sweep | RES | TODO |
-| G6 | The dissociation analysis: does the best-reading layer also bite hardest? | RES | TODO |
-| G7 | `results/RESULTS.md` written from measured output only, including an explicit **"what was not run"** section | RES | TODO |
+| G5 | Run 5 — α sweep | RES | DONE |
+| G6 | The dissociation analysis: does the best-reading layer also bite hardest? | RES | DONE |
+| G7 | `results/RESULTS.md` written from measured output only, including an explicit **"what was not run"** section | RES | DONE |
 
 ---
 
@@ -147,7 +147,7 @@ Every undecided choice must record **both options** and a **selection rule fixed
 | H2 | `docs/ROADMAP.md` — phases, each with its principal failure mode | DOC | DONE |
 | H3 | `docs/API_REFERENCE.md` | DOC | DONE |
 | H4 | `docs/PROJECT.md` — this file | DOC | DONE |
-| H5 | `docs/figures/` — concept figure (SVG) and the Phase-0 plot | DOC | IN PROGRESS |
+| H5 | `docs/figures/` — concept figure (SVG) and the Phase-0 plot | DOC | DONE |
 
 ---
 
@@ -183,3 +183,11 @@ difference between the plan and what was actually built stays visible.
 | 2026-11-02 | `D9` (`src/bmd/real_data.py`, the `Hi-ToM/Hi-ToM_Dataset` loader) remains `TODO`. | The synthetic generator is sufficient for Phase 0 and is the only source with exact, by-construction ground truth for the two error modes. The loader is scheduled for Phase 1. |
 | 2026-11-02 | `E7` is implemented as *arm-label uniqueness and arm-count consistency* plus the `tools/check_integrity.py` NaN scan, rather than "never writes NaN" inside the runner alone. | Splitting it gives a test that runs in CI without a model and an integrity check that runs over every committed result file. |
 | 2026-11-02 | `D6` was scoped to include ΔPPL and MAUVE; only the accuracy and error-mode metrics plus the statistics are implemented. The task text was corrected to match what exists rather than marked DONE against a description of something absent. | The two text-quality metrics need free-form generation, which the Phase-0 arms do not produce. Implementing them against a metric that does not apply would produce a number with no meaning. |
+
+| 2026-11-02 | **The scoring arms were evaluated in-sample, and this was found by running the matrix, not by reading it.** The probe is fitted on 80 % of the (item, candidate) pairs and the arms then score *every* pair, so `margin-L20-a4 = 0.910` is largely the probe memorising its own training pairs. `tools/analyze_heldout.py` re-does the analysis with the split at the level of *items*, 5-fold cross-validated: out-of-fold, the same arm scores 0.695. | A leakage artefact that made the method look like it beats the prompt oracle. The fix is a new tool, not a changed number. `results/RESULTS.md` reports the out-of-fold numbers and explains why the in-sample ones are not evidence. |
+| 2026-11-02 | **The activation-steering arms had no matched control inside the matrix, and that was a real weakness.** `src/run_controls.py` supplies the two standard controls at a chosen layer -- a uniformly random direction and the sign-flipped belief direction, both matched in layer, norm and alpha. The result changed the headline: the layer-4 effect is directional (p = 0.0037 vs the sign flip) but **not** distinguishable from a random direction of the same size (p = 0.151). | A mechanism that changes the forward pass must ship a matched control. Without it, a positive result is indistinguishable from generic confidence steering. |
+| 2026-11-02 | The activation hook perturbs the **input** of a decoder layer, so a model with 24 decoder layers can be steered at layers 0-23 but not at layer 24 (`hidden_states[-1]`). The first run died with `IndexError: layer 24 out of range for 24 layers` after the whole run had been paid for. | Layer 24 is still probed and still carries the margin and logit arms. The summary now records `act_layers_skipped`, and the requested layers are validated against the model's depth before the run starts. |
+| 2026-11-02 | **SciPy is not installed in the recording environment**, so the Wilcoxon p-values come from the tie-corrected normal approximation in `bmd.evaluate.paired_test`. | The fallback was extracted into its own function and the CI suite now asserts that it agrees with SciPy's exact signed-rank test. Without that test the fallback would only ever run where it cannot be checked. |
+| 2026-11-02 | The arm JSONs now store the **per-item predictions**, and `tools/recompute_stats.py` re-derives every statistic from them. | A summary that cannot be recomputed is a number, not a result. |
+| 2026-11-02 | `G4` (fluency guard) remains `TODO`. | The Phase-0 arms score three fixed candidate continuations and never generate free text, so MAUVE and delta-PPL do not apply to this measurement. Reporting 0.0 for a method that never generated text would be a number with no meaning. It is listed in `results/RESULTS.md` under "what was not run". |
+| 2026-11-02 | The figures are rendered as **hand-written SVG from the standard library** (`tools/make_phase0_figures.py`) rather than with matplotlib. | matplotlib could not be installed alongside a 2.6 GB model run on a 3 GB machine, and the stdlib version is a better artefact anyway: vector output, no font-embedding baggage, and no plotting dependency in CI. |

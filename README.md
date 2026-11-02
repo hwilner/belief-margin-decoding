@@ -10,6 +10,40 @@ so that any positive result has to beat a matched control before it counts.
 
 ---
 
+## The measured result
+
+> **The partner belief is strongly linearly decodable from the model's own activations, and no
+> intervention we tested turned that into a usable change in the model's answers.**
+>
+> | | measured | reference |
+> |---|---|---|
+> | base model | 0.370 | chance 0.333 (p = 0.29 — **at chance**) |
+> | `prompt_oracle` (ORACLE, upper bound) | 0.510 | p = 2.6 × 10⁻⁷ vs chance |
+> | belief probe, out-of-fold 3-way ranking at L16 | **0.720** | shuffled control 0.375, p = 2.0 × 10⁻¹¹ |
+> | activation steering at L4 (the best forward-pass arm) | 0.480 | p = 0.00175 vs base |
+> | ...vs a **matched random direction** at L4 | 0.430 | paired p = **0.151 — not significant** |
+> | ...vs the **sign-flipped** belief direction at L4 | 0.380 | paired p = 0.0037 |
+
+The probe works. The intervention does not: the one forward-pass effect is **directional but not
+shown to be belief-specific**, and it appears at layer 4, which is exactly where the belief
+*cannot* be read.
+
+Two findings from this phase matter beyond the headline:
+
+- **The read and bite curves are inverted.** The belief reads best at layer 16 (0.720) and steers
+  nothing there; the only layer where steering does anything is layer 4, where the probe has no
+  signal at all (0.420, p = 0.55).
+- **A score-level belief-margin intervention does not make the model use the belief; it makes the
+  probe pick the answer.** Its out-of-fold accuracy converges onto the probe's own accuracy
+  (0.720 at L16, 0.695 at L20) as α grows, and the large numbers in the matrix summary
+  (`margin-L20-a4 = 0.910`) are **in-sample leakage**. This is why the mechanism that "beats" the
+  oracle is not evidence of anything.
+
+Full numbers, controls, timings, and an explicit **"what was not run"** section are in
+[`results/RESULTS.md`](results/RESULTS.md).
+
+---
+
 ## What this is
 
 A frozen LLM is asked a three-agent Theory-of-Mind question. In every item exactly one of the three
@@ -70,7 +104,7 @@ python -m venv .venv && source .venv/bin/activate
 # macOS / Apple Silicon: the default PyPI wheel is already MPS-capable.
 pip install -r requirements-dev.txt && pip install -e .
 
-pytest -q                        # 43 tests, CPU only, no model download
+pytest -q                        # 47 tests, CPU only, no model download
 python tools/check_integrity.py  # checks that can fail
 ```
 
@@ -95,7 +129,20 @@ killed run continues instead of starting over.
 The matched random-direction and sign-flip controls for the activation arms:
 
 ```bash
-python src/run_controls.py --layer 12 --alpha 1.0 --out-dir results/controls
+python src/run_controls.py --layer 4 --alpha 1.0 --n-items 200 --out-dir results/controls
+```
+
+The leakage-controlled analysis — the matrix summary's scoring arms are evaluated in-sample, so
+this re-does them with the split at the level of *items*, 5-fold cross-validated:
+
+```bash
+python tools/analyze_heldout.py
+```
+
+Every statistic can be recomputed from the stored per-item predictions, without a model:
+
+```bash
+python tools/recompute_stats.py
 ```
 
 ## Layout
@@ -113,7 +160,7 @@ src/run_phase0.py              the matrix runner
 src/run_controls.py            the matched random-direction / sign-flip controls
 results/RESULTS.md             what was measured — and what was not
 results/ablation/*.json        one file per arm
-tests/                         43 tests, CPU only
+tests/                         47 tests, CPU only
 tools/check_integrity.py       checks that can fail
 tools/make_phase0_figures.py   SVG figures and markdown tables from the summary JSON
 ```

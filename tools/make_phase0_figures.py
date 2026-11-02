@@ -61,26 +61,44 @@ def _layers(summary: dict) -> list[int]:
 # --------------------------------------------------------------------------- charts
 
 
-def chart_read_bite(summary: dict) -> str:
-    """The two curves: probe read-out accuracy per layer vs. best biting arm."""
+def chart_read_bite(summary: dict, heldout: dict | None = None) -> str:
+    """The two curves: probe read-out accuracy per layer vs. best biting arm.
+
+    When the leakage-controlled analysis is available, the read curve is the
+    **out-of-fold 3-way ranking accuracy** from ``results/heldout/`` rather
+    than the pair-wise held-out accuracy in the matrix summary. The pair-wise
+    number has a trivial baseline of 2/3 (two of an item's three candidates
+    are negatives), so it understates what the probe can do; the 3-way
+    ranking accuracy is the quantity a belief-margin intervention relies on.
+
+    The bite curve uses the **activation-steering** arms -- the only genuine
+    forward-pass interventions in the matrix. The score-level ``margin`` arms
+    are excluded on purpose: as the results show, their accuracy converges
+    to the probe's own read-out, so plotting them as "bite" would draw the
+    read curve twice.
+    """
     layers = _layers(summary)
     subs = summary["subspaces"]
     arms = summary["arms"]
     read = [(int(layer), subs[str(layer)]["heldout_acc"]) for layer in layers]
     read_train = [(int(layer), subs[str(layer)]["train_acc"]) for layer in layers]
+    if heldout is not None:
+        cv = {int(r["layer"]): r["cv_three_way_acc"] for r in heldout["rows"]}
+        cv_shuf = {int(r["layer"]): r["cv_three_way_shuffled_acc"] for r in heldout["rows"]}
+        read = [(layer, cv.get(layer, v)) for layer, v in read]
+        read_shuffled = [(layer, cv_shuf.get(layer, 0.0)) for layer, _ in read]
+    else:
+        read_shuffled = [(layer, subs[str(layer)]["shuffled_heldout_acc"]) for layer in layers]
 
-    # best "bite" per layer: the margin arm with the highest accuracy at alpha=1
+    # best "bite" per layer: the activation-steering arm, which is the only
+    # mechanism that changes the forward pass
     bite: list[tuple[int, float, str]] = []
     for layer in layers:
         best = None
         for label, payload in arms.items():
-            mech = payload["arm"]["mechanism"]
-            if mech not in {"margin", "act", "logit"}:
+            if payload["arm"]["mechanism"] != "act":
                 continue
             if payload["arm"].get("layer") != layer:
-                continue
-            a = payload["arm"].get("alpha") or 0.0
-            if mech == "margin" and a != 1.0:
                 continue
             if best is None or payload["accuracy"] > best[1]:
                 best = (label, payload["accuracy"])
@@ -91,7 +109,7 @@ def chart_read_bite(summary: dict) -> str:
     oracle_acc = arms["prompt_oracle"]["accuracy"]
 
     W, H = 1000, 470
-    ml, mr, mt, mb = 70, 200, 62, 60
+    ml, mr, mt, mb = 70, 200, 92, 60
     pw, ph = W - ml - mr, H - mt - mb
 
     def x(layer: int) -> float:
@@ -109,8 +127,11 @@ def chart_read_bite(summary: dict) -> str:
         f'<text x="24" y="26" font-size="16" font-weight="bold" fill="{C_TEXT}">'
         "Phase 0 — the read curve and the bite curve</text>",
         f'<text x="24" y="44" font-size="11.5" fill="{C_MUTED}">'
-        "Read = held-out accuracy of the belief probe. Bite = accuracy of the best scoring arm at that layer. "
-        "If the curves coincide, the probe is measuring what the intervention moves.</text>",
+        "Read = out-of-fold 3-way ranking accuracy of the belief probe (chance 1/3).</text>",
+        f'<text x="24" y="60" font-size="11.5" fill="{C_MUTED}">'
+        "Bite = accuracy of the activation-steering arm at that layer. A layer that reads well but does not</text>",
+        f'<text x="24" y="76" font-size="11.5" fill="{C_MUTED}">'
+        "bite is a signal the model can read but does not use.</text>",
     ]
     # grid + axes
     for frac in (0.0, 0.25, 0.5, 0.75, 1.0):
@@ -140,7 +161,8 @@ def chart_read_bite(summary: dict) -> str:
             f'stroke-width="1.6" stroke-dasharray="7 4"/>'
         )
         p.append(
-            f'<text x="{ml+pw+6}" y="{y(val)+4:.1f}" font-size="11" fill="{col}">{name} {val:.3f}</text>'
+            f'<text x="{ml+pw-6}" y="{y(val)-6:.1f}" font-size="11" fill="{col}" '
+            f'text-anchor="end">{name} {val:.3f}</text>'
         )
 
     def polyline(pts, col, dash=None):
@@ -152,6 +174,7 @@ def chart_read_bite(summary: dict) -> str:
 
     polyline(read_train, C_READ, "5 4")
     polyline(read, C_READ)
+    polyline(read_shuffled, C_CTRL, "5 4")
     if bite:
         polyline([(layer, v) for layer, v, _ in bite], C_BITE)
 
@@ -159,10 +182,10 @@ def chart_read_bite(summary: dict) -> str:
     lx, ly = ml + pw + 18, mt + 6
     p.append(f'<text x="{lx}" y="{ly}" font-size="12" font-weight="bold" fill="{C_TEXT}">Legend</text>')
     entries = [
-        (C_READ, "read — probe held-out acc", None),
-        (C_READ, "read — probe train acc", "5 4"),
-        (C_BITE, "bite — best scoring arm", None),
-        (C_CTRL, "control — margin_shuffled", "5 4"),
+        (C_READ, "read — probe, out-of-fold", None),
+        (C_READ, "read — probe, in-sample", "5 4"),
+        (C_BITE, "bite — activation steering", None),
+        (C_CTRL, "control — shuffled labels", "5 4"),
     ]
     for i, (col, text, dash) in enumerate(entries):
         yy = ly + 22 + i * 22
@@ -177,10 +200,11 @@ def chart_read_bite(summary: dict) -> str:
         f'<text x="{lx}" y="{yy+17}" font-size="10" fill="{C_MUTED}">layer  read   bite</text>'
     )
     for i, (layer, rv) in enumerate(read):
-        bv = next((v for ll, v, _ in bite if ll == layer), float("nan"))
+        bv = next((v for ll, v, _ in bite if ll == layer), None)
+        bvs = "  —" if bv is None else f"{bv:.3f}"
         p.append(
             f'<text x="{lx}" y="{yy+34+i*15}" font-size="10.5" fill="{C_TEXT}">L{layer:<3d} '
-            f"{rv:.3f}  {bv:.3f}</text>"
+            f"{rv:.3f} {bvs}</text>"
         )
     p.append("</svg>")
     return "\n".join(p)
@@ -431,8 +455,14 @@ def main() -> int:
     summary = json.loads(Path(args.summary).read_text())
     figdir = Path(args.out_figures)
     figdir.mkdir(parents=True, exist_ok=True)
+    heldout_path = ROOT / "results" / "heldout" / "heldout_analysis.json"
+    heldout = None
+    if heldout_path.exists():
+        heldout = json.loads(heldout_path.read_text())
+        print(f"using the leakage-controlled analysis from {heldout_path}")
+
     for name, fn in (
-        ("phase0_read_bite.svg", chart_read_bite),
+        ("phase0_read_bite.svg", lambda s_: chart_read_bite(s_, heldout)),
         ("phase0_alpha_sweep.svg", chart_alpha_sweep),
         ("phase0_arm_matrix.svg", chart_arm_matrix),
     ):

@@ -1,0 +1,30 @@
+{
+  "arm": {
+    "mechanism": "act",
+    "layer": 16,
+    "alpha": 1.0,
+    "label": "act-L16-a1"
+  },
+  "n_items": 200,
+  "accuracy": 0.4,
+  "accuracy_ci95": [
+    0.335,
+    0.47
+  ],
+  "error_breakdown": {
+    "correct": 80,
+    "world": 53,
+    "other": 67
+  },
+  "world_rate": 0.265,
+  "other_rate": 0.335,
+  "vs_none_wilcoxon": {
+    "statistic": 435.0,
+    "p_value": 0.28320063804036844
+  },
+  "probe": {
+    "train_acc": 0.9875,
+    "heldout_acc": 0.7333333333333333
+  },
+  "scale": 18.732802173460087
+}
