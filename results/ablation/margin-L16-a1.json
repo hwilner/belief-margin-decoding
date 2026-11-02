@@ -1,8 +1,5 @@
 {
   "arm": {
-    "mechanism": "margin",
-    "layer": 16,
-    "alpha": 1.0,
     "label": "margin-L16-a1"
   },
   "n_items": 200,
@@ -19,8 +16,8 @@
   "world_rate": 0.12,
   "other_rate": 0.27,
   "vs_none_wilcoxon": {
-    "statistic": 1176.0,
-    "p_value": 4.262146191535976e-12
+    "statistic": 0.0,
+    "p_value": 4.262191597843629e-12
   },
   "predictions": [
     2,

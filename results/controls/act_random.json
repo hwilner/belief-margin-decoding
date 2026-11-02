@@ -19,8 +19,8 @@
   "world_rate": 0.245,
   "other_rate": 0.325,
   "vs_none_wilcoxon": {
-    "statistic": 406.0,
-    "p_value": 0.03345479148786845
+    "statistic": 192.5,
+    "p_value": 0.039591763236690385
   },
   "note": "CONTROL: uniformly random direction, matched norm, layer and alpha to the real arm",
   "scale": 7.564058337240172,

@@ -19,10 +19,10 @@ so that any positive result has to beat a matched control before it counts.
 > |---|---|---|
 > | base model | 0.370 | chance 0.333 (p = 0.29 — **at chance**) |
 > | `prompt_oracle` (ORACLE, upper bound) | 0.510 | p = 2.6 × 10⁻⁷ vs chance |
-> | belief probe, out-of-fold 3-way ranking at L16 | **0.720** | shuffled control 0.375, p = 2.0 × 10⁻¹¹ |
-> | activation steering at L4 (the best forward-pass arm) | 0.480 | p = 0.00175 vs base |
-> | ...vs a **matched random direction** at L4 | 0.430 | paired p = **0.151 — not significant** |
-> | ...vs the **sign-flipped** belief direction at L4 | 0.380 | paired p = 0.0037 |
+> | belief probe, out-of-fold 3-way ranking at L16 | **0.720** | shuffled control 0.375, p = 2.5 × 10⁻¹¹ |
+> | activation steering at L4 (the best forward-pass arm) | 0.480 | p = 0.00387 vs base |
+> | ...vs a **matched random direction** at L4 | 0.430 | paired p = **0.189 — not significant** |
+> | ...vs the **sign-flipped** belief direction at L4 | 0.380 | paired p = 0.0065 |
 
 The probe works. The intervention does not: the one forward-pass effect is **directional but not
 shown to be belief-specific**, and it appears at layer 4, which is exactly where the belief

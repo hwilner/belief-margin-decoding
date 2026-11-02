@@ -35,8 +35,8 @@
     24
   ],
   "timing_sec": {
-    "base_pass": 35.2,
-    "total": 49.6
+    "base_pass": 34.8,
+    "total": 2291.9
   },
   "subspaces": {
     "4": {
@@ -332,8 +332,8 @@
       "world_rate": 0.2,
       "other_rate": 0.29,
       "vs_none_wilcoxon": {
-        "statistic": 663.0,
-        "p_value": 1.1351001061310484e-06
+        "statistic": 97.5,
+        "p_value": 5.567024236927999e-06
       },
       "predictions": [
         2,
@@ -590,9 +590,211 @@
       "world_rate": 0.315,
       "other_rate": 0.34,
       "vs_none_wilcoxon": {
-        "statistic": 423.0,
-        "p_value": 0.48819953454734666
+        "statistic": 418.0,
+        "p_value": 0.4457659079148423
       },
+      "predictions": [
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        1,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        2,
+        0,
+        0,
+        2,
+        1,
+        1,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        0,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        0,
+        2,
+        1,
+        1,
+        0,
+        1,
+        2,
+        2,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        1,
+        2,
+        0,
+        1,
+        1,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        0,
+        1,
+        2,
+        1,
+        1,
+        1,
+        0,
+        2,
+        1,
+        2,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        0,
+        1,
+        0,
+        0,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        0,
+        0,
+        2,
+        1,
+        1,
+        0,
+        1,
+        2,
+        1,
+        2,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2,
+        0,
+        2,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        2,
+        1,
+        1,
+        1,
+        0,
+        1,
+        2,
+        2,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        0,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        1,
+        1,
+        2,
+        0,
+        1
+      ],
       "probe": {
         "train_acc": 0.9395833333333333,
         "heldout_acc": 0.6333333333333333
@@ -620,9 +822,211 @@
       "world_rate": 0.22,
       "other_rate": 0.375,
       "vs_none_wilcoxon": {
-        "statistic": 597.0,
-        "p_value": 0.3027586136115894
+        "statistic": 437.0,
+        "p_value": 0.2967175263220604
       },
+      "predictions": [
+        2,
+        0,
+        1,
+        2,
+        1,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        2,
+        2,
+        0,
+        0,
+        0,
+        2,
+        0,
+        2,
+        2,
+        0,
+        2,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        1,
+        0,
+        0,
+        2,
+        2,
+        2,
+        0,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        0,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        2,
+        0,
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        2,
+        1,
+        2,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        2,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        2,
+        0,
+        0,
+        2,
+        1,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        0,
+        2,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        2,
+        2,
+        2,
+        0,
+        0,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        0,
+        2,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        1,
+        0,
+        0,
+        2
+      ],
       "probe": {
         "train_acc": 0.9625,
         "heldout_acc": 0.6916666666666667
@@ -650,9 +1054,211 @@
       "world_rate": 0.265,
       "other_rate": 0.335,
       "vs_none_wilcoxon": {
-        "statistic": 435.0,
-        "p_value": 0.28320063804036844
+        "statistic": 312.0,
+        "p_value": 0.3303900488487942
       },
+      "predictions": [
+        0,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        0,
+        0,
+        0,
+        1,
+        2,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        2,
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        2,
+        1,
+        2,
+        0,
+        2,
+        1,
+        1,
+        0,
+        2,
+        2,
+        0,
+        2,
+        0,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        0,
+        1,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        2,
+        0,
+        2,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        2,
+        0,
+        0,
+        0,
+        2,
+        1,
+        2,
+        2,
+        0,
+        1,
+        2,
+        2,
+        2,
+        1,
+        0,
+        2,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        0,
+        0,
+        2,
+        1,
+        1,
+        0,
+        2,
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        2,
+        2,
+        1,
+        1,
+        0,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        0,
+        0,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
       "probe": {
         "train_acc": 0.9875,
         "heldout_acc": 0.7333333333333333
@@ -680,9 +1286,211 @@
       "world_rate": 0.24,
       "other_rate": 0.39,
       "vs_none_wilcoxon": {
-        "statistic": 755.0,
-        "p_value": 0.9015436242380359
+        "statistic": 742.5,
+        "p_value": 1.0
       },
+      "predictions": [
+        0,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        2,
+        0,
+        0,
+        1,
+        0,
+        1,
+        2,
+        2,
+        2,
+        0,
+        2,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        0,
+        2,
+        1,
+        2,
+        0,
+        2,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        2,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        2,
+        0,
+        0,
+        0,
+        2,
+        1,
+        2,
+        2,
+        0,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        2,
+        2,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        0,
+        2,
+        2,
+        1,
+        1,
+        0,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        0,
+        0,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        0,
+        1,
+        0,
+        1,
+        2,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
       "probe": {
         "train_acc": 0.9895833333333334,
         "heldout_acc": 0.6833333333333333
@@ -710,8 +1518,8 @@
       "world_rate": 0.265,
       "other_rate": 0.33,
       "vs_none_wilcoxon": {
-        "statistic": 37.0,
-        "p_value": 0.05319514804201919
+        "statistic": 5.0,
+        "p_value": 0.019630657257290667
       },
       "predictions": [
         2,
@@ -941,8 +1749,8 @@
       "world_rate": 0.29,
       "other_rate": 0.335,
       "vs_none_wilcoxon": {
-        "statistic": 13.0,
-        "p_value": 0.8501067391385257
+        "statistic": 12.0,
+        "p_value": 0.7054569861112734
       },
       "predictions": [
         2,
@@ -1173,8 +1981,8 @@
       "world_rate": 0.42,
       "other_rate": 0.31,
       "vs_none_wilcoxon": {
-        "statistic": 1675.0,
-        "p_value": 0.17514348247625966
+        "statistic": 1513.0,
+        "p_value": 0.03300625766123251
       },
       "predictions": [
         1,
@@ -1404,8 +2212,8 @@
       "world_rate": 0.245,
       "other_rate": 0.315,
       "vs_none_wilcoxon": {
-        "statistic": 121.0,
-        "p_value": 0.0018230097224571917
+        "statistic": 8.5,
+        "p_value": 0.00046525815807105003
       },
       "predictions": [
         2,
@@ -1635,8 +2443,8 @@
       "world_rate": 0.29,
       "other_rate": 0.35,
       "vs_none_wilcoxon": {
-        "statistic": 37.0,
-        "p_value": 0.8590008104121027
+        "statistic": 32.5,
+        "p_value": 0.5637028616507731
       },
       "predictions": [
         2,
@@ -1867,8 +2675,8 @@
       "world_rate": 0.42,
       "other_rate": 0.31,
       "vs_none_wilcoxon": {
-        "statistic": 1675.0,
-        "p_value": 0.17514348247625966
+        "statistic": 1513.0,
+        "p_value": 0.03300625766123251
       },
       "predictions": [
         1,
@@ -2098,8 +2906,8 @@
       "world_rate": 0.185,
       "other_rate": 0.26,
       "vs_none_wilcoxon": {
-        "statistic": 784.0,
-        "p_value": 1.4574933571154247e-07
+        "statistic": 42.0,
+        "p_value": 7.54012650724165e-09
       },
       "predictions": [
         2,
@@ -2329,8 +3137,8 @@
       "world_rate": 0.3,
       "other_rate": 0.36,
       "vs_none_wilcoxon": {
-        "statistic": 123.0,
-        "p_value": 0.377876151545276
+        "statistic": 112.5,
+        "p_value": 0.22067136191984693
       },
       "predictions": [
         0,
@@ -2561,8 +3369,8 @@
       "world_rate": 0.42,
       "other_rate": 0.31,
       "vs_none_wilcoxon": {
-        "statistic": 1675.0,
-        "p_value": 0.17514348247625966
+        "statistic": 1513.0,
+        "p_value": 0.03300625766123251
       },
       "predictions": [
         1,
@@ -2792,8 +3600,8 @@
       "world_rate": 0.15,
       "other_rate": 0.175,
       "vs_none_wilcoxon": {
-        "statistic": 2177.0,
-        "p_value": 2.5689228522196572e-11
+        "statistic": 140.0,
+        "p_value": 2.0802179596362658e-13
       },
       "predictions": [
         2,
@@ -3023,8 +3831,8 @@
       "world_rate": 0.33,
       "other_rate": 0.335,
       "vs_none_wilcoxon": {
-        "statistic": 704.0,
-        "p_value": 0.26313951017278336
+        "statistic": 725.0,
+        "p_value": 0.35383690068472906
       },
       "predictions": [
         0,
@@ -3255,8 +4063,8 @@
       "world_rate": 0.42,
       "other_rate": 0.31,
       "vs_none_wilcoxon": {
-        "statistic": 1675.0,
-        "p_value": 0.17514348247625966
+        "statistic": 1513.0,
+        "p_value": 0.03300625766123251
       },
       "predictions": [
         1,
@@ -3486,8 +4294,8 @@
       "world_rate": 0.11,
       "other_rate": 0.14,
       "vs_none_wilcoxon": {
-        "statistic": 3781.0,
-        "p_value": 1.7575274569026078e-11
+        "statistic": 427.5,
+        "p_value": 4.548670383289757e-15
       },
       "predictions": [
         2,
@@ -3717,8 +4525,8 @@
       "world_rate": 0.33,
       "other_rate": 0.31,
       "vs_none_wilcoxon": {
-        "statistic": 1728.0,
-        "p_value": 0.7697753967022734
+        "statistic": 1742.5,
+        "p_value": 0.8272593465627113
       },
       "predictions": [
         0,
@@ -3949,8 +4757,8 @@
       "world_rate": 0.42,
       "other_rate": 0.31,
       "vs_none_wilcoxon": {
-        "statistic": 1675.0,
-        "p_value": 0.17514348247625966
+        "statistic": 1513.0,
+        "p_value": 0.03300625766123251
       },
       "predictions": [
         1,
@@ -4180,8 +4988,8 @@
       "world_rate": 0.245,
       "other_rate": 0.335,
       "vs_none_wilcoxon": {
-        "statistic": 55.0,
-        "p_value": 0.0015654022580025018
+        "statistic": 0.0,
+        "p_value": 0.001565402258002548
       },
       "predictions": [
         2,
@@ -4411,8 +5219,8 @@
       "world_rate": 0.28,
       "other_rate": 0.34,
       "vs_none_wilcoxon": {
-        "statistic": 27.0,
-        "p_value": 0.157299207050285
+        "statistic": 13.5,
+        "p_value": 0.47950012218695337
       },
       "predictions": [
         2,
@@ -4643,8 +5451,8 @@
       "world_rate": 0.505,
       "other_rate": 0.245,
       "vs_none_wilcoxon": {
-        "statistic": 1281.0,
-        "p_value": 0.025227477353360284
+        "statistic": 1203.5,
+        "p_value": 0.008040684672516726
       },
       "predictions": [
         1,
@@ -4874,8 +5682,8 @@
       "world_rate": 0.215,
       "other_rate": 0.33,
       "vs_none_wilcoxon": {
-        "statistic": 153.0,
-        "p_value": 3.7379818401683806e-05
+        "statistic": 0.0,
+        "p_value": 3.737981840170154e-05
       },
       "predictions": [
         2,
@@ -5105,8 +5913,8 @@
       "world_rate": 0.285,
       "other_rate": 0.34,
       "vs_none_wilcoxon": {
-        "statistic": 28.0,
-        "p_value": 0.46335514926959664
+        "statistic": 20.0,
+        "p_value": 0.7388826803635273
       },
       "predictions": [
         2,
@@ -5337,8 +6145,8 @@
       "world_rate": 0.505,
       "other_rate": 0.245,
       "vs_none_wilcoxon": {
-        "statistic": 1281.0,
-        "p_value": 0.025227477353360284
+        "statistic": 1203.5,
+        "p_value": 0.008040684672516726
       },
       "predictions": [
         1,
@@ -5568,8 +6376,8 @@
       "world_rate": 0.145,
       "other_rate": 0.31,
       "vs_none_wilcoxon": {
-        "statistic": 747.0,
-        "p_value": 2.5074451253104257e-06
+        "statistic": 63.0,
+        "p_value": 4.6009242950025175e-08
       },
       "predictions": [
         2,
@@ -5799,8 +6607,8 @@
       "world_rate": 0.295,
       "other_rate": 0.325,
       "vs_none_wilcoxon": {
-        "statistic": 166.0,
-        "p_value": 0.1430311124435566
+        "statistic": 115.0,
+        "p_value": 0.6698153575994166
       },
       "predictions": [
         0,
@@ -6031,8 +6839,8 @@
       "world_rate": 0.505,
       "other_rate": 0.245,
       "vs_none_wilcoxon": {
-        "statistic": 1281.0,
-        "p_value": 0.025227477353360284
+        "statistic": 1203.5,
+        "p_value": 0.008040684672516726
       },
       "predictions": [
         1,
@@ -6262,8 +7070,8 @@
       "world_rate": 0.075,
       "other_rate": 0.245,
       "vs_none_wilcoxon": {
-        "statistic": 2156.0,
-        "p_value": 4.829248112514506e-12
+        "statistic": 103.5,
+        "p_value": 5.5364037285436554e-14
       },
       "predictions": [
         2,
@@ -6493,8 +7301,8 @@
       "world_rate": 0.33,
       "other_rate": 0.305,
       "vs_none_wilcoxon": {
-        "statistic": 351.0,
-        "p_value": 0.49896229860376096
+        "statistic": 306.0,
+        "p_value": 0.8657723749926214
       },
       "predictions": [
         0,
@@ -6725,8 +7533,8 @@
       "world_rate": 0.505,
       "other_rate": 0.245,
       "vs_none_wilcoxon": {
-        "statistic": 1281.0,
-        "p_value": 0.025227477353360284
+        "statistic": 1203.5,
+        "p_value": 0.008040684672516726
       },
       "predictions": [
         1,
@@ -6956,8 +7764,8 @@
       "world_rate": 0.015,
       "other_rate": 0.155,
       "vs_none_wilcoxon": {
-        "statistic": 4677.0,
-        "p_value": 0.0
+        "statistic": 202.0,
+        "p_value": 3.579497624028105e-20
       },
       "predictions": [
         2,
@@ -7187,8 +7995,8 @@
       "world_rate": 0.315,
       "other_rate": 0.305,
       "vs_none_wilcoxon": {
-        "statistic": 1109.0,
-        "p_value": 0.5955787045899392
+        "statistic": 1007.5,
+        "p_value": 0.8025873486341526
       },
       "predictions": [
         0,
@@ -7419,8 +8227,8 @@
       "world_rate": 0.505,
       "other_rate": 0.245,
       "vs_none_wilcoxon": {
-        "statistic": 1281.0,
-        "p_value": 0.025227477353360284
+        "statistic": 1203.5,
+        "p_value": 0.008040684672516726
       },
       "predictions": [
         1,
@@ -7650,8 +8458,8 @@
       "world_rate": 0.225,
       "other_rate": 0.355,
       "vs_none_wilcoxon": {
-        "statistic": 55.0,
-        "p_value": 0.0015654022580025018
+        "statistic": 0.0,
+        "p_value": 0.001565402258002548
       },
       "predictions": [
         2,
@@ -7881,8 +8689,8 @@
       "world_rate": 0.285,
       "other_rate": 0.345,
       "vs_none_wilcoxon": {
-        "statistic": 2.0,
-        "p_value": 0.6373518882339371
+        "statistic": 1.5,
+        "p_value": 1.0
       },
       "predictions": [
         2,
@@ -8113,8 +8921,8 @@
       "world_rate": 0.405,
       "other_rate": 0.345,
       "vs_none_wilcoxon": {
-        "statistic": 2155.0,
-        "p_value": 0.06982758878131134
+        "statistic": 2008.5,
+        "p_value": 0.01748467441052132
       },
       "predictions": [
         1,
@@ -8344,8 +9152,8 @@
       "world_rate": 0.175,
       "other_rate": 0.35,
       "vs_none_wilcoxon": {
-        "statistic": 231.0,
-        "p_value": 4.592833711791755e-06
+        "statistic": 0.0,
+        "p_value": 4.592833711753968e-06
       },
       "predictions": [
         2,
@@ -8807,8 +9615,8 @@
       "world_rate": 0.405,
       "other_rate": 0.345,
       "vs_none_wilcoxon": {
-        "statistic": 2155.0,
-        "p_value": 0.06982758878131134
+        "statistic": 2008.5,
+        "p_value": 0.01748467441052132
       },
       "predictions": [
         1,
@@ -9038,8 +9846,8 @@
       "world_rate": 0.1,
       "other_rate": 0.32,
       "vs_none_wilcoxon": {
-        "statistic": 903.0,
-        "p_value": 9.127343325587844e-11
+        "statistic": 0.0,
+        "p_value": 9.12734179928913e-11
       },
       "predictions": [
         2,
@@ -9269,8 +10077,8 @@
       "world_rate": 0.285,
       "other_rate": 0.355,
       "vs_none_wilcoxon": {
-        "statistic": 66.0,
-        "p_value": 0.3332342820651055
+        "statistic": 76.0,
+        "p_value": 0.6373518882339371
       },
       "predictions": [
         2,
@@ -9501,8 +10309,8 @@
       "world_rate": 0.405,
       "other_rate": 0.345,
       "vs_none_wilcoxon": {
-        "statistic": 2155.0,
-        "p_value": 0.06982758878131134
+        "statistic": 2008.5,
+        "p_value": 0.01748467441052132
       },
       "predictions": [
         1,
@@ -9732,8 +10540,8 @@
       "world_rate": 0.055,
       "other_rate": 0.2,
       "vs_none_wilcoxon": {
-        "statistic": 2935.0,
-        "p_value": 0.0
+        "statistic": 39.0,
+        "p_value": 1.2628189659757305e-17
       },
       "predictions": [
         2,
@@ -9963,8 +10771,8 @@
       "world_rate": 0.295,
       "other_rate": 0.34,
       "vs_none_wilcoxon": {
-        "statistic": 403.0,
-        "p_value": 0.6825201997499026
+        "statistic": 420.0,
+        "p_value": 0.8758960579229409
       },
       "predictions": [
         2,
@@ -10195,8 +11003,8 @@
       "world_rate": 0.405,
       "other_rate": 0.345,
       "vs_none_wilcoxon": {
-        "statistic": 2155.0,
-        "p_value": 0.06982758878131134
+        "statistic": 2008.5,
+        "p_value": 0.01748467441052132
       },
       "predictions": [
         1,
@@ -10426,8 +11234,8 @@
       "world_rate": 0.005,
       "other_rate": 0.115,
       "vs_none_wilcoxon": {
-        "statistic": 5591.0,
-        "p_value": 0.0
+        "statistic": 163.5,
+        "p_value": 9.708170309126205e-23
       },
       "predictions": [
         2,
@@ -10657,8 +11465,8 @@
       "world_rate": 0.315,
       "other_rate": 0.325,
       "vs_none_wilcoxon": {
-        "statistic": 718.0,
-        "p_value": 0.8084123257835907
+        "statistic": 715.0,
+        "p_value": 0.7854947471183542
       },
       "predictions": [
         2,
@@ -10889,8 +11697,8 @@
       "world_rate": 0.405,
       "other_rate": 0.345,
       "vs_none_wilcoxon": {
-        "statistic": 2155.0,
-        "p_value": 0.06982758878131134
+        "statistic": 2008.5,
+        "p_value": 0.01748467441052132
       },
       "predictions": [
         1,
@@ -11120,8 +11928,8 @@
       "world_rate": 0.24,
       "other_rate": 0.34,
       "vs_none_wilcoxon": {
-        "statistic": 55.0,
-        "p_value": 0.0015654022580025018
+        "statistic": 0.0,
+        "p_value": 0.001565402258002548
       },
       "predictions": [
         2,
@@ -11583,8 +12391,8 @@
       "world_rate": 0.44,
       "other_rate": 0.31,
       "vs_none_wilcoxon": {
-        "statistic": 1992.0,
-        "p_value": 0.07684424257728883
+        "statistic": 1831.5,
+        "p_value": 0.015335137038007587
       },
       "predictions": [
         1,
@@ -11814,8 +12622,8 @@
       "world_rate": 0.185,
       "other_rate": 0.315,
       "vs_none_wilcoxon": {
-        "statistic": 351.0,
-        "p_value": 3.4141735771875403e-07
+        "statistic": 0.0,
+        "p_value": 3.414173577297533e-07
       },
       "predictions": [
         2,
@@ -12045,8 +12853,8 @@
       "world_rate": 0.265,
       "other_rate": 0.355,
       "vs_none_wilcoxon": {
-        "statistic": 31.0,
-        "p_value": 0.6873369100516229
+        "statistic": 22.0,
+        "p_value": 0.5270892568655381
       },
       "predictions": [
         2,
@@ -12277,8 +13085,8 @@
       "world_rate": 0.44,
       "other_rate": 0.31,
       "vs_none_wilcoxon": {
-        "statistic": 1992.0,
-        "p_value": 0.07684424257728883
+        "statistic": 1831.5,
+        "p_value": 0.015335137038007587
       },
       "predictions": [
         1,
@@ -12508,8 +13316,8 @@
       "world_rate": 0.12,
       "other_rate": 0.27,
       "vs_none_wilcoxon": {
-        "statistic": 1176.0,
-        "p_value": 4.262146191535976e-12
+        "statistic": 0.0,
+        "p_value": 4.262191597843629e-12
       },
       "predictions": [
         2,
@@ -12739,8 +13547,8 @@
       "world_rate": 0.27,
       "other_rate": 0.35,
       "vs_none_wilcoxon": {
-        "statistic": 70.0,
-        "p_value": 0.9063473162821931
+        "statistic": 59.5,
+        "p_value": 0.6170750774519738
       },
       "predictions": [
         2,
@@ -12971,8 +13779,8 @@
       "world_rate": 0.44,
       "other_rate": 0.31,
       "vs_none_wilcoxon": {
-        "statistic": 1992.0,
-        "p_value": 0.07684424257728883
+        "statistic": 1831.5,
+        "p_value": 0.015335137038007587
       },
       "predictions": [
         1,
@@ -13202,8 +14010,8 @@
       "world_rate": 0.055,
       "other_rate": 0.15,
       "vs_none_wilcoxon": {
-        "statistic": 3655.0,
-        "p_value": 0.0
+        "statistic": 0.0,
+        "p_value": 2.983650762799002e-20
       },
       "predictions": [
         2,
@@ -13433,8 +14241,8 @@
       "world_rate": 0.28,
       "other_rate": 0.34,
       "vs_none_wilcoxon": {
-        "statistic": 325.0,
-        "p_value": 0.5898899228140317
+        "statistic": 280.0,
+        "p_value": 0.7316005889599013
       },
       "predictions": [
         1,
@@ -13665,8 +14473,8 @@
       "world_rate": 0.44,
       "other_rate": 0.31,
       "vs_none_wilcoxon": {
-        "statistic": 1992.0,
-        "p_value": 0.07684424257728883
+        "statistic": 1831.5,
+        "p_value": 0.015335137038007587
       },
       "predictions": [
         1,
@@ -13896,8 +14704,8 @@
       "world_rate": 0.015,
       "other_rate": 0.08,
       "vs_none_wilcoxon": {
-        "statistic": 5896.0,
-        "p_value": 0.0
+        "statistic": 55.0,
+        "p_value": 1.1989467982169688e-24
       },
       "predictions": [
         2,
@@ -14127,8 +14935,8 @@
       "world_rate": 0.3,
       "other_rate": 0.335,
       "vs_none_wilcoxon": {
-        "statistic": 690.0,
-        "p_value": 0.7711833269167636
+        "statistic": 650.0,
+        "p_value": 0.8886378608950078
       },
       "predictions": [
         1,
@@ -14359,8 +15167,8 @@
       "world_rate": 0.44,
       "other_rate": 0.31,
       "vs_none_wilcoxon": {
-        "statistic": 1992.0,
-        "p_value": 0.07684424257728883
+        "statistic": 1831.5,
+        "p_value": 0.015335137038007587
       },
       "predictions": [
         1,
@@ -14590,8 +15398,8 @@
       "world_rate": 0.25,
       "other_rate": 0.335,
       "vs_none_wilcoxon": {
-        "statistic": 45.0,
-        "p_value": 0.002699796063260207
+        "statistic": 0.0,
+        "p_value": 0.0026997960632601866
       },
       "predictions": [
         2,
@@ -14821,8 +15629,8 @@
       "world_rate": 0.28,
       "other_rate": 0.35,
       "vs_none_wilcoxon": {
-        "statistic": 31.0,
-        "p_value": 0.6873369100516229
+        "statistic": 27.5,
+        "p_value": 1.0
       },
       "predictions": [
         2,
@@ -15053,8 +15861,8 @@
       "world_rate": 0.19,
       "other_rate": 0.39,
       "vs_none_wilcoxon": {
-        "statistic": 2322.0,
-        "p_value": 0.41187123412955806
+        "statistic": 1906.5,
+        "p_value": 0.2971465303484704
       },
       "predictions": [
         0,
@@ -15284,8 +16092,8 @@
       "world_rate": 0.185,
       "other_rate": 0.335,
       "vs_none_wilcoxon": {
-        "statistic": 253.0,
-        "p_value": 2.726504656269668e-06
+        "statistic": 0.0,
+        "p_value": 2.7265046561554873e-06
       },
       "predictions": [
         2,
@@ -15515,8 +16323,8 @@
       "world_rate": 0.28,
       "other_rate": 0.345,
       "vs_none_wilcoxon": {
-        "statistic": 51.0,
-        "p_value": 0.6629558177935087
+        "statistic": 42.0,
+        "p_value": 0.7815112949987133
       },
       "predictions": [
         2,
@@ -15747,8 +16555,8 @@
       "world_rate": 0.19,
       "other_rate": 0.39,
       "vs_none_wilcoxon": {
-        "statistic": 2322.0,
-        "p_value": 0.41187123412955806
+        "statistic": 1906.5,
+        "p_value": 0.2971465303484704
       },
       "predictions": [
         0,
@@ -15978,8 +16786,8 @@
       "world_rate": 0.125,
       "other_rate": 0.275,
       "vs_none_wilcoxon": {
-        "statistic": 1081.0,
-        "p_value": 1.1825207479887467e-11
+        "statistic": 0.0,
+        "p_value": 1.1825298845719069e-11
       },
       "predictions": [
         2,
@@ -16209,8 +17017,8 @@
       "world_rate": 0.265,
       "other_rate": 0.34,
       "vs_none_wilcoxon": {
-        "statistic": 285.0,
-        "p_value": 0.09467071984550879
+        "statistic": 180.0,
+        "p_value": 0.35316035331598783
       },
       "predictions": [
         1,
@@ -16441,8 +17249,8 @@
       "world_rate": 0.19,
       "other_rate": 0.39,
       "vs_none_wilcoxon": {
-        "statistic": 2322.0,
-        "p_value": 0.41187123412955806
+        "statistic": 1906.5,
+        "p_value": 0.2971465303484704
       },
       "predictions": [
         0,
@@ -16672,8 +17480,8 @@
       "world_rate": 0.06,
       "other_rate": 0.18,
       "vs_none_wilcoxon": {
-        "statistic": 3081.0,
-        "p_value": 0.0
+        "statistic": 0.0,
+        "p_value": 1.030405543210943e-18
       },
       "predictions": [
         2,
@@ -16903,8 +17711,8 @@
       "world_rate": 0.29,
       "other_rate": 0.33,
       "vs_none_wilcoxon": {
-        "statistic": 1003.0,
-        "p_value": 0.4562914952403263
+        "statistic": 884.5,
+        "p_value": 0.7962534147376392
       },
       "predictions": [
         1,
@@ -17135,8 +17943,8 @@
       "world_rate": 0.19,
       "other_rate": 0.39,
       "vs_none_wilcoxon": {
-        "statistic": 2322.0,
-        "p_value": 0.41187123412955806
+        "statistic": 1906.5,
+        "p_value": 0.2971465303484704
       },
       "predictions": [
         0,
@@ -17366,8 +18174,8 @@
       "world_rate": 0.005,
       "other_rate": 0.085,
       "vs_none_wilcoxon": {
-        "statistic": 5886.0,
-        "p_value": 0.0
+        "statistic": 0.0,
+        "p_value": 2.68778179464934e-25
       },
       "predictions": [
         2,
@@ -17597,8 +18405,8 @@
       "world_rate": 0.33,
       "other_rate": 0.295,
       "vs_none_wilcoxon": {
-        "statistic": 1512.0,
-        "p_value": 0.5969918616220118
+        "statistic": 1406.0,
+        "p_value": 0.9080725552559752
       },
       "predictions": [
         1,
@@ -17829,8 +18637,8 @@
       "world_rate": 0.19,
       "other_rate": 0.39,
       "vs_none_wilcoxon": {
-        "statistic": 2322.0,
-        "p_value": 0.41187123412955806
+        "statistic": 1906.5,
+        "p_value": 0.2971465303484704
       },
       "predictions": [
         0,
@@ -18060,8 +18868,8 @@
       "world_rate": 0.235,
       "other_rate": 0.355,
       "vs_none_wilcoxon": {
-        "statistic": 36.0,
-        "p_value": 0.004677734981047177
+        "statistic": 0.0,
+        "p_value": 0.0046777349810472576
       },
       "predictions": [
         2,
@@ -18291,8 +19099,8 @@
       "world_rate": 0.265,
       "other_rate": 0.355,
       "vs_none_wilcoxon": {
-        "statistic": 9.0,
-        "p_value": 0.10959858339911599
+        "statistic": 2.5,
+        "p_value": 0.31731050786291415
       },
       "predictions": [
         2,
@@ -18523,8 +19331,8 @@
       "world_rate": 0.28,
       "other_rate": 0.23,
       "vs_none_wilcoxon": {
-        "statistic": 4007.0,
-        "p_value": 0.017478486522071623
+        "statistic": 2587.5,
+        "p_value": 0.024588566448858755
       },
       "predictions": [
         1,
@@ -18754,8 +19562,8 @@
       "world_rate": 0.18,
       "other_rate": 0.355,
       "vs_none_wilcoxon": {
-        "statistic": 190.0,
-        "p_value": 1.3071845366807722e-05
+        "statistic": 0.0,
+        "p_value": 1.3071845366763019e-05
       },
       "predictions": [
         2,
@@ -18985,8 +19793,8 @@
       "world_rate": 0.25,
       "other_rate": 0.36,
       "vs_none_wilcoxon": {
-        "statistic": 20.0,
-        "p_value": 0.026677465241644605
+        "statistic": 3.5,
+        "p_value": 0.10247043485974941
       },
       "predictions": [
         2,
@@ -19217,8 +20025,8 @@
       "world_rate": 0.28,
       "other_rate": 0.23,
       "vs_none_wilcoxon": {
-        "statistic": 4007.0,
-        "p_value": 0.017478486522071623
+        "statistic": 2587.5,
+        "p_value": 0.024588566448858755
       },
       "predictions": [
         1,
@@ -19448,8 +20256,8 @@
       "world_rate": 0.135,
       "other_rate": 0.305,
       "vs_none_wilcoxon": {
-        "statistic": 741.0,
-        "p_value": 7.074463237444206e-10
+        "statistic": 0.0,
+        "p_value": 7.074463098970675e-10
       },
       "predictions": [
         2,
@@ -19679,7 +20487,7 @@
       "world_rate": 0.255,
       "other_rate": 0.355,
       "vs_none_wilcoxon": {
-        "statistic": 85.0,
+        "statistic": 51.0,
         "p_value": 0.31731050786291415
       },
       "predictions": [
@@ -19911,8 +20719,8 @@
       "world_rate": 0.28,
       "other_rate": 0.23,
       "vs_none_wilcoxon": {
-        "statistic": 4007.0,
-        "p_value": 0.017478486522071623
+        "statistic": 2587.5,
+        "p_value": 0.024588566448858755
       },
       "predictions": [
         1,
@@ -20142,8 +20950,8 @@
       "world_rate": 0.055,
       "other_rate": 0.18,
       "vs_none_wilcoxon": {
-        "statistic": 3160.0,
-        "p_value": 0.0
+        "statistic": 0.0,
+        "p_value": 6.210993425425191e-19
       },
       "predictions": [
         2,
@@ -20373,8 +21181,8 @@
       "world_rate": 0.245,
       "other_rate": 0.36,
       "vs_none_wilcoxon": {
-        "statistic": 329.0,
-        "p_value": 0.32058003750757713
+        "statistic": 238.0,
+        "p_value": 0.384088249473852
       },
       "predictions": [
         2,
@@ -20605,8 +21413,8 @@
       "world_rate": 0.28,
       "other_rate": 0.23,
       "vs_none_wilcoxon": {
-        "statistic": 4007.0,
-        "p_value": 0.017478486522071623
+        "statistic": 2587.5,
+        "p_value": 0.024588566448858755
       },
       "predictions": [
         1,
@@ -20836,8 +21644,8 @@
       "world_rate": 0.02,
       "other_rate": 0.11,
       "vs_none_wilcoxon": {
-        "statistic": 5152.0,
-        "p_value": 0.0
+        "statistic": 51.5,
+        "p_value": 4.101784199989599e-23
       },
       "predictions": [
         2,
@@ -21067,8 +21875,8 @@
       "world_rate": 0.245,
       "other_rate": 0.36,
       "vs_none_wilcoxon": {
-        "statistic": 703.0,
-        "p_value": 0.3010026133276904
+        "statistic": 550.0,
+        "p_value": 0.475050524053953
       },
       "predictions": [
         2,
@@ -21299,8 +22107,8 @@
       "world_rate": 0.28,
       "other_rate": 0.23,
       "vs_none_wilcoxon": {
-        "statistic": 4007.0,
-        "p_value": 0.017478486522071623
+        "statistic": 2587.5,
+        "p_value": 0.024588566448858755
       },
       "predictions": [
         1,

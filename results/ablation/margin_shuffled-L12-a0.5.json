@@ -1,8 +1,5 @@
 {
   "arm": {
-    "mechanism": "margin_shuffled",
-    "layer": 12,
-    "alpha": 0.5,
     "label": "margin_shuffled-L12-a0.5"
   },
   "n_items": 200,

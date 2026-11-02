@@ -19,8 +19,8 @@
   "world_rate": 0.23,
   "other_rate": 0.39,
   "vs_none_wilcoxon": {
-    "statistic": 318.0,
-    "p_value": 0.6878336618841336
+    "statistic": 280.0,
+    "p_value": 0.7316005889599013
   },
   "note": "CONTROL: negation of the fitted belief direction, matched norm, layer and alpha",
   "scale": 7.564058337240172,

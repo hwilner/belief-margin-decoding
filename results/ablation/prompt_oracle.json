@@ -1,8 +1,5 @@
 {
   "arm": {
-    "mechanism": "prompt_oracle",
-    "layer": null,
-    "alpha": 0.0,
     "label": "prompt_oracle"
   },
   "n_items": 200,
@@ -19,8 +16,8 @@
   "world_rate": 0.2,
   "other_rate": 0.29,
   "vs_none_wilcoxon": {
-    "statistic": 663.0,
-    "p_value": 1.1351001061310484e-06
+    "statistic": 97.5,
+    "p_value": 5.567024236927999e-06
   },
   "predictions": [
     2,

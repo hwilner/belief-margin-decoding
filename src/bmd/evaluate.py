@@ -90,10 +90,23 @@ def _wilcoxon_normal_approx(a: np.ndarray, b: np.ndarray) -> tuple[float, float]
     n = len(d)
     if n == 0:
         return (0.0, 1.0)
-    order = np.argsort(np.abs(d))
+    # Average ranks for tied absolute differences. This is not a detail: the
+    # paired differences here are correctness indicators, so every non-zero
+    # difference has the same magnitude and they are all tied. Ranking them
+    # 1..n instead of giving them their average rank inflates W+ and makes
+    # the test anti-conservative.
+    abs_d = np.abs(d)
+    order = np.argsort(abs_d, kind="mergesort")
+    sorted_abs = abs_d[order]
     ranks = np.empty(n, dtype=np.float64)
-    ranks[order] = np.arange(1, n + 1)
-    _, counts = np.unique(np.abs(d), return_counts=True)
+    start = 0
+    while start < n:
+        stop = start
+        while stop + 1 < n and sorted_abs[stop + 1] == sorted_abs[start]:
+            stop += 1
+        ranks[order[start : stop + 1]] = (start + stop) / 2.0 + 1.0
+        start = stop + 1
+    _, counts = np.unique(abs_d, return_counts=True)
     tie_correction = float(np.sum(counts**3 - counts)) if counts.size else 0.0
     w_plus = float(ranks[d > 0].sum())
     mu = n * (n + 1) / 4.0

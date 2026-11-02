@@ -1,8 +1,5 @@
 {
   "arm": {
-    "mechanism": "none",
-    "layer": null,
-    "alpha": 0.0,
     "label": "none"
   },
   "n_items": 200,

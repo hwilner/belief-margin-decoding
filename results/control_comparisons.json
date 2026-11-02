@@ -1,0 +1,47 @@
+{
+  "act_real_vs_act_random": {
+    "accuracy_a": 0.48,
+    "accuracy_b": 0.43,
+    "difference": 0.04999999999999999,
+    "difference_ci95": [
+      -0.025,
+      0.12
+    ],
+    "wilcoxon": {
+      "statistic": 708.0,
+      "p_value": 0.18916127259520799
+    },
+    "a_better": 34,
+    "b_better": 24
+  },
+  "act_real_vs_act_reversed": {
+    "accuracy_a": 0.48,
+    "accuracy_b": 0.38,
+    "difference": 0.09999999999999998,
+    "difference_ci95": [
+      0.03,
+      0.17
+    ],
+    "wilcoxon": {
+      "statistic": 467.5,
+      "p_value": 0.00649558625717902
+    },
+    "a_better": 37,
+    "b_better": 17
+  },
+  "act_random_vs_act_reversed": {
+    "accuracy_a": 0.43,
+    "accuracy_b": 0.38,
+    "difference": 0.04999999999999999,
+    "difference_ci95": [
+      0.0,
+      0.105
+    ],
+    "wilcoxon": {
+      "statistic": 130.5,
+      "p_value": 0.05878172135535886
+    },
+    "a_better": 19,
+    "b_better": 9
+  }
+}

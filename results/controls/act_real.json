@@ -19,8 +19,8 @@
   "world_rate": 0.205,
   "other_rate": 0.315,
   "vs_none_wilcoxon": {
-    "statistic": 1207.0,
-    "p_value": 0.0017534318415304284
+    "statistic": 531.0,
+    "p_value": 0.0038678686666596975
   },
   "note": "the fitted belief direction, re-run at the control layer so that all three arms are produced by the same code path on the same day",
   "scale": 7.564058337240172,

@@ -28,11 +28,11 @@ over from a different run.
 > intervention we tested turned that into a usable change in the model's answers.**
 >
 > - The belief is readable: out-of-fold 3-way ranking accuracy **0.720** at layer 16
->   (chance 0.333, base model 0.370; p = 2.0 × 10⁻¹¹ vs base, p = 6.6 × 10⁻¹¹ vs a shuffled-label
+>   (chance 0.333, base model 0.370; p = 2.5 × 10⁻¹¹ vs base, p = 8.5 × 10⁻¹¹ vs a shuffled-label
 >   control).
 > - The belief is **not** usable: the only mechanism that changes the forward pass — activation
 >   steering — helps at exactly one layer, and at that layer a **matched random direction helps
->   just as much** (0.480 vs 0.430, paired p = 0.15).
+>   about as much** (0.480 vs 0.430, paired p = 0.189, not significant).
 > - The mechanism that *does* beat the oracle (0.910 vs the oracle's 0.510) does so by
 >   **bypassing the model**, not by changing it: its accuracy converges to the probe's own
 >   read-out accuracy. Its headline number in the matrix summary (0.910) is an **in-sample**
@@ -90,18 +90,18 @@ every item is scored by a probe that never saw it, and the bootstrap resamples o
 
 | layer | 3-way ranking acc (out-of-fold) | 95 % CI | shuffled-label control | base model | p vs base | p vs shuffled |
 |---|---|---|---|---|---|---|
-| L4 | 0.420 | [0.355, 0.490] | 0.430 | 0.370 | 0.545 | 0.249 |
-| L8 | 0.545 | [0.475, 0.615] | 0.345 | 0.370 | 0.00138 | 0.00324 |
-| L12 | 0.530 | [0.465, 0.600] | 0.385 | 0.370 | 0.0022 | 0.017 |
-| **L16** | **0.720** | **[0.655, 0.780]** | 0.375 | 0.370 | **1.97 × 10⁻¹¹** | 6.55 × 10⁻¹¹ |
-| L20 | 0.695 | [0.630, 0.755] | 0.360 | 0.370 | 2.88 × 10⁻¹⁰ | 3.98 × 10⁻¹⁰ |
-| L24 | 0.595 | [0.530, 0.660] | 0.355 | 0.370 | 2.92 × 10⁻⁶ | 1.07 × 10⁻⁶ |
+| L4 | 0.420 | [0.355, 0.490] | 0.430 | 0.370 | 0.331 | 0.835 |
+| L8 | 0.545 | [0.475, 0.615] | 0.345 | 0.370 | 0.0011 | 8.8 × 10⁻⁵ |
+| L12 | 0.530 | [0.465, 0.600] | 0.385 | 0.370 | 0.0021 | 0.0059 |
+| **L16** | **0.720** | **[0.655, 0.780]** | 0.375 | 0.370 | **2.49 × 10⁻¹¹** | 8.53 × 10⁻¹¹ |
+| L20 | 0.695 | [0.630, 0.755] | 0.360 | 0.370 | 6.85 × 10⁻¹⁰ | 1.12 × 10⁻⁹ |
+| L24 | 0.595 | [0.530, 0.660] | 0.355 | 0.370 | 7.55 × 10⁻⁶ | 3.13 × 10⁻⁶ |
 
 **The partner belief is linearly encoded, and it becomes readable at layer 8 and peaks at layer 16.**
 At layer 16 the probe ranks the correct candidate first on 72 % of items it has never seen — nearly
 twice the chance level and three times the base model, and far above the shuffled-label control.
 
-The layer-4 row is the one to remember: **the probe has no signal there at all** (0.420, p = 0.55 vs
+The layer-4 row is the one to remember: **the probe has no signal there at all** (0.420, p = 0.33 vs
 base, 0.430 for the shuffled control). And layer 4 is exactly where the one forward-pass effect
 appears (§4). The two curves are anti-correlated at the point where it matters.
 
@@ -123,11 +123,11 @@ LM-head image of the direction.
 
 | layer | α | margin (out-of-fold) | margin_shuffled | difference | p (paired) |
 |---|---|---|---|---|---|
-| L8 | 4 | 0.545 | 0.355 | +0.190 | 6.1 × 10⁻⁵ |
-| L12 | 4 | 0.590 | 0.410 | +0.180 | 3.1 × 10⁻⁴ |
-| L16 | 4 | **0.720** | 0.330 | +0.390 | 1.3 × 10⁻¹⁵ |
-| L20 | 4 | 0.695 | 0.370 | +0.325 | 1.5 × 10⁻¹¹ |
-| L24 | 4 | 0.625 | 0.405 | +0.220 | 6.1 × 10⁻⁷ |
+| L8 | 4 | 0.545 | 0.355 | +0.190 | 4.2 × 10⁻⁵ |
+| L12 | 4 | 0.590 | 0.410 | +0.180 | 1.8 × 10⁻⁴ |
+| L16 | 4 | **0.720** | 0.330 | +0.390 | 2.0 × 10⁻¹⁴ |
+| L20 | 4 | 0.695 | 0.370 | +0.325 | 1.6 × 10⁻¹¹ |
+| L24 | 4 | 0.625 | 0.405 | +0.220 | 1.2 × 10⁻⁶ |
 | L4 | any | 0.390–0.425 | 0.375–0.400 | ≤ +0.040 | ≥ 0.23 |
 
 **But look at where the numbers land.** At α = 4 the `margin` arm's out-of-fold accuracy is
@@ -168,11 +168,11 @@ at every depth.
 
 | layer | accuracy | 95 % CI | world rate | other rate | p vs base |
 |---|---|---|---|---|---|
-| **L4** | **0.480** | [0.415, 0.550] | 0.205 | 0.315 | **0.00175** |
-| L8 | 0.345 | [0.275, 0.415] | 0.315 | 0.340 | 0.488 |
-| L12 | 0.405 | [0.340, 0.475] | 0.220 | 0.375 | 0.303 |
-| L16 | 0.400 | [0.335, 0.470] | 0.265 | 0.335 | 0.283 |
-| L20 | 0.370 | [0.305, 0.440] | 0.240 | 0.390 | 0.902 |
+| **L4** | **0.480** | [0.415, 0.550] | 0.205 | 0.315 | **0.00387** |
+| L8 | 0.345 | [0.275, 0.415] | 0.315 | 0.340 | 0.446 |
+| L12 | 0.405 | [0.340, 0.475] | 0.220 | 0.375 | 0.297 |
+| L16 | 0.400 | [0.335, 0.470] | 0.265 | 0.335 | 0.330 |
+| L20 | 0.370 | [0.305, 0.440] | 0.240 | 0.390 | 1.000 |
 | L24 | — | — | — | — | *no act arm: see below* |
 
 Layer 4 is the only layer with a significant effect: **+11 points over the base model**, and it
@@ -195,29 +195,29 @@ and α, all produced by the same code path on the same day:
 
 | arm | direction | accuracy | 95 % CI | p vs base |
 |---|---|---|---|---|
-| `act_real` | the fitted belief direction | **0.480** | [0.415, 0.550] | 0.00175 |
-| `act_random` | a uniformly random unit direction | **0.430** | [0.365, 0.500] | 0.0335 |
-| `act_reversed` | the negation of the belief direction | 0.380 | [0.315, 0.450] | 0.688 |
+| `act_real` | the fitted belief direction | **0.480** | [0.415, 0.550] | 0.00387 |
+| `act_random` | a uniformly random unit direction | **0.430** | [0.365, 0.500] | 0.0396 |
+| `act_reversed` | the negation of the belief direction | 0.380 | [0.315, 0.450] | 0.732 |
 | base | — | 0.370 | [0.305, 0.440] | — |
 
 Paired by item:
 
 | comparison | difference | 95 % CI (bootstrap of the paired difference) | Wilcoxon p |
 |---|---|---|---|
-| `act_real` vs `act_random` | +0.050 | [−0.025, +0.120] | **0.151** |
-| `act_real` vs `act_reversed` | +0.100 | [+0.030, +0.170] | **0.0037** |
-| `act_random` vs `act_reversed` | +0.050 | [+0.000, +0.105] | 0.020 |
+| `act_real` vs `act_random` | +0.050 | [−0.025, +0.120] | **0.189** |
+| `act_real` vs `act_reversed` | +0.100 | [+0.030, +0.170] | **0.0065** |
+| `act_random` vs `act_reversed` | +0.050 | [+0.000, +0.105] | 0.059 |
 
 **This is the result the phase exists to produce.**
 
 - The effect is **directional**: pushing along the belief direction beats pushing against it
-  (p = 0.0037). It is not noise.
+  (p = 0.0065). It is not noise.
 - The effect is **not shown to be belief-specific**: a random direction of the same magnitude at
   the same layer reaches 0.430, and the gap to the real direction is **not significant**
-  (p = 0.151, CI [−0.025, +0.120]). The data are compatible with the belief direction being up to
+  (p = 0.189, CI [−0.025, +0.120]). The data are compatible with the belief direction being up to
   12 points better than a random one, or 2.5 points worse.
-- A **re-run of the real arm reproduced the matrix result exactly** (0.480, p = 0.00175,
-  identical to the matrix's `act-L4-a1`), so the effect is deterministic, not a fluke of the run.
+- A **re-run of the real arm reproduced the matrix result exactly** (0.480, identical to the
+  matrix's `act-L4-a1`), so the effect is deterministic, not a fluke of the run.
 
 The honest statement is therefore: *at layer 4, perturbing the residual stream in the direction of
 the fitted belief subspace improves the model's answers by 11 points, but this improvement is not
@@ -283,7 +283,7 @@ unreported omission is worse.
 | not run | why | what it would change |
 |---|---|---|
 | **A second model.** Everything is `Qwen/Qwen2.5-0.5B-Instruct`. | 0.5B was chosen so the whole matrix fits in 3 GB and on a laptop. | The base model is at chance; a stronger model might have a partner-belief signal to steer, which would change every conclusion. **This is the most important omission.** |
-| **Repeated random-direction controls.** One random draw was run at layer 4. | 9.5 min per draw on this hardware. | The real-vs-random comparison (p = 0.151) is underpowered. Five to ten draws would turn it into a proper test. |
+| **Repeated random-direction controls.** One random draw was run at layer 4. | 9.5 min per draw on this hardware. | The real-vs-random comparison (p = 0.189) is underpowered. Five to ten draws would turn it into a proper test. |
 | **Activation steering at layer 24.** | Not possible: the hook perturbs a decoder layer's input and layer 24 is the final output. | Leaves the deepest layer out of the bite curve. |
 | **Free-form generation, and with it the MAUVE / ΔPPL utility floor.** | Every arm scores three fixed candidate continuations; nothing generates text. | The utility floor is unmeasured, so we cannot say whether the steered model is still a fluent model. Task `C7` stays open. |
 | **The `Hi-ToM` real dataset** (`src/bmd/real_data.py`, task `D9`). | The synthetic generator gives exact ground truth for the two error modes; the real dataset does not label them. | No claim here transfers to real ToM data. |
@@ -305,11 +305,13 @@ unreported omission is worse.
 3. **The probe is fitted on candidates, not on the prompt.** It reads "which of these three
    continuations matches the belief" — a different question from "what does the model believe".
    The 0.720 at layer 16 is a *discrimination* result, not a readout of a belief state.
-4. **The p-values use a normal approximation.** SciPy is not installed in the recording
-   environment, so `bmd.evaluate.paired_test` fell back to its tie-corrected normal
-   approximation. The CI suite asserts that the fallback agrees with SciPy's exact signed-rank
-   test (that test runs in CI, where SciPy is installed). The affected comparisons are nowhere
-   near a threshold — the two that matter are p = 0.0037 and p = 0.151.
+4. **The p-values are exact.** SciPy was installed for the final statistics pass, so every
+   p-value in this document comes from `scipy.stats.wilcoxon` with `zero_method="wilcox"`. The
+   SciPy-free fallback in `bmd.evaluate.paired_test` is retained and is asserted by the CI suite
+   to agree with the exact test — it previously did **not**, because it gave tied absolute
+   differences distinct ranks instead of their average rank, which made it anti-conservative.
+   Every statistic here was recomputed with `tools/recompute_all_stats.py` from the stored
+   per-item predictions, so the numbers can be re-derived independently.
 5. **The random-direction control is a single draw.** A single draw of a random variable is not
    its distribution, and the real-vs-random comparison is the one this phase cannot settle.
 

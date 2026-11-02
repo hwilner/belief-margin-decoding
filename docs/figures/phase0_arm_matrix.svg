@@ -9,84 +9,84 @@
 <text x="410" y="85" font-size="11.5" fill="#64748b">[0.870, 0.945]</text>
 <text x="520" y="85" font-size="11.5" fill="#0f172a">0.005</text>
 <text x="580" y="85" font-size="11.5" fill="#0f172a">0.085</text>
-<text x="650" y="85" font-size="11.5" fill="#0f172a">0</text>
+<text x="650" y="85" font-size="11.5" fill="#0f172a">2.69e-25</text>
 <text x="770" y="85" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="105" font-size="11.5" fill="#0f172a">margin-L16-a4</text>
 <text x="330" y="105" font-size="11.5" fill="#0f172a">0.905</text>
 <text x="410" y="105" font-size="11.5" fill="#64748b">[0.860, 0.945]</text>
 <text x="520" y="105" font-size="11.5" fill="#0f172a">0.015</text>
 <text x="580" y="105" font-size="11.5" fill="#0f172a">0.080</text>
-<text x="650" y="105" font-size="11.5" fill="#0f172a">0</text>
+<text x="650" y="105" font-size="11.5" fill="#0f172a">1.2e-24</text>
 <text x="770" y="105" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="125" font-size="11.5" fill="#0f172a">margin-L12-a4</text>
 <text x="330" y="125" font-size="11.5" fill="#0f172a">0.880</text>
 <text x="410" y="125" font-size="11.5" fill="#64748b">[0.835, 0.925]</text>
 <text x="520" y="125" font-size="11.5" fill="#0f172a">0.005</text>
 <text x="580" y="125" font-size="11.5" fill="#0f172a">0.115</text>
-<text x="650" y="125" font-size="11.5" fill="#0f172a">0</text>
+<text x="650" y="125" font-size="11.5" fill="#0f172a">9.71e-23</text>
 <text x="770" y="125" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="145" font-size="11.5" fill="#0f172a">margin-L24-a4</text>
 <text x="330" y="145" font-size="11.5" fill="#0f172a">0.870</text>
 <text x="410" y="145" font-size="11.5" fill="#64748b">[0.825, 0.915]</text>
 <text x="520" y="145" font-size="11.5" fill="#0f172a">0.020</text>
 <text x="580" y="145" font-size="11.5" fill="#0f172a">0.110</text>
-<text x="650" y="145" font-size="11.5" fill="#0f172a">0</text>
+<text x="650" y="145" font-size="11.5" fill="#0f172a">4.1e-23</text>
 <text x="770" y="145" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="165" font-size="11.5" fill="#0f172a">margin-L8-a4</text>
 <text x="330" y="165" font-size="11.5" fill="#0f172a">0.830</text>
 <text x="410" y="165" font-size="11.5" fill="#64748b">[0.780, 0.880]</text>
 <text x="520" y="165" font-size="11.5" fill="#0f172a">0.015</text>
 <text x="580" y="165" font-size="11.5" fill="#0f172a">0.155</text>
-<text x="650" y="165" font-size="11.5" fill="#0f172a">0</text>
+<text x="650" y="165" font-size="11.5" fill="#0f172a">3.58e-20</text>
 <text x="770" y="165" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="185" font-size="11.5" fill="#0f172a">margin-L16-a2</text>
 <text x="330" y="185" font-size="11.5" fill="#0f172a">0.795</text>
 <text x="410" y="185" font-size="11.5" fill="#64748b">[0.735, 0.850]</text>
 <text x="520" y="185" font-size="11.5" fill="#0f172a">0.055</text>
 <text x="580" y="185" font-size="11.5" fill="#0f172a">0.150</text>
-<text x="650" y="185" font-size="11.5" fill="#0f172a">0</text>
+<text x="650" y="185" font-size="11.5" fill="#0f172a">2.98e-20</text>
 <text x="770" y="185" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="205" font-size="11.5" fill="#0f172a">margin-L24-a2</text>
 <text x="330" y="205" font-size="11.5" fill="#0f172a">0.765</text>
 <text x="410" y="205" font-size="11.5" fill="#64748b">[0.705, 0.820]</text>
 <text x="520" y="205" font-size="11.5" fill="#0f172a">0.055</text>
 <text x="580" y="205" font-size="11.5" fill="#0f172a">0.180</text>
-<text x="650" y="205" font-size="11.5" fill="#0f172a">0</text>
+<text x="650" y="205" font-size="11.5" fill="#0f172a">6.21e-19</text>
 <text x="770" y="205" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="225" font-size="11.5" fill="#0f172a">margin-L20-a2</text>
 <text x="330" y="225" font-size="11.5" fill="#0f172a">0.760</text>
 <text x="410" y="225" font-size="11.5" fill="#64748b">[0.700, 0.815]</text>
 <text x="520" y="225" font-size="11.5" fill="#0f172a">0.060</text>
 <text x="580" y="225" font-size="11.5" fill="#0f172a">0.180</text>
-<text x="650" y="225" font-size="11.5" fill="#0f172a">0</text>
+<text x="650" y="225" font-size="11.5" fill="#0f172a">1.03e-18</text>
 <text x="770" y="225" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="245" font-size="11.5" fill="#0f172a">margin-L4-a4</text>
 <text x="330" y="245" font-size="11.5" fill="#0f172a">0.750</text>
 <text x="410" y="245" font-size="11.5" fill="#64748b">[0.690, 0.815]</text>
 <text x="520" y="245" font-size="11.5" fill="#0f172a">0.110</text>
 <text x="580" y="245" font-size="11.5" fill="#0f172a">0.140</text>
-<text x="650" y="245" font-size="11.5" fill="#0f172a">1.76e-11</text>
+<text x="650" y="245" font-size="11.5" fill="#0f172a">4.55e-15</text>
 <text x="770" y="245" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="265" font-size="11.5" fill="#0f172a">margin-L12-a2</text>
 <text x="330" y="265" font-size="11.5" fill="#0f172a">0.745</text>
 <text x="410" y="265" font-size="11.5" fill="#64748b">[0.685, 0.805]</text>
 <text x="520" y="265" font-size="11.5" fill="#0f172a">0.055</text>
 <text x="580" y="265" font-size="11.5" fill="#0f172a">0.200</text>
-<text x="650" y="265" font-size="11.5" fill="#0f172a">0</text>
+<text x="650" y="265" font-size="11.5" fill="#0f172a">1.26e-17</text>
 <text x="770" y="265" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="285" font-size="11.5" fill="#0f172a">margin-L8-a2</text>
 <text x="330" y="285" font-size="11.5" fill="#0f172a">0.680</text>
 <text x="410" y="285" font-size="11.5" fill="#64748b">[0.615, 0.745]</text>
 <text x="520" y="285" font-size="11.5" fill="#0f172a">0.075</text>
 <text x="580" y="285" font-size="11.5" fill="#0f172a">0.245</text>
-<text x="650" y="285" font-size="11.5" fill="#0f172a">4.83e-12</text>
+<text x="650" y="285" font-size="11.5" fill="#0f172a">5.54e-14</text>
 <text x="770" y="285" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="305" font-size="11.5" fill="#0f172a">margin-L4-a2</text>
 <text x="330" y="305" font-size="11.5" fill="#0f172a">0.675</text>
 <text x="410" y="305" font-size="11.5" fill="#64748b">[0.610, 0.740]</text>
 <text x="520" y="305" font-size="11.5" fill="#0f172a">0.150</text>
 <text x="580" y="305" font-size="11.5" fill="#0f172a">0.175</text>
-<text x="650" y="305" font-size="11.5" fill="#0f172a">2.57e-11</text>
+<text x="650" y="305" font-size="11.5" fill="#0f172a">2.08e-13</text>
 <text x="770" y="305" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="325" font-size="11.5" fill="#0f172a">margin-L16-a1</text>
 <text x="330" y="325" font-size="11.5" fill="#0f172a">0.610</text>
@@ -121,21 +121,21 @@
 <text x="410" y="405" font-size="11.5" fill="#64748b">[0.490, 0.630]</text>
 <text x="520" y="405" font-size="11.5" fill="#0f172a">0.185</text>
 <text x="580" y="405" font-size="11.5" fill="#0f172a">0.260</text>
-<text x="650" y="405" font-size="11.5" fill="#0f172a">1.46e-07</text>
+<text x="650" y="405" font-size="11.5" fill="#0f172a">7.54e-09</text>
 <text x="770" y="405" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="425" font-size="11.5" fill="#0f172a">margin-L8-a1</text>
 <text x="330" y="425" font-size="11.5" fill="#0f172a">0.545</text>
 <text x="410" y="425" font-size="11.5" fill="#64748b">[0.475, 0.620]</text>
 <text x="520" y="425" font-size="11.5" fill="#0f172a">0.145</text>
 <text x="580" y="425" font-size="11.5" fill="#0f172a">0.310</text>
-<text x="650" y="425" font-size="11.5" fill="#0f172a">2.51e-06</text>
+<text x="650" y="425" font-size="11.5" fill="#0f172a">4.6e-08</text>
 <text x="770" y="425" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="445" font-size="11.5" fill="#b91c1c">prompt_oracle  (ORACLE)</text>
 <text x="330" y="445" font-size="11.5" fill="#0f172a">0.510</text>
 <text x="410" y="445" font-size="11.5" fill="#64748b">[0.445, 0.585]</text>
 <text x="520" y="445" font-size="11.5" fill="#0f172a">0.200</text>
 <text x="580" y="445" font-size="11.5" fill="#0f172a">0.290</text>
-<text x="650" y="445" font-size="11.5" fill="#0f172a">1.14e-06</text>
+<text x="650" y="445" font-size="11.5" fill="#0f172a">5.57e-06</text>
 <text x="770" y="445" font-size="11.5" fill="#0f172a">upper bound</text>
 <text x="24" y="465" font-size="11.5" fill="#0f172a">margin-L16-a0.5</text>
 <text x="330" y="465" font-size="11.5" fill="#0f172a">0.500</text>
@@ -149,35 +149,35 @@
 <text x="410" y="485" font-size="11.5" fill="#64748b">[0.420, 0.555]</text>
 <text x="520" y="485" font-size="11.5" fill="#0f172a">0.280</text>
 <text x="580" y="485" font-size="11.5" fill="#0f172a">0.230</text>
-<text x="650" y="485" font-size="11.5" fill="#0f172a">0.0175</text>
+<text x="650" y="485" font-size="11.5" fill="#0f172a">0.0246</text>
 <text x="770" y="485" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="505" font-size="11.5" fill="#0f172a">logit-L24-a0.5</text>
 <text x="330" y="505" font-size="11.5" fill="#0f172a">0.490</text>
 <text x="410" y="505" font-size="11.5" fill="#64748b">[0.420, 0.555]</text>
 <text x="520" y="505" font-size="11.5" fill="#0f172a">0.280</text>
 <text x="580" y="505" font-size="11.5" fill="#0f172a">0.230</text>
-<text x="650" y="505" font-size="11.5" fill="#0f172a">0.0175</text>
+<text x="650" y="505" font-size="11.5" fill="#0f172a">0.0246</text>
 <text x="770" y="505" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="525" font-size="11.5" fill="#0f172a">logit-L24-a1</text>
 <text x="330" y="525" font-size="11.5" fill="#0f172a">0.490</text>
 <text x="410" y="525" font-size="11.5" fill="#64748b">[0.420, 0.555]</text>
 <text x="520" y="525" font-size="11.5" fill="#0f172a">0.280</text>
 <text x="580" y="525" font-size="11.5" fill="#0f172a">0.230</text>
-<text x="650" y="525" font-size="11.5" fill="#0f172a">0.0175</text>
+<text x="650" y="525" font-size="11.5" fill="#0f172a">0.0246</text>
 <text x="770" y="525" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="545" font-size="11.5" fill="#0f172a">logit-L24-a2</text>
 <text x="330" y="545" font-size="11.5" fill="#0f172a">0.490</text>
 <text x="410" y="545" font-size="11.5" fill="#64748b">[0.420, 0.555]</text>
 <text x="520" y="545" font-size="11.5" fill="#0f172a">0.280</text>
 <text x="580" y="545" font-size="11.5" fill="#0f172a">0.230</text>
-<text x="650" y="545" font-size="11.5" fill="#0f172a">0.0175</text>
+<text x="650" y="545" font-size="11.5" fill="#0f172a">0.0246</text>
 <text x="770" y="545" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="565" font-size="11.5" fill="#0f172a">logit-L24-a4</text>
 <text x="330" y="565" font-size="11.5" fill="#0f172a">0.490</text>
 <text x="410" y="565" font-size="11.5" fill="#64748b">[0.420, 0.555]</text>
 <text x="520" y="565" font-size="11.5" fill="#0f172a">0.280</text>
 <text x="580" y="565" font-size="11.5" fill="#0f172a">0.230</text>
-<text x="650" y="565" font-size="11.5" fill="#0f172a">0.0175</text>
+<text x="650" y="565" font-size="11.5" fill="#0f172a">0.0246</text>
 <text x="770" y="565" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="585" font-size="11.5" fill="#0f172a">act-L4-a1</text>
 <text x="330" y="585" font-size="11.5" fill="#0f172a">0.480</text>
@@ -219,7 +219,7 @@
 <text x="410" y="685" font-size="11.5" fill="#64748b">[0.375, 0.515]</text>
 <text x="520" y="685" font-size="11.5" fill="#0f172a">0.245</text>
 <text x="580" y="685" font-size="11.5" fill="#0f172a">0.315</text>
-<text x="650" y="685" font-size="11.5" fill="#0f172a">0.00182</text>
+<text x="650" y="685" font-size="11.5" fill="#0f172a">0.000465</text>
 <text x="770" y="685" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="705" font-size="11.5" fill="#0f172a">margin-L8-a0.25</text>
 <text x="330" y="705" font-size="11.5" fill="#0f172a">0.420</text>
@@ -247,35 +247,35 @@
 <text x="410" y="765" font-size="11.5" fill="#64748b">[0.355, 0.490]</text>
 <text x="520" y="765" font-size="11.5" fill="#0f172a">0.190</text>
 <text x="580" y="765" font-size="11.5" fill="#0f172a">0.390</text>
-<text x="650" y="765" font-size="11.5" fill="#0f172a">0.412</text>
+<text x="650" y="765" font-size="11.5" fill="#0f172a">0.297</text>
 <text x="770" y="765" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="785" font-size="11.5" fill="#0f172a">logit-L20-a0.5</text>
 <text x="330" y="785" font-size="11.5" fill="#0f172a">0.420</text>
 <text x="410" y="785" font-size="11.5" fill="#64748b">[0.355, 0.490]</text>
 <text x="520" y="785" font-size="11.5" fill="#0f172a">0.190</text>
 <text x="580" y="785" font-size="11.5" fill="#0f172a">0.390</text>
-<text x="650" y="785" font-size="11.5" fill="#0f172a">0.412</text>
+<text x="650" y="785" font-size="11.5" fill="#0f172a">0.297</text>
 <text x="770" y="785" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="805" font-size="11.5" fill="#0f172a">logit-L20-a1</text>
 <text x="330" y="805" font-size="11.5" fill="#0f172a">0.420</text>
 <text x="410" y="805" font-size="11.5" fill="#64748b">[0.355, 0.490]</text>
 <text x="520" y="805" font-size="11.5" fill="#0f172a">0.190</text>
 <text x="580" y="805" font-size="11.5" fill="#0f172a">0.390</text>
-<text x="650" y="805" font-size="11.5" fill="#0f172a">0.412</text>
+<text x="650" y="805" font-size="11.5" fill="#0f172a">0.297</text>
 <text x="770" y="805" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="825" font-size="11.5" fill="#0f172a">logit-L20-a2</text>
 <text x="330" y="825" font-size="11.5" fill="#0f172a">0.420</text>
 <text x="410" y="825" font-size="11.5" fill="#64748b">[0.355, 0.490]</text>
 <text x="520" y="825" font-size="11.5" fill="#0f172a">0.190</text>
 <text x="580" y="825" font-size="11.5" fill="#0f172a">0.390</text>
-<text x="650" y="825" font-size="11.5" fill="#0f172a">0.412</text>
+<text x="650" y="825" font-size="11.5" fill="#0f172a">0.297</text>
 <text x="770" y="825" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="845" font-size="11.5" fill="#0f172a">logit-L20-a4</text>
 <text x="330" y="845" font-size="11.5" fill="#0f172a">0.420</text>
 <text x="410" y="845" font-size="11.5" fill="#64748b">[0.355, 0.490]</text>
 <text x="520" y="845" font-size="11.5" fill="#0f172a">0.190</text>
 <text x="580" y="845" font-size="11.5" fill="#0f172a">0.390</text>
-<text x="650" y="845" font-size="11.5" fill="#0f172a">0.412</text>
+<text x="650" y="845" font-size="11.5" fill="#0f172a">0.297</text>
 <text x="770" y="845" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="865" font-size="11.5" fill="#0f172a">margin-L20-a0.25</text>
 <text x="330" y="865" font-size="11.5" fill="#0f172a">0.415</text>
@@ -296,49 +296,49 @@
 <text x="410" y="905" font-size="11.5" fill="#64748b">[0.340, 0.475]</text>
 <text x="520" y="905" font-size="11.5" fill="#0f172a">0.220</text>
 <text x="580" y="905" font-size="11.5" fill="#0f172a">0.375</text>
-<text x="650" y="905" font-size="11.5" fill="#0f172a">0.303</text>
+<text x="650" y="905" font-size="11.5" fill="#0f172a">0.297</text>
 <text x="770" y="905" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="925" font-size="11.5" fill="#0f172a">margin-L4-a0.25</text>
 <text x="330" y="925" font-size="11.5" fill="#0f172a">0.405</text>
 <text x="410" y="925" font-size="11.5" fill="#64748b">[0.340, 0.480]</text>
 <text x="520" y="925" font-size="11.5" fill="#0f172a">0.265</text>
 <text x="580" y="925" font-size="11.5" fill="#0f172a">0.330</text>
-<text x="650" y="925" font-size="11.5" fill="#0f172a">0.0532</text>
+<text x="650" y="925" font-size="11.5" fill="#0f172a">0.0196</text>
 <text x="770" y="925" font-size="11.5" fill="#0f172a">yes</text>
 <text x="24" y="945" font-size="11.5" fill="#0f172a">act-L16-a1</text>
 <text x="330" y="945" font-size="11.5" fill="#0f172a">0.400</text>
 <text x="410" y="945" font-size="11.5" fill="#64748b">[0.335, 0.470]</text>
 <text x="520" y="945" font-size="11.5" fill="#0f172a">0.265</text>
 <text x="580" y="945" font-size="11.5" fill="#0f172a">0.335</text>
-<text x="650" y="945" font-size="11.5" fill="#0f172a">0.283</text>
+<text x="650" y="945" font-size="11.5" fill="#0f172a">0.33</text>
 <text x="770" y="945" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="965" font-size="11.5" fill="#c2410c">margin_shuffled-L20-a1</text>
 <text x="330" y="965" font-size="11.5" fill="#0f172a">0.395</text>
 <text x="410" y="965" font-size="11.5" fill="#64748b">[0.330, 0.465]</text>
 <text x="520" y="965" font-size="11.5" fill="#0f172a">0.265</text>
 <text x="580" y="965" font-size="11.5" fill="#0f172a">0.340</text>
-<text x="650" y="965" font-size="11.5" fill="#0f172a">0.0947</text>
+<text x="650" y="965" font-size="11.5" fill="#0f172a">0.353</text>
 <text x="770" y="965" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="985" font-size="11.5" fill="#c2410c">margin_shuffled-L24-a2</text>
 <text x="330" y="985" font-size="11.5" fill="#0f172a">0.395</text>
 <text x="410" y="985" font-size="11.5" fill="#64748b">[0.330, 0.465]</text>
 <text x="520" y="985" font-size="11.5" fill="#0f172a">0.245</text>
 <text x="580" y="985" font-size="11.5" fill="#0f172a">0.360</text>
-<text x="650" y="985" font-size="11.5" fill="#0f172a">0.321</text>
+<text x="650" y="985" font-size="11.5" fill="#0f172a">0.384</text>
 <text x="770" y="985" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1005" font-size="11.5" fill="#c2410c">margin_shuffled-L24-a4</text>
 <text x="330" y="1005" font-size="11.5" fill="#0f172a">0.395</text>
 <text x="410" y="1005" font-size="11.5" fill="#64748b">[0.330, 0.460]</text>
 <text x="520" y="1005" font-size="11.5" fill="#0f172a">0.245</text>
 <text x="580" y="1005" font-size="11.5" fill="#0f172a">0.360</text>
-<text x="650" y="1005" font-size="11.5" fill="#0f172a">0.301</text>
+<text x="650" y="1005" font-size="11.5" fill="#0f172a">0.475</text>
 <text x="770" y="1005" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1025" font-size="11.5" fill="#c2410c">margin_shuffled-L24-a0.5</text>
 <text x="330" y="1025" font-size="11.5" fill="#0f172a">0.390</text>
 <text x="410" y="1025" font-size="11.5" fill="#64748b">[0.325, 0.460]</text>
 <text x="520" y="1025" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="580" y="1025" font-size="11.5" fill="#0f172a">0.360</text>
-<text x="650" y="1025" font-size="11.5" fill="#0f172a">0.0267</text>
+<text x="650" y="1025" font-size="11.5" fill="#0f172a">0.102</text>
 <text x="770" y="1025" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1045" font-size="11.5" fill="#c2410c">margin_shuffled-L24-a1</text>
 <text x="330" y="1045" font-size="11.5" fill="#0f172a">0.390</text>
@@ -352,84 +352,84 @@
 <text x="410" y="1065" font-size="11.5" fill="#64748b">[0.315, 0.450]</text>
 <text x="520" y="1065" font-size="11.5" fill="#0f172a">0.280</text>
 <text x="580" y="1065" font-size="11.5" fill="#0f172a">0.340</text>
-<text x="650" y="1065" font-size="11.5" fill="#0f172a">0.157</text>
+<text x="650" y="1065" font-size="11.5" fill="#0f172a">0.48</text>
 <text x="770" y="1065" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1085" font-size="11.5" fill="#c2410c">margin_shuffled-L8-a1</text>
 <text x="330" y="1085" font-size="11.5" fill="#0f172a">0.380</text>
 <text x="410" y="1085" font-size="11.5" fill="#64748b">[0.315, 0.450]</text>
 <text x="520" y="1085" font-size="11.5" fill="#0f172a">0.295</text>
 <text x="580" y="1085" font-size="11.5" fill="#0f172a">0.325</text>
-<text x="650" y="1085" font-size="11.5" fill="#0f172a">0.143</text>
+<text x="650" y="1085" font-size="11.5" fill="#0f172a">0.67</text>
 <text x="770" y="1085" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1105" font-size="11.5" fill="#c2410c">margin_shuffled-L8-a4</text>
 <text x="330" y="1105" font-size="11.5" fill="#0f172a">0.380</text>
 <text x="410" y="1105" font-size="11.5" fill="#64748b">[0.315, 0.445]</text>
 <text x="520" y="1105" font-size="11.5" fill="#0f172a">0.315</text>
 <text x="580" y="1105" font-size="11.5" fill="#0f172a">0.305</text>
-<text x="650" y="1105" font-size="11.5" fill="#0f172a">0.596</text>
+<text x="650" y="1105" font-size="11.5" fill="#0f172a">0.803</text>
 <text x="770" y="1105" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1125" font-size="11.5" fill="#c2410c">margin_shuffled-L16-a0.5</text>
 <text x="330" y="1125" font-size="11.5" fill="#0f172a">0.380</text>
 <text x="410" y="1125" font-size="11.5" fill="#64748b">[0.315, 0.450]</text>
 <text x="520" y="1125" font-size="11.5" fill="#0f172a">0.265</text>
 <text x="580" y="1125" font-size="11.5" fill="#0f172a">0.355</text>
-<text x="650" y="1125" font-size="11.5" fill="#0f172a">0.687</text>
+<text x="650" y="1125" font-size="11.5" fill="#0f172a">0.527</text>
 <text x="770" y="1125" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1145" font-size="11.5" fill="#c2410c">margin_shuffled-L16-a1</text>
 <text x="330" y="1145" font-size="11.5" fill="#0f172a">0.380</text>
 <text x="410" y="1145" font-size="11.5" fill="#64748b">[0.315, 0.450]</text>
 <text x="520" y="1145" font-size="11.5" fill="#0f172a">0.270</text>
 <text x="580" y="1145" font-size="11.5" fill="#0f172a">0.350</text>
-<text x="650" y="1145" font-size="11.5" fill="#0f172a">0.906</text>
+<text x="650" y="1145" font-size="11.5" fill="#0f172a">0.617</text>
 <text x="770" y="1145" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1165" font-size="11.5" fill="#c2410c">margin_shuffled-L16-a2</text>
 <text x="330" y="1165" font-size="11.5" fill="#0f172a">0.380</text>
 <text x="410" y="1165" font-size="11.5" fill="#64748b">[0.310, 0.450]</text>
 <text x="520" y="1165" font-size="11.5" fill="#0f172a">0.280</text>
 <text x="580" y="1165" font-size="11.5" fill="#0f172a">0.340</text>
-<text x="650" y="1165" font-size="11.5" fill="#0f172a">0.59</text>
+<text x="650" y="1165" font-size="11.5" fill="#0f172a">0.732</text>
 <text x="770" y="1165" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1185" font-size="11.5" fill="#c2410c">margin_shuffled-L20-a2</text>
 <text x="330" y="1185" font-size="11.5" fill="#0f172a">0.380</text>
 <text x="410" y="1185" font-size="11.5" fill="#64748b">[0.315, 0.445]</text>
 <text x="520" y="1185" font-size="11.5" fill="#0f172a">0.290</text>
 <text x="580" y="1185" font-size="11.5" fill="#0f172a">0.330</text>
-<text x="650" y="1185" font-size="11.5" fill="#0f172a">0.456</text>
+<text x="650" y="1185" font-size="11.5" fill="#0f172a">0.796</text>
 <text x="770" y="1185" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1205" font-size="11.5" fill="#c2410c">margin_shuffled-L24-a0.25</text>
 <text x="330" y="1205" font-size="11.5" fill="#0f172a">0.380</text>
 <text x="410" y="1205" font-size="11.5" fill="#64748b">[0.315, 0.450]</text>
 <text x="520" y="1205" font-size="11.5" fill="#0f172a">0.265</text>
 <text x="580" y="1205" font-size="11.5" fill="#0f172a">0.355</text>
-<text x="650" y="1205" font-size="11.5" fill="#0f172a">0.11</text>
+<text x="650" y="1205" font-size="11.5" fill="#0f172a">0.317</text>
 <text x="770" y="1205" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1225" font-size="11.5" fill="#c2410c">margin_shuffled-L4-a0.25</text>
 <text x="330" y="1225" font-size="11.5" fill="#0f172a">0.375</text>
 <text x="410" y="1225" font-size="11.5" fill="#64748b">[0.310, 0.450]</text>
 <text x="520" y="1225" font-size="11.5" fill="#0f172a">0.290</text>
 <text x="580" y="1225" font-size="11.5" fill="#0f172a">0.335</text>
-<text x="650" y="1225" font-size="11.5" fill="#0f172a">0.85</text>
+<text x="650" y="1225" font-size="11.5" fill="#0f172a">0.705</text>
 <text x="770" y="1225" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1245" font-size="11.5" fill="#c2410c">margin_shuffled-L8-a0.5</text>
 <text x="330" y="1245" font-size="11.5" fill="#0f172a">0.375</text>
 <text x="410" y="1245" font-size="11.5" fill="#64748b">[0.310, 0.445]</text>
 <text x="520" y="1245" font-size="11.5" fill="#0f172a">0.285</text>
 <text x="580" y="1245" font-size="11.5" fill="#0f172a">0.340</text>
-<text x="650" y="1245" font-size="11.5" fill="#0f172a">0.463</text>
+<text x="650" y="1245" font-size="11.5" fill="#0f172a">0.739</text>
 <text x="770" y="1245" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1265" font-size="11.5" fill="#c2410c">margin_shuffled-L20-a0.5</text>
 <text x="330" y="1265" font-size="11.5" fill="#0f172a">0.375</text>
 <text x="410" y="1265" font-size="11.5" fill="#64748b">[0.310, 0.445]</text>
 <text x="520" y="1265" font-size="11.5" fill="#0f172a">0.280</text>
 <text x="580" y="1265" font-size="11.5" fill="#0f172a">0.345</text>
-<text x="650" y="1265" font-size="11.5" fill="#0f172a">0.663</text>
+<text x="650" y="1265" font-size="11.5" fill="#0f172a">0.782</text>
 <text x="770" y="1265" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1285" font-size="11.5" fill="#c2410c">margin_shuffled-L20-a4</text>
 <text x="330" y="1285" font-size="11.5" fill="#0f172a">0.375</text>
 <text x="410" y="1285" font-size="11.5" fill="#64748b">[0.310, 0.445]</text>
 <text x="520" y="1285" font-size="11.5" fill="#0f172a">0.330</text>
 <text x="580" y="1285" font-size="11.5" fill="#0f172a">0.295</text>
-<text x="650" y="1285" font-size="11.5" fill="#0f172a">0.597</text>
+<text x="650" y="1285" font-size="11.5" fill="#0f172a">0.908</text>
 <text x="770" y="1285" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1305" font-size="11.5" fill="#64748b">none</text>
 <text x="330" y="1305" font-size="11.5" fill="#0f172a">0.370</text>
@@ -443,14 +443,14 @@
 <text x="410" y="1325" font-size="11.5" fill="#64748b">[0.305, 0.440]</text>
 <text x="520" y="1325" font-size="11.5" fill="#0f172a">0.240</text>
 <text x="580" y="1325" font-size="11.5" fill="#0f172a">0.390</text>
-<text x="650" y="1325" font-size="11.5" fill="#0f172a">0.902</text>
+<text x="650" y="1325" font-size="11.5" fill="#0f172a">1</text>
 <text x="770" y="1325" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1345" font-size="11.5" fill="#c2410c">margin_shuffled-L12-a0.25</text>
 <text x="330" y="1345" font-size="11.5" fill="#0f172a">0.370</text>
 <text x="410" y="1345" font-size="11.5" fill="#64748b">[0.310, 0.440]</text>
 <text x="520" y="1345" font-size="11.5" fill="#0f172a">0.285</text>
 <text x="580" y="1345" font-size="11.5" fill="#0f172a">0.345</text>
-<text x="650" y="1345" font-size="11.5" fill="#0f172a">0.637</text>
+<text x="650" y="1345" font-size="11.5" fill="#0f172a">1</text>
 <text x="770" y="1345" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1365" font-size="11.5" fill="#c2410c">margin_shuffled-L16-a0.25</text>
 <text x="330" y="1365" font-size="11.5" fill="#0f172a">0.370</text>
@@ -464,42 +464,42 @@
 <text x="410" y="1385" font-size="11.5" fill="#64748b">[0.305, 0.440]</text>
 <text x="520" y="1385" font-size="11.5" fill="#0f172a">0.280</text>
 <text x="580" y="1385" font-size="11.5" fill="#0f172a">0.350</text>
-<text x="650" y="1385" font-size="11.5" fill="#0f172a">0.687</text>
+<text x="650" y="1385" font-size="11.5" fill="#0f172a">1</text>
 <text x="770" y="1385" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1405" font-size="11.5" fill="#c2410c">margin_shuffled-L8-a2</text>
 <text x="330" y="1405" font-size="11.5" fill="#0f172a">0.365</text>
 <text x="410" y="1405" font-size="11.5" fill="#64748b">[0.300, 0.430]</text>
 <text x="520" y="1405" font-size="11.5" fill="#0f172a">0.330</text>
 <text x="580" y="1405" font-size="11.5" fill="#0f172a">0.305</text>
-<text x="650" y="1405" font-size="11.5" fill="#0f172a">0.499</text>
+<text x="650" y="1405" font-size="11.5" fill="#0f172a">0.866</text>
 <text x="770" y="1405" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1425" font-size="11.5" fill="#c2410c">margin_shuffled-L12-a2</text>
 <text x="330" y="1425" font-size="11.5" fill="#0f172a">0.365</text>
 <text x="410" y="1425" font-size="11.5" fill="#64748b">[0.300, 0.435]</text>
 <text x="520" y="1425" font-size="11.5" fill="#0f172a">0.295</text>
 <text x="580" y="1425" font-size="11.5" fill="#0f172a">0.340</text>
-<text x="650" y="1425" font-size="11.5" fill="#0f172a">0.683</text>
+<text x="650" y="1425" font-size="11.5" fill="#0f172a">0.876</text>
 <text x="770" y="1425" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1445" font-size="11.5" fill="#c2410c">margin_shuffled-L16-a4</text>
 <text x="330" y="1445" font-size="11.5" fill="#0f172a">0.365</text>
 <text x="410" y="1445" font-size="11.5" fill="#64748b">[0.300, 0.435]</text>
 <text x="520" y="1445" font-size="11.5" fill="#0f172a">0.300</text>
 <text x="580" y="1445" font-size="11.5" fill="#0f172a">0.335</text>
-<text x="650" y="1445" font-size="11.5" fill="#0f172a">0.771</text>
+<text x="650" y="1445" font-size="11.5" fill="#0f172a">0.889</text>
 <text x="770" y="1445" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1465" font-size="11.5" fill="#c2410c">margin_shuffled-L4-a0.5</text>
 <text x="330" y="1465" font-size="11.5" fill="#0f172a">0.360</text>
 <text x="410" y="1465" font-size="11.5" fill="#64748b">[0.295, 0.430]</text>
 <text x="520" y="1465" font-size="11.5" fill="#0f172a">0.290</text>
 <text x="580" y="1465" font-size="11.5" fill="#0f172a">0.350</text>
-<text x="650" y="1465" font-size="11.5" fill="#0f172a">0.859</text>
+<text x="650" y="1465" font-size="11.5" fill="#0f172a">0.564</text>
 <text x="770" y="1465" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1485" font-size="11.5" fill="#c2410c">margin_shuffled-L4-a4</text>
 <text x="330" y="1485" font-size="11.5" fill="#0f172a">0.360</text>
 <text x="410" y="1485" font-size="11.5" fill="#64748b">[0.295, 0.425]</text>
 <text x="520" y="1485" font-size="11.5" fill="#0f172a">0.330</text>
 <text x="580" y="1485" font-size="11.5" fill="#0f172a">0.310</text>
-<text x="650" y="1485" font-size="11.5" fill="#0f172a">0.77</text>
+<text x="650" y="1485" font-size="11.5" fill="#0f172a">0.827</text>
 <text x="770" y="1485" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1505" font-size="11.5" fill="#c2410c">margin_shuffled-L12-a0.5</text>
 <text x="330" y="1505" font-size="11.5" fill="#0f172a">0.360</text>
@@ -513,174 +513,174 @@
 <text x="410" y="1525" font-size="11.5" fill="#64748b">[0.295, 0.430]</text>
 <text x="520" y="1525" font-size="11.5" fill="#0f172a">0.285</text>
 <text x="580" y="1525" font-size="11.5" fill="#0f172a">0.355</text>
-<text x="650" y="1525" font-size="11.5" fill="#0f172a">0.333</text>
+<text x="650" y="1525" font-size="11.5" fill="#0f172a">0.637</text>
 <text x="770" y="1525" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1545" font-size="11.5" fill="#c2410c">margin_shuffled-L12-a4</text>
 <text x="330" y="1545" font-size="11.5" fill="#0f172a">0.360</text>
 <text x="410" y="1545" font-size="11.5" fill="#64748b">[0.295, 0.425]</text>
 <text x="520" y="1545" font-size="11.5" fill="#0f172a">0.315</text>
 <text x="580" y="1545" font-size="11.5" fill="#0f172a">0.325</text>
-<text x="650" y="1545" font-size="11.5" fill="#0f172a">0.808</text>
+<text x="650" y="1545" font-size="11.5" fill="#0f172a">0.785</text>
 <text x="770" y="1545" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1565" font-size="11.5" fill="#0f172a">act-L8-a1</text>
 <text x="330" y="1565" font-size="11.5" fill="#0f172a">0.345</text>
 <text x="410" y="1565" font-size="11.5" fill="#64748b">[0.275, 0.415]</text>
 <text x="520" y="1565" font-size="11.5" fill="#0f172a">0.315</text>
 <text x="580" y="1565" font-size="11.5" fill="#0f172a">0.340</text>
-<text x="650" y="1565" font-size="11.5" fill="#0f172a">0.488</text>
+<text x="650" y="1565" font-size="11.5" fill="#0f172a">0.446</text>
 <text x="770" y="1565" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1585" font-size="11.5" fill="#c2410c">margin_shuffled-L4-a1</text>
 <text x="330" y="1585" font-size="11.5" fill="#0f172a">0.340</text>
 <text x="410" y="1585" font-size="11.5" fill="#64748b">[0.270, 0.410]</text>
 <text x="520" y="1585" font-size="11.5" fill="#0f172a">0.300</text>
 <text x="580" y="1585" font-size="11.5" fill="#0f172a">0.360</text>
-<text x="650" y="1585" font-size="11.5" fill="#0f172a">0.378</text>
+<text x="650" y="1585" font-size="11.5" fill="#0f172a">0.221</text>
 <text x="770" y="1585" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1605" font-size="11.5" fill="#c2410c">margin_shuffled-L4-a2</text>
 <text x="330" y="1605" font-size="11.5" fill="#0f172a">0.335</text>
 <text x="410" y="1605" font-size="11.5" fill="#64748b">[0.270, 0.405]</text>
 <text x="520" y="1605" font-size="11.5" fill="#0f172a">0.330</text>
 <text x="580" y="1605" font-size="11.5" fill="#0f172a">0.335</text>
-<text x="650" y="1605" font-size="11.5" fill="#0f172a">0.263</text>
+<text x="650" y="1605" font-size="11.5" fill="#0f172a">0.354</text>
 <text x="770" y="1605" font-size="11.5" fill="#0f172a">control</text>
 <text x="24" y="1625" font-size="11.5" fill="#0f172a">logit-L4-a0.25</text>
 <text x="330" y="1625" font-size="11.5" fill="#0f172a">0.270</text>
 <text x="410" y="1625" font-size="11.5" fill="#64748b">[0.210, 0.335]</text>
 <text x="520" y="1625" font-size="11.5" fill="#0f172a">0.420</text>
 <text x="580" y="1625" font-size="11.5" fill="#0f172a">0.310</text>
-<text x="650" y="1625" font-size="11.5" fill="#0f172a">0.175</text>
+<text x="650" y="1625" font-size="11.5" fill="#0f172a">0.033</text>
 <text x="770" y="1625" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1645" font-size="11.5" fill="#0f172a">logit-L4-a0.5</text>
 <text x="330" y="1645" font-size="11.5" fill="#0f172a">0.270</text>
 <text x="410" y="1645" font-size="11.5" fill="#64748b">[0.210, 0.335]</text>
 <text x="520" y="1645" font-size="11.5" fill="#0f172a">0.420</text>
 <text x="580" y="1645" font-size="11.5" fill="#0f172a">0.310</text>
-<text x="650" y="1645" font-size="11.5" fill="#0f172a">0.175</text>
+<text x="650" y="1645" font-size="11.5" fill="#0f172a">0.033</text>
 <text x="770" y="1645" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1665" font-size="11.5" fill="#0f172a">logit-L4-a1</text>
 <text x="330" y="1665" font-size="11.5" fill="#0f172a">0.270</text>
 <text x="410" y="1665" font-size="11.5" fill="#64748b">[0.210, 0.335]</text>
 <text x="520" y="1665" font-size="11.5" fill="#0f172a">0.420</text>
 <text x="580" y="1665" font-size="11.5" fill="#0f172a">0.310</text>
-<text x="650" y="1665" font-size="11.5" fill="#0f172a">0.175</text>
+<text x="650" y="1665" font-size="11.5" fill="#0f172a">0.033</text>
 <text x="770" y="1665" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1685" font-size="11.5" fill="#0f172a">logit-L4-a2</text>
 <text x="330" y="1685" font-size="11.5" fill="#0f172a">0.270</text>
 <text x="410" y="1685" font-size="11.5" fill="#64748b">[0.210, 0.335]</text>
 <text x="520" y="1685" font-size="11.5" fill="#0f172a">0.420</text>
 <text x="580" y="1685" font-size="11.5" fill="#0f172a">0.310</text>
-<text x="650" y="1685" font-size="11.5" fill="#0f172a">0.175</text>
+<text x="650" y="1685" font-size="11.5" fill="#0f172a">0.033</text>
 <text x="770" y="1685" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1705" font-size="11.5" fill="#0f172a">logit-L4-a4</text>
 <text x="330" y="1705" font-size="11.5" fill="#0f172a">0.270</text>
 <text x="410" y="1705" font-size="11.5" fill="#64748b">[0.210, 0.335]</text>
 <text x="520" y="1705" font-size="11.5" fill="#0f172a">0.420</text>
 <text x="580" y="1705" font-size="11.5" fill="#0f172a">0.310</text>
-<text x="650" y="1705" font-size="11.5" fill="#0f172a">0.175</text>
+<text x="650" y="1705" font-size="11.5" fill="#0f172a">0.033</text>
 <text x="770" y="1705" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1725" font-size="11.5" fill="#0f172a">logit-L8-a0.25</text>
 <text x="330" y="1725" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1725" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1725" font-size="11.5" fill="#0f172a">0.505</text>
 <text x="580" y="1725" font-size="11.5" fill="#0f172a">0.245</text>
-<text x="650" y="1725" font-size="11.5" fill="#0f172a">0.0252</text>
+<text x="650" y="1725" font-size="11.5" fill="#0f172a">0.00804</text>
 <text x="770" y="1725" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1745" font-size="11.5" fill="#0f172a">logit-L8-a0.5</text>
 <text x="330" y="1745" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1745" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1745" font-size="11.5" fill="#0f172a">0.505</text>
 <text x="580" y="1745" font-size="11.5" fill="#0f172a">0.245</text>
-<text x="650" y="1745" font-size="11.5" fill="#0f172a">0.0252</text>
+<text x="650" y="1745" font-size="11.5" fill="#0f172a">0.00804</text>
 <text x="770" y="1745" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1765" font-size="11.5" fill="#0f172a">logit-L8-a1</text>
 <text x="330" y="1765" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1765" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1765" font-size="11.5" fill="#0f172a">0.505</text>
 <text x="580" y="1765" font-size="11.5" fill="#0f172a">0.245</text>
-<text x="650" y="1765" font-size="11.5" fill="#0f172a">0.0252</text>
+<text x="650" y="1765" font-size="11.5" fill="#0f172a">0.00804</text>
 <text x="770" y="1765" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1785" font-size="11.5" fill="#0f172a">logit-L8-a2</text>
 <text x="330" y="1785" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1785" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1785" font-size="11.5" fill="#0f172a">0.505</text>
 <text x="580" y="1785" font-size="11.5" fill="#0f172a">0.245</text>
-<text x="650" y="1785" font-size="11.5" fill="#0f172a">0.0252</text>
+<text x="650" y="1785" font-size="11.5" fill="#0f172a">0.00804</text>
 <text x="770" y="1785" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1805" font-size="11.5" fill="#0f172a">logit-L8-a4</text>
 <text x="330" y="1805" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1805" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1805" font-size="11.5" fill="#0f172a">0.505</text>
 <text x="580" y="1805" font-size="11.5" fill="#0f172a">0.245</text>
-<text x="650" y="1805" font-size="11.5" fill="#0f172a">0.0252</text>
+<text x="650" y="1805" font-size="11.5" fill="#0f172a">0.00804</text>
 <text x="770" y="1805" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1825" font-size="11.5" fill="#0f172a">logit-L12-a0.25</text>
 <text x="330" y="1825" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1825" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1825" font-size="11.5" fill="#0f172a">0.405</text>
 <text x="580" y="1825" font-size="11.5" fill="#0f172a">0.345</text>
-<text x="650" y="1825" font-size="11.5" fill="#0f172a">0.0698</text>
+<text x="650" y="1825" font-size="11.5" fill="#0f172a">0.0175</text>
 <text x="770" y="1825" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1845" font-size="11.5" fill="#0f172a">logit-L12-a0.5</text>
 <text x="330" y="1845" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1845" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1845" font-size="11.5" fill="#0f172a">0.405</text>
 <text x="580" y="1845" font-size="11.5" fill="#0f172a">0.345</text>
-<text x="650" y="1845" font-size="11.5" fill="#0f172a">0.0698</text>
+<text x="650" y="1845" font-size="11.5" fill="#0f172a">0.0175</text>
 <text x="770" y="1845" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1865" font-size="11.5" fill="#0f172a">logit-L12-a1</text>
 <text x="330" y="1865" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1865" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1865" font-size="11.5" fill="#0f172a">0.405</text>
 <text x="580" y="1865" font-size="11.5" fill="#0f172a">0.345</text>
-<text x="650" y="1865" font-size="11.5" fill="#0f172a">0.0698</text>
+<text x="650" y="1865" font-size="11.5" fill="#0f172a">0.0175</text>
 <text x="770" y="1865" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1885" font-size="11.5" fill="#0f172a">logit-L12-a2</text>
 <text x="330" y="1885" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1885" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1885" font-size="11.5" fill="#0f172a">0.405</text>
 <text x="580" y="1885" font-size="11.5" fill="#0f172a">0.345</text>
-<text x="650" y="1885" font-size="11.5" fill="#0f172a">0.0698</text>
+<text x="650" y="1885" font-size="11.5" fill="#0f172a">0.0175</text>
 <text x="770" y="1885" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1905" font-size="11.5" fill="#0f172a">logit-L12-a4</text>
 <text x="330" y="1905" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1905" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1905" font-size="11.5" fill="#0f172a">0.405</text>
 <text x="580" y="1905" font-size="11.5" fill="#0f172a">0.345</text>
-<text x="650" y="1905" font-size="11.5" fill="#0f172a">0.0698</text>
+<text x="650" y="1905" font-size="11.5" fill="#0f172a">0.0175</text>
 <text x="770" y="1905" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1925" font-size="11.5" fill="#0f172a">logit-L16-a0.25</text>
 <text x="330" y="1925" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1925" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1925" font-size="11.5" fill="#0f172a">0.440</text>
 <text x="580" y="1925" font-size="11.5" fill="#0f172a">0.310</text>
-<text x="650" y="1925" font-size="11.5" fill="#0f172a">0.0768</text>
+<text x="650" y="1925" font-size="11.5" fill="#0f172a">0.0153</text>
 <text x="770" y="1925" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1945" font-size="11.5" fill="#0f172a">logit-L16-a0.5</text>
 <text x="330" y="1945" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1945" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1945" font-size="11.5" fill="#0f172a">0.440</text>
 <text x="580" y="1945" font-size="11.5" fill="#0f172a">0.310</text>
-<text x="650" y="1945" font-size="11.5" fill="#0f172a">0.0768</text>
+<text x="650" y="1945" font-size="11.5" fill="#0f172a">0.0153</text>
 <text x="770" y="1945" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1965" font-size="11.5" fill="#0f172a">logit-L16-a1</text>
 <text x="330" y="1965" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1965" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1965" font-size="11.5" fill="#0f172a">0.440</text>
 <text x="580" y="1965" font-size="11.5" fill="#0f172a">0.310</text>
-<text x="650" y="1965" font-size="11.5" fill="#0f172a">0.0768</text>
+<text x="650" y="1965" font-size="11.5" fill="#0f172a">0.0153</text>
 <text x="770" y="1965" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="1985" font-size="11.5" fill="#0f172a">logit-L16-a2</text>
 <text x="330" y="1985" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="1985" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="1985" font-size="11.5" fill="#0f172a">0.440</text>
 <text x="580" y="1985" font-size="11.5" fill="#0f172a">0.310</text>
-<text x="650" y="1985" font-size="11.5" fill="#0f172a">0.0768</text>
+<text x="650" y="1985" font-size="11.5" fill="#0f172a">0.0153</text>
 <text x="770" y="1985" font-size="11.5" fill="#0f172a">—</text>
 <text x="24" y="2005" font-size="11.5" fill="#0f172a">logit-L16-a4</text>
 <text x="330" y="2005" font-size="11.5" fill="#0f172a">0.250</text>
 <text x="410" y="2005" font-size="11.5" fill="#64748b">[0.190, 0.310]</text>
 <text x="520" y="2005" font-size="11.5" fill="#0f172a">0.440</text>
 <text x="580" y="2005" font-size="11.5" fill="#0f172a">0.310</text>
-<text x="650" y="2005" font-size="11.5" fill="#0f172a">0.0768</text>
+<text x="650" y="2005" font-size="11.5" fill="#0f172a">0.0153</text>
 <text x="770" y="2005" font-size="11.5" fill="#0f172a">—</text>
 </svg>

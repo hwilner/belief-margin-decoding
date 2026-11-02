@@ -1,8 +1,5 @@
 {
   "arm": {
-    "mechanism": "logit",
-    "layer": 24,
-    "alpha": 1.0,
     "label": "logit-L24-a1"
   },
   "n_items": 200,
@@ -19,8 +16,8 @@
   "world_rate": 0.28,
   "other_rate": 0.23,
   "vs_none_wilcoxon": {
-    "statistic": 4007.0,
-    "p_value": 0.017478486522071623
+    "statistic": 2587.5,
+    "p_value": 0.024588566448858755
   },
   "predictions": [
     1,
