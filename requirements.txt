@@ -1,0 +1,14 @@
+# Runtime dependencies for belief-margin-decoding.
+#
+# MACOS / APPLE SILICON: install the DEFAULT PyPI torch wheel -- it is already
+# MPS-capable. Do NOT install a CUDA wheel: it is several gigabytes and cannot
+# be used on macOS at all.
+#
+# LINUX CI: install torch CPU-only FIRST, from the PyTorch index, then this file:
+#     pip install --index-url https://download.pytorch.org/whl/cpu torch
+#     pip install -r requirements.txt
+torch>=2.0.0
+transformers>=4.40.0
+numpy>=1.24.0
+scipy>=1.10.0
+datasets>=2.14.0
