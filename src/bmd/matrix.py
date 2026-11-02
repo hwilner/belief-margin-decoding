@@ -66,6 +66,7 @@ class MatrixConfig:
     probe_kind: str = "lda"
     out_dir: str = "results"
     device: str | None = None
+    dtype: str | None = None
     layer_scale: float = 1.0
     skip_existing: bool = True
 
@@ -193,7 +194,14 @@ def _unit(v: np.ndarray) -> np.ndarray:
 
 
 def _cache_key(config: MatrixConfig) -> str:
-    return f"{config.model_id}|n{config.n_items}|s{config.seed}|L{'-'.join(map(str, config.layers))}"
+    key = f"{config.model_id}|n{config.n_items}|s{config.seed}|L{'-'.join(map(str, config.layers))}"
+    # The dtype is part of the cache identity only when it is not the default.
+    # The recorded Phase-0 run used float32, and its key is kept byte-identical
+    # so the committed cache and summary stay valid. A bfloat16 run of the same
+    # configuration is a *different* measurement and must not reuse it.
+    if config.dtype and config.dtype != "float32":
+        key += f"|dt{config.dtype}"
+    return key
 
 
 def run_matrix(config: MatrixConfig, verbose: bool = True) -> dict:
@@ -217,7 +225,7 @@ def run_matrix(config: MatrixConfig, verbose: bool = True) -> dict:
     if verbose:
         print(f"[matrix] model={config.model_id} items={config.n_items} layers={layers}", flush=True)
 
-    model, tokenizer = load_model(config.model_id, config.device)
+    model, tokenizer = load_model(config.model_id, config.device, config.dtype)
     device = str(next(model.parameters()).device)
     n_model_layers = len(decoder_layers(model))
     # `output_hidden_states` yields n_model_layers + 1 tensors: the embedding
@@ -274,7 +282,8 @@ def run_matrix(config: MatrixConfig, verbose: bool = True) -> dict:
         final_states = np.array(fs, dtype=np.float32)    # (n, 3, d)
         np.savez_compressed(cache_path, key=np.array(key), base_logprobs=base_logprobs,
                             oracle_logprobs=oracle_logprobs, states=states,
-                            final_states=final_states, exact=np.array(exact))
+                            final_states=final_states, exact=np.array(exact),
+                            dtype=np.array(config.dtype or "float32"))
         if verbose:
             print(f"[matrix] base pass done in {time.time()-t0:.0f}s; exact tokenisation={exact}", flush=True)
     base_pass_s = time.time() - t_start

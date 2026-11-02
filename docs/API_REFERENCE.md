@@ -119,8 +119,16 @@ def paired_test(a: np.ndarray, b: np.ndarray) -> tuple[float, float]
 ## `bmd.model`
 
 ```python
-def load_model(model_id: str, device: str | None = None)
+def resolve_dtype(dtype: str | torch.dtype | None) -> torch.dtype
+    # None -> torch.float32 (the dtype of the recorded Phase-0 run).
+    # Accepts "float32" | "bfloat16" | "float16" (and the short aliases).
+
+def load_model(model_id: str, device: str | None = None,
+               dtype: str | torch.dtype | None = None)
     # device=None -> mps if available, then cuda, then cpu
+    # dtype=None  -> float32, which is what the recorded run used.
+    #               Pass "bfloat16" for a 1.5B model on Apple Silicon
+    #               (3.1 GB instead of 6.2 GB).
 
 def extract_states(model, tokenizer, texts: list[str], layer: int,
                    device: str | None = None, batch_size: int = 8) -> np.ndarray
@@ -155,6 +163,7 @@ class MatrixConfig:
     probe_kind: str = "lda"
     out_dir: str = "results"
     device: str | None = None
+    dtype: str | None = None     # None -> float32 (the recorded run's dtype)
     layer_scale: float = 1.0
     skip_existing: bool = True
 
@@ -188,5 +197,60 @@ python src/run_phase0.py \
   --act-alphas 1.0 \
   --score-alphas 0.25,0.5,1.0,2.0,4.0 \
   --probe-kind lda \
+  --dtype bfloat16 \
   --out-dir results
 ```
+
+### The matched activation controls
+
+```bash
+# one random direction, the real direction, and the sign-flipped direction
+python src/run_controls.py --layer 4 --alpha 1.0 --n-items 200 --out-dir results/controls
+
+# N independent random directions, each with a recorded seed: the real arm is
+# then compared against a DISTRIBUTION of matched random directions
+python src/run_controls.py --layer 4 --random-draws 6 --skip-real --skip-reversed \
+  --n-items 200 --out-dir results/controls
+
+# the whole sweep, then the dissociation analysis
+bash tools/run_random_control_sweep.sh
+```
+
+| flag | meaning |
+|---|---|
+| `--random-draws N` | run N independent random directions; seeds are `seed+977`, `+978`, … Each arm records its seed and its cosine to the real direction. |
+| `--skip-real` | do not re-run the real belief direction (the stored matrix arm is reused for pairing) |
+| `--skip-reversed` | do not re-run the sign-flipped control |
+| `--dtype` | must match the dtype the base pass was recorded in; a mismatch is rejected |
+
+The control runner **refuses** a cache built for a different `--n-items`: a
+control steered with a direction fitted on one item set and scored on another
+is not a control.
+
+### The read-vs-bite dissociation
+
+```bash
+python tools/read_bite_dissociation.py
+```
+
+Re-derives the read curve, the bite curve, their rank correlation (with an
+**exact permutation** p-value over all 5! layer orderings), and the
+random-direction distribution, entirely from the stored per-item predictions.
+No model is loaded.
+
+| flag | meaning |
+|---|---|
+| `--heldout` | the item-level cross-validation JSON |
+| `--ablation-dir` | the matrix arm directory |
+| `--controls-dir` | the matched-control directory |
+| `--out-dir` | where to write the analysis (default `results/dissociation`) |
+
+### The second model (Apple Silicon)
+
+```bash
+bash tools/run_second_model_macos.sh
+```
+
+Runs the matrix, the held-out analysis, the controls, the random-direction
+sweep and the dissociation analysis for `Qwen/Qwen2.5-1.5B-Instruct` in
+`bfloat16`, into `results/qwen1_5b/`, leaving the 0.5B results untouched.
