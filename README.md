@@ -32,12 +32,18 @@ Two findings from this phase matter beyond the headline:
 
 - **The read and bite curves are inverted.** The belief reads best at layer 16 (0.720) and steers
   nothing there; the only layer where steering does anything is layer 4, where the probe has no
-  signal at all (0.420, p = 0.55).
+  signal at all (0.420, p = 0.55). As a rank statistic over the five steerable layers this is
+  Spearman ρ = **−0.600** — negative, but with five layers the exact permutation p-value is 0.350,
+  so the inversion is **suggestive, not established**.
 - **A score-level belief-margin intervention does not make the model use the belief; it makes the
-  probe pick the answer.** Its out-of-fold accuracy converges onto the probe's own accuracy
-  (0.720 at L16, 0.695 at L20) as α grows, and the large numbers in the matrix summary
-  (`margin-L20-a4 = 0.910`) are **in-sample leakage**. This is why the mechanism that "beats" the
-  oracle is not evidence of anything.
+  probe pick the answer.** Measured directly on the belief-accuracy frontier: at L16 the arm's
+  prediction *is* the probe's prediction on **83 % of items** at α = 4, and its accuracy (0.720)
+  is exactly the probe's (0.720). Across all 180 configurations (every layer × every probe quality ×
+  every α) the arm beats its own probe in 91 — but **none survives a Bonferroni correction**, while
+  13 are significantly *worse* than the probe. As α grows the arm slides monotonically from the base
+  model's ranking to the probe's and never passes it: it is a **dial between "the model decides" and
+  "the probe decides"**. The break-even belief accuracy is ≈ 0.34, barely above chance. This is why
+  the mechanism that "beats" the oracle is not evidence of anything.
 
 Full numbers, controls, timings, and an explicit **"what was not run"** section are in
 [`results/RESULTS.md`](results/RESULTS.md).

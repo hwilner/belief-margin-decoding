@@ -252,26 +252,26 @@ def load_random_controls(controls_dir: Path) -> dict[int, list[dict]]:
 def find_real_arm(layer: int, controls_dir: Path, ablation_dir: Path) -> dict | None:
     """The real (belief-direction) steering arm for a layer.
 
-    Prefers the control runner's own ``act_real.json`` when its layer matches
-    (produced by the same code path as the controls), otherwise falls back to
-    the matrix's ``act-L<layer>-a1.json``.
+    Prefers the control runner's own layer-named arm (``act_real_L<layer>.json``,
+    produced by the same code path as the controls), then the legacy
+    ``act_real.json`` when its recorded layer matches, and finally the matrix's
+    ``act-L<layer>-a1.json``.
     """
-    p = controls_dir / "act_real.json"
-    if p.exists():
+    candidates = [
+        (controls_dir / f"act_real_L{layer}.json", True),
+        (controls_dir / "act_real.json", True),
+        (ablation_dir / f"act-L{layer}-a1.json", False),
+    ]
+    for p, check_layer in candidates:
+        if not p.exists():
+            continue
         d = _load(p)
-        if int(d.get("arm", {}).get("layer", -1)) == layer:
-            return {
-                "label": d["arm"].get("label", "act_real"),
-                "file": p.name,
-                "accuracy": float(d["accuracy"]),
-                "accuracy_ci95": d.get("accuracy_ci95"),
-                "predictions": d.get("predictions"),
-            }
-    p = ablation_dir / f"act-L{layer}-a1.json"
-    if p.exists():
-        d = _load(p)
+        if check_layer:
+            recorded = d.get("arm", {}).get("layer")
+            if recorded is None or int(recorded) != layer:
+                continue
         return {
-            "label": d["arm"].get("label", p.stem),
+            "label": d.get("arm", {}).get("label", p.stem),
             "file": p.name,
             "accuracy": float(d["accuracy"]),
             "accuracy_ci95": d.get("accuracy_ci95"),

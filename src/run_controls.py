@@ -62,6 +62,20 @@ def _parse_floats(value: str) -> tuple[float, ...]:
     return tuple(float(v) for v in value.split(",") if v.strip())
 
 
+def random_control_label(draw_seed: int, layer: int) -> str:
+    """The label -- and filename stem -- of a random-direction control arm.
+
+    **The layer must be part of the name.** The same direction seed is reused
+    at every layer (the direction lives in the activation space, which has the
+    same width at every depth), so a name without the layer is overwritten by
+    the next layer's run. That is not hypothetical: the first version of the
+    sweep used ``act_random_s<seed>.json`` and silently lost the layer-4 and
+    layer-8 arms -- including their per-item predictions -- when the layer-12
+    run overwrote them.
+    """
+    return f"act_random_s{int(draw_seed)}_L{int(layer)}"
+
+
 def _label_matrix(items) -> np.ndarray:
     y = np.zeros(len(items) * 3, dtype=int)
     for i, item in enumerate(items):
@@ -93,6 +107,11 @@ def main(argv: list[str] | None = None) -> int:
         "--skip-reversed",
         action="store_true",
         help="do not re-run the sign-flipped control",
+    )
+    parser.add_argument(
+        "--no-skip-existing",
+        action="store_true",
+        help="re-run control arms whose output file already exists",
     )
     parser.add_argument("--cache", default="results/base_cache.npz")
     parser.add_argument("--out-dir", default="results/controls")
@@ -234,16 +253,41 @@ def main(argv: list[str] | None = None) -> int:
     if args.skip_real:
         print("[control] skipping the real arm (--skip-real)")
     else:
-        results["act_real"] = record(
-            "act_real",
+        # The layer is in the filename for the same reason it is in the random
+        # draws' filenames: the same label at two layers would overwrite.
+        results[f"act_real_L{layer}"] = record(
+            f"act_real_L{layer}",
             real_dir,
             "the fitted belief direction, re-run at the control layer so that all three "
             "arms are produced by the same code path on the same day",
+            extra={"control_kind": "real"},
         )
 
     for draw in range(args.random_draws):
         rand_dir, draw_seed = random_direction(draw)
-        label = f"act_random_s{draw_seed}"
+        # The layer MUST be in the filename. The same seed is reused at every
+        # layer (the direction is drawn in the activation space, which is the
+        # same at every depth), so a name without the layer would be
+        # overwritten by the next layer's run and the earlier layer's arm --
+        # including its per-item predictions -- would be lost. That is not
+        # hypothetical: it is exactly what happened the first time this
+        # sweep was run.
+        label = random_control_label(draw_seed, layer)
+        out_path = out_dir / f"{label}.json"
+        if out_path.exists() and not args.no_skip_existing:
+            try:
+                existing = json.loads(out_path.read_text())
+                same = (
+                    int(existing.get("arm", {}).get("layer", -1)) == layer
+                    and existing.get("direction_seed") == draw_seed
+                    and len(existing.get("predictions", [])) == len(items)
+                )
+            except (ValueError, OSError):
+                same = False
+            if same:
+                print(f"[control] {label} (cached)", flush=True)
+                results[label] = existing
+                continue
         results[label] = record(
             label,
             rand_dir,
@@ -263,8 +307,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.skip_reversed:
         print("[control] skipping the reversed arm (--skip-reversed)")
     else:
-        results["act_reversed"] = record(
-            "act_reversed",
+        results[f"act_reversed_L{layer}"] = record(
+            f"act_reversed_L{layer}",
             -real_dir,
             "CONTROL: negation of the fitted belief direction, matched norm, layer and alpha",
             extra={"control_kind": "reversed"},

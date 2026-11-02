@@ -188,6 +188,61 @@ def main() -> int:
                 "b_better": int(((pb == 1) & (pa == 0)).sum()),
             }
 
+    # ---------------------------------------------- the random-direction sweep
+    # A single random draw is not a distribution. Where several draws exist at
+    # a layer, the real arm is compared against all of them, and the
+    # distribution is summarised rather than a single number being quoted.
+    random_by_layer: dict[int, list[tuple[str, np.ndarray]]] = {}
+    if controls_dir.exists():
+        for path in sorted(controls_dir.glob("act_random*.json")):
+            payload = json.loads(path.read_text())
+            if payload.get("control_kind") != "random":
+                continue
+            layer = payload.get("arm", {}).get("layer")
+            if layer is None or "predictions" not in payload:
+                continue
+            label = payload["arm"]["label"]
+            preds_vec = np.array(payload["predictions"], dtype=int)
+            random_by_layer.setdefault(int(layer), []).append((label, preds_vec))
+
+    distribution = {}
+    for layer, draws in sorted(random_by_layer.items()):
+        real_label = f"act-L{layer}-a1"
+        real_preds = preds.get(real_label)
+        if real_preds is None:
+            continue
+        rp = (real_preds == correct).astype(float)
+        entries = []
+        for label, draw_preds in draws:
+            dp = (draw_preds == correct).astype(float)
+            stat, pval = paired_test(rp, dp)
+            dlo, dhi = bootstrap_ci(rp - dp, seed=args.seed)
+            entries.append(
+                {
+                    "random_label": label,
+                    "random_accuracy": float(dp.mean()),
+                    "difference": float(rp.mean() - dp.mean()),
+                    "difference_ci95": [dlo, dhi],
+                    "wilcoxon": {"statistic": stat, "p_value": pval},
+                }
+            )
+        accs = [e["random_accuracy"] for e in entries]
+        distribution[f"L{layer}"] = {
+            "real_label": real_label,
+            "real_accuracy": float(rp.mean()),
+            "n_draws": len(accs),
+            "random_accuracies": accs,
+            "random_mean": float(np.mean(accs)),
+            "random_std": float(np.std(accs, ddof=1)) if len(accs) > 1 else 0.0,
+            "random_min": float(np.min(accs)),
+            "random_max": float(np.max(accs)),
+            "n_random_beating_real": int(sum(1 for a in accs if a > rp.mean())),
+            "n_random_tieing_real": int(sum(1 for a in accs if a == rp.mean())),
+            "paired_vs_each": entries,
+        }
+    if distribution:
+        comparisons["act_random_distribution"] = distribution
+
     # ------------------------------------------------------------------ write
     if not args.dry_run:
         for label, payload in rows:
