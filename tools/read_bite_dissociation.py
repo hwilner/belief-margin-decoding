@@ -360,6 +360,47 @@ def analyse(read: dict[int, dict], bite: dict[int, dict], controls: dict[int, li
     n_real_wins = sum(1 for p in paired if p["delta"] > 0)
     n_random_wins = sum(1 for p in paired if p["delta"] < 0)
 
+    # The sharper form of the dissociation.
+    #
+    # The read-vs-bite correlation asks whether the layers where the belief
+    # reads well are the layers where steering it works. The *advantage* form
+    # asks the better question: does the belief direction beat a matched
+    # RANDOM direction more at layers where the belief reads well? A random
+    # direction is the baseline for "perturbing the residual stream here does
+    # something", so the advantage of the belief direction over random
+    # isolates the part of the steering effect that could be about the belief.
+    advantage_rows = []
+    for row in rows:
+        ctl = controls.get(row["layer"], [])
+        if not ctl:
+            continue
+        real = row.get("real_arm")
+        if not real:
+            continue
+        random_accs = [c["accuracy"] for c in ctl]
+        advantage_rows.append(
+            {
+                "layer": row["layer"],
+                "read_acc": row["read_acc"],
+                "real_acc": real["accuracy"],
+                "random_mean": float(np.mean(random_accs)),
+                "random_min": float(np.min(random_accs)),
+                "random_max": float(np.max(random_accs)),
+                "n_draws": len(random_accs),
+                "advantage": float(real["accuracy"] - np.mean(random_accs)),
+                "n_random_beating_real": int(sum(1 for a in random_accs if a > real["accuracy"])),
+            }
+        )
+
+    if len(advantage_rows) >= 3:
+        adv_read = np.array([r["read_acc"] for r in advantage_rows])
+        adv_val = np.array([r["advantage"] for r in advantage_rows])
+        p_adv, rho_adv, n_perm_adv = exact_permutation_p(adv_read, adv_val, "spearman")
+        p_tau_adv, tau_adv, _ = exact_permutation_p(adv_read, adv_val, "kendall")
+    else:
+        rho_adv = tau_adv = p_adv = p_tau_adv = float("nan")
+        n_perm_adv = 0
+
     return {
         "layers": layers,
         "base_accuracy": base_acc,
@@ -370,6 +411,11 @@ def analyse(read: dict[int, dict], bite: dict[int, dict], controls: dict[int, li
         "best_read_acc": best_read["read_acc"],
         "best_bite_layer": best_bite["layer"],
         "best_bite_acc": best_bite["bite_acc"],
+        "advantage_over_random": {
+            "rows": advantage_rows,
+            "spearman": {"rho": rho_adv, "p_value_exact": p_adv, "n_permutations": n_perm_adv},
+            "kendall": {"tau_b": tau_adv, "p_value_exact": p_tau_adv},
+        },
         "paired_real_vs_random": paired,
         "paired_summary": {
             "n_comparisons": len(paired),
@@ -459,6 +505,46 @@ def render_markdown(result: dict) -> str:
         lines.append(
             f"Real direction is ahead in **{s['real_wins']}** of {s['n_comparisons']} "
             f"pairwise comparisons; the random direction is ahead in {s['random_wins']}."
+        )
+        lines.append("")
+
+    adv = result.get("advantage_over_random")
+    if adv and adv["rows"]:
+        lines.append("## The sharper dissociation: does the belief direction beat a random one *more* where the belief reads better?")
+        lines.append("")
+        lines.append(
+            "A random direction is the baseline for \"perturbing the residual stream here does "
+            "something\". The advantage of the belief direction over the mean matched random "
+            "direction isolates the part of the steering effect that could be about the belief at all."
+        )
+        lines.append("")
+        lines.append(
+            "| layer | read (out-of-fold 3-way) | belief direction | random mean | "
+            "advantage | random draws that beat the belief direction |"
+        )
+        lines.append("|---|---|---|---|---|---|")
+        for r in adv["rows"]:
+            lines.append(
+                f"| L{r['layer']} | {r['read_acc']:.3f} | {r['real_acc']:.3f} | "
+                f"{r['random_mean']:.3f} ({r['n_draws']} draws) | {r['advantage']:+.3f} | "
+                f"{r['n_random_beating_real']}/{r['n_draws']} |"
+            )
+        sp = adv["spearman"]
+        lines.append("")
+        lines.append(
+            f"Spearman ρ(read accuracy, advantage) = **{sp['rho']:+.3f}**, exact permutation "
+            f"p = **{_fmt_p(sp['p_value_exact'])}** ({sp['n_permutations']} permutations)."
+        )
+        lines.append(
+            f"Kendall τ-b = **{adv['kendall']['tau_b']:+.3f}**, exact permutation "
+            f"p = **{_fmt_p(adv['kendall']['p_value_exact'])}**."
+        )
+        lines.append("")
+        lines.append(
+            "A **negative** correlation means the belief direction's steering advantage is "
+            "*largest where the belief is least readable*. That is the dissociation in its "
+            "sharpest form: the steering effect is not proportional to how much of the belief "
+            "the layer carries."
         )
         lines.append("")
 

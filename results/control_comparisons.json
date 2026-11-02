@@ -1,19 +1,4 @@
 {
-  "act_real_vs_act_random": {
-    "accuracy_a": 0.48,
-    "accuracy_b": 0.43,
-    "difference": 0.04999999999999999,
-    "difference_ci95": [
-      -0.025,
-      0.12
-    ],
-    "wilcoxon": {
-      "statistic": 708.0,
-      "p_value": 0.18916127259520799
-    },
-    "a_better": 34,
-    "b_better": 24
-  },
   "act_real_vs_act_reversed": {
     "accuracy_a": 0.48,
     "accuracy_b": 0.38,
@@ -29,19 +14,315 @@
     "a_better": 37,
     "b_better": 17
   },
-  "act_random_vs_act_reversed": {
-    "accuracy_a": 0.43,
-    "accuracy_b": 0.38,
-    "difference": 0.04999999999999999,
-    "difference_ci95": [
-      0.0,
-      0.105
-    ],
-    "wilcoxon": {
-      "statistic": 130.5,
-      "p_value": 0.05878172135535886
+  "act_random_distribution": {
+    "L4": {
+      "real_label": "act-L4-a1",
+      "real_accuracy": 0.48,
+      "n_draws": 6,
+      "random_accuracies": [
+        0.43,
+        0.45,
+        0.42,
+        0.4,
+        0.34,
+        0.36
+      ],
+      "random_mean": 0.39999999999999997,
+      "random_std": 0.04242640687119285,
+      "random_min": 0.34,
+      "random_max": 0.45,
+      "n_random_beating_real": 0,
+      "n_random_tieing_real": 0,
+      "n_draws_the_real_arm_beats": 6,
+      "sign_test_p": 0.03125,
+      "paired_vs_each": [
+        {
+          "random_label": "act_random_s977_L4",
+          "random_accuracy": 0.43,
+          "difference": 0.04999999999999999,
+          "difference_ci95": [
+            -0.025,
+            0.12
+          ],
+          "wilcoxon": {
+            "statistic": 708.0,
+            "p_value": 0.18916127259520799
+          }
+        },
+        {
+          "random_label": "act_random_s978_L4",
+          "random_accuracy": 0.45,
+          "difference": 0.02999999999999997,
+          "difference_ci95": [
+            -0.045,
+            0.105
+          ],
+          "wilcoxon": {
+            "statistic": 823.5,
+            "p_value": 0.4385780260809998
+          }
+        },
+        {
+          "random_label": "act_random_s979_L4",
+          "random_accuracy": 0.42,
+          "difference": 0.06,
+          "difference_ci95": [
+            -0.01,
+            0.13
+          ],
+          "wilcoxon": {
+            "statistic": 577.5,
+            "p_value": 0.10247043485974937
+          }
+        },
+        {
+          "random_label": "act_random_s980_L4",
+          "random_accuracy": 0.4,
+          "difference": 0.07999999999999996,
+          "difference_ci95": [
+            0.01,
+            0.155
+          ],
+          "wilcoxon": {
+            "statistic": 570.0,
+            "p_value": 0.03250944464571951
+          }
+        },
+        {
+          "random_label": "act_random_s981_L4",
+          "random_accuracy": 0.34,
+          "difference": 0.13999999999999996,
+          "difference_ci95": [
+            0.07,
+            0.21
+          ],
+          "wilcoxon": {
+            "statistic": 399.0,
+            "p_value": 0.0001828106329818348
+          }
+        },
+        {
+          "random_label": "act_random_s982_L4",
+          "random_accuracy": 0.36,
+          "difference": 0.12,
+          "difference_ci95": [
+            0.05,
+            0.19
+          ],
+          "wilcoxon": {
+            "statistic": 412.5,
+            "p_value": 0.001090835176125296
+          }
+        }
+      ]
     },
-    "a_better": 19,
-    "b_better": 9
+    "L8": {
+      "real_label": "act-L8-a1",
+      "real_accuracy": 0.345,
+      "n_draws": 2,
+      "random_accuracies": [
+        0.315,
+        0.34
+      ],
+      "random_mean": 0.3275,
+      "random_std": 0.017677669529663705,
+      "random_min": 0.315,
+      "random_max": 0.34,
+      "n_random_beating_real": 0,
+      "n_random_tieing_real": 0,
+      "n_draws_the_real_arm_beats": 2,
+      "sign_test_p": 0.5,
+      "paired_vs_each": [
+        {
+          "random_label": "act_random_s977_L8",
+          "random_accuracy": 0.315,
+          "difference": 0.02999999999999997,
+          "difference_ci95": [
+            -0.025,
+            0.08
+          ],
+          "wilcoxon": {
+            "statistic": 186.0,
+            "p_value": 0.27332167829229814
+          }
+        },
+        {
+          "random_label": "act_random_s978_L8",
+          "random_accuracy": 0.34,
+          "difference": 0.004999999999999949,
+          "difference_ci95": [
+            -0.065,
+            0.07
+          ],
+          "wilcoxon": {
+            "statistic": 552.0,
+            "p_value": 0.8840279686806821
+          }
+        }
+      ]
+    },
+    "L12": {
+      "real_label": "act-L12-a1",
+      "real_accuracy": 0.405,
+      "n_draws": 2,
+      "random_accuracies": [
+        0.385,
+        0.325
+      ],
+      "random_mean": 0.355,
+      "random_std": 0.042426406871192854,
+      "random_min": 0.325,
+      "random_max": 0.385,
+      "n_random_beating_real": 0,
+      "n_random_tieing_real": 0,
+      "n_draws_the_real_arm_beats": 2,
+      "sign_test_p": 0.5,
+      "paired_vs_each": [
+        {
+          "random_label": "act_random_s977_L12",
+          "random_accuracy": 0.385,
+          "difference": 0.020000000000000018,
+          "difference_ci95": [
+            -0.05,
+            0.09
+          ],
+          "wilcoxon": {
+            "statistic": 539.0,
+            "p_value": 0.5637028616507731
+          }
+        },
+        {
+          "random_label": "act_random_s978_L12",
+          "random_accuracy": 0.325,
+          "difference": 0.08000000000000002,
+          "difference_ci95": [
+            0.0,
+            0.17
+          ],
+          "wilcoxon": {
+            "statistic": 1224.5,
+            "p_value": 0.07004133687461596
+          }
+        }
+      ]
+    },
+    "L16": {
+      "real_label": "act-L16-a1",
+      "real_accuracy": 0.4,
+      "n_draws": 4,
+      "random_accuracies": [
+        0.455,
+        0.41,
+        0.355,
+        0.425
+      ],
+      "random_mean": 0.41125,
+      "random_std": 0.041907636535600534,
+      "random_min": 0.355,
+      "random_max": 0.455,
+      "n_random_beating_real": 3,
+      "n_random_tieing_real": 0,
+      "n_draws_the_real_arm_beats": 1,
+      "sign_test_p": 0.625,
+      "paired_vs_each": [
+        {
+          "random_label": "act_random_s977_L16",
+          "random_accuracy": 0.455,
+          "difference": -0.05499999999999999,
+          "difference_ci95": [
+            -0.115,
+            0.0
+          ],
+          "wilcoxon": {
+            "statistic": 216.0,
+            "p_value": 0.06297905121445523
+          }
+        },
+        {
+          "random_label": "act_random_s978_L16",
+          "random_accuracy": 0.41,
+          "difference": -0.009999999999999953,
+          "difference_ci95": [
+            -0.075,
+            0.055
+          ],
+          "wilcoxon": {
+            "statistic": 430.0,
+            "p_value": 0.7576207236833965
+          }
+        },
+        {
+          "random_label": "act_random_s979_L16",
+          "random_accuracy": 0.355,
+          "difference": 0.04500000000000004,
+          "difference_ci95": [
+            -0.025,
+            0.12
+          ],
+          "wilcoxon": {
+            "statistic": 750.0,
+            "p_value": 0.24131744318383797
+          }
+        },
+        {
+          "random_label": "act_random_s980_L16",
+          "random_accuracy": 0.425,
+          "difference": -0.024999999999999967,
+          "difference_ci95": [
+            -0.11,
+            0.06
+          ],
+          "wilcoxon": {
+            "statistic": 1188.0,
+            "p_value": 0.5529196249710484
+          }
+        }
+      ]
+    },
+    "L20": {
+      "real_label": "act-L20-a1",
+      "real_accuracy": 0.37,
+      "n_draws": 2,
+      "random_accuracies": [
+        0.37,
+        0.425
+      ],
+      "random_mean": 0.39749999999999996,
+      "random_std": 0.03889087296526011,
+      "random_min": 0.37,
+      "random_max": 0.425,
+      "n_random_beating_real": 1,
+      "n_random_tieing_real": 1,
+      "n_draws_the_real_arm_beats": 0,
+      "sign_test_p": 0.5,
+      "paired_vs_each": [
+        {
+          "random_label": "act_random_s977_L20",
+          "random_accuracy": 0.37,
+          "difference": 0.0,
+          "difference_ci95": [
+            -0.06,
+            0.055
+          ],
+          "wilcoxon": {
+            "statistic": 333.0,
+            "p_value": 1.0
+          }
+        },
+        {
+          "random_label": "act_random_s978_L20",
+          "random_accuracy": 0.425,
+          "difference": -0.05499999999999999,
+          "difference_ci95": [
+            -0.135,
+            0.02
+          ],
+          "wilcoxon": {
+            "statistic": 832.0,
+            "p_value": 0.16578668398105822
+          }
+        }
+      ]
+    }
   }
 }

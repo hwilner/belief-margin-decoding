@@ -208,22 +208,67 @@ Paired by item:
 | `act_real` vs `act_reversed` | +0.100 | [+0.030, +0.170] | **0.0065** |
 | `act_random` vs `act_reversed` | +0.050 | [+0.000, +0.105] | 0.059 |
 
-**This is the result the phase exists to produce.**
+### The random control, repeated until it is a distribution
 
-- The effect is **directional**: pushing along the belief direction beats pushing against it
-  (p = 0.0065). It is not noise.
-- The effect is **not shown to be belief-specific**: a random direction of the same magnitude at
-  the same layer reaches 0.430, and the gap to the real direction is **not significant**
-  (p = 0.189, CI [−0.025, +0.120]). The data are compatible with the belief direction being up to
-  12 points better than a random one, or 2.5 points worse.
-- A **re-run of the real arm reproduced the matrix result exactly** (0.480, identical to the
-  matrix's `act-L4-a1`), so the effect is deterministic, not a fluke of the run.
+**One random draw is not a distribution.** The comparison above is a single draw, and the Phase-0
+text said so. The sweep re-runs the control with several independent random directions per layer,
+each with a recorded seed and its cosine to the real direction.
 
-The honest statement is therefore: *at layer 4, perturbing the residual stream in the direction of
-the fitted belief subspace improves the model's answers by 11 points, but this improvement is not
-distinguishable from the improvement produced by perturbing it in an arbitrary direction of the
-same size.* One random draw is not a distribution, so the correct next step is to repeat the random
-control over several seeds; the current data cannot settle it.
+| layer | belief direction | random draws | mean | sd | min | max | draws beating the belief direction | sign-test p |
+|---|---|---|---|---|---|---|---|---|
+| **L4** | **0.480** | 6 | 0.400 | 0.042 | 0.340 | 0.450 | **0 / 6** | **0.031** |
+| L8 | 0.345 | 2 | 0.328 | 0.018 | 0.315 | 0.340 | 0 / 2 | 0.50 |
+| L12 | 0.405 | 2 | 0.355 | 0.042 | 0.325 | 0.385 | 0 / 2 | 0.50 |
+| **L16** | 0.400 | 4 | **0.411** | 0.042 | 0.355 | 0.455 | **3 / 4** | 0.63 |
+| **L20** | 0.370 | 2 | **0.397** | 0.039 | 0.370 | 0.425 | **1 / 2** | 0.50 |
+
+The sign test is the aggregate statistic: under the null that the belief direction is exchangeable
+with the random draws, each paired sign is a fair coin, so the exact two-sided p-value for *n*
+positive differences out of *n* is 2^(1−n). It uses every draw and cherry-picks nothing — the
+individual paired tests share the belief arm and the base predictions and are therefore correlated,
+so quoting the smallest of them would be a multiple-comparison selection. The per-draw tests are
+reported alongside it:
+
+| layer | random draw | accuracy | belief − random | 95 % CI | Wilcoxon p |
+|---|---|---|---|---|---|
+| L4 | seed 977 | 0.430 | +0.050 | [−0.025, +0.120] | 0.189 |
+| L4 | seed 978 | 0.450 | +0.030 | [−0.045, +0.105] | 0.439 |
+| L4 | seed 979 | 0.420 | +0.060 | [−0.010, +0.130] | 0.103 |
+| L4 | seed 980 | 0.400 | +0.080 | [+0.010, +0.155] | 0.033 |
+| L4 | seed 981 | 0.340 | +0.140 | [+0.070, +0.210] | 0.00018 |
+| L4 | seed 982 | 0.360 | +0.120 | [+0.050, +0.190] | 0.0011 |
+| L16 | seed 977 | 0.455 | −0.055 | [−0.115, +0.000] | 0.063 |
+| L16 | seed 978 | 0.410 | −0.010 | [−0.075, +0.055] | 0.758 |
+| L16 | seed 979 | 0.355 | +0.045 | [−0.025, +0.120] | 0.241 |
+| L16 | seed 980 | 0.425 | −0.025 | [−0.110, +0.060] | 0.553 |
+| L20 | seed 977 | 0.370 | +0.000 | [−0.060, +0.055] | 1.000 |
+| L20 | seed 978 | 0.425 | −0.055 | [−0.135, +0.020] | 0.166 |
+
+**This changes the Phase-0 conclusion, in the direction of a stronger effect.**
+
+- **At layer 4 the belief direction beats 6 of 6 matched random directions** (sign-test p = 0.031),
+  and no random draw reaches its accuracy. The Phase-0 statement "directional but not shown to be
+  belief-specific" is upgraded to **"directional, and distinguishable from a matched random
+  direction of the same size at the same layer"**.
+- **The single draw that Phase 0 used was one of the more favourable random directions.** Its
+  p-value of 0.189 was not an unlucky draw; it was a *generous* one, and one draw understated the
+  effect. A different single draw would have given p = 0.00018.
+- **At layers 16 and 20 the random directions do better than the belief direction** (mean 0.411 vs
+  0.400 at L16; 0.397 vs 0.370 at L20), and 3 of 4 random draws beat the belief direction at L16.
+  At the layer where the belief is most readable, pushing along the belief direction is *worse* than
+  pushing along an arbitrary one.
+
+**This is the result the phase exists to produce, and it is still a negative one.** The effect is
+directional (p = 0.0065 against the sign flip) and, at layer 4, it is distinguishable from a
+matched random direction. But layer 4 is the layer where the belief **cannot be read at all**
+(probe accuracy 0.420, p = 0.33). A direction that does not carry a readable belief still steers
+better than a random one — so what the belief direction is doing at layer 4 is *not* obviously
+about the belief, and the one place the belief is demonstrably present (layer 16) is the place
+where the belief direction steers no better than noise. See §5.
+
+A **re-run of the real arm reproduced the matrix result exactly** (0.480, identical predictions to
+the matrix's `act-L4-a1`), and the sweep's draw 0 at layer 4 reproduced the original single-draw
+control exactly (0.430, identical predictions), so these are deterministic, not flukes of a run.
 
 ---
 
@@ -249,11 +294,7 @@ Two readings of that inversion are consistent with these data, and this phase ca
 1. **The signal is encoded but not used.** The model holds the partner's belief at layers 16–20
    and does not act on it; steering layer 4 changes something else that happens to help.
 2. **The layer-4 effect is not about the belief at all.** The probe has no signal at layer 4, so
-   the direction being pushed is not the belief direction in any meaningful sense — which is
-   consistent with the random control performing nearly as well.
-
-The matched control is what makes reading 2 the more parsimonious one, and it is the reason the
-control exists.
+   the direction being pushed is not the belief direction in any meaningful sense.
 
 ### The inversion, as a statistic
 
@@ -272,10 +313,40 @@ with five layers even a *perfect* negative correlation would reach only p = 2/12
 are therefore **suggestive, not established**: the layers where the belief reads best are the layers
 where steering it does least, but five layers cannot demonstrate that.
 
-The per-layer numbers behind it are in `results/dissociation/read_bite_dissociation.md`.
+### The sharper form: does the belief direction beat a random one *more* where the belief reads better?
 
----
+A random direction is the baseline for "perturbing the residual stream here does something". The
+**advantage** of the belief direction over the mean matched random direction isolates the part of
+the steering effect that could be about the belief at all — and it is the better question.
 
+| layer | read (out-of-fold 3-way) | belief direction | random mean | **advantage** | random draws beating the belief direction |
+|---|---|---|---|---|---|
+| **L4** | 0.420 | 0.480 | 0.400 (6 draws) | **+0.080** | **0 / 6** |
+| L8 | 0.545 | 0.345 | 0.328 (2 draws) | +0.017 | 0 / 2 |
+| L12 | 0.530 | 0.405 | 0.355 (2 draws) | +0.050 | 0 / 2 |
+| **L16** | **0.720** | 0.400 | **0.411** (4 draws) | **−0.011** | **3 / 4** |
+| **L20** | 0.695 | 0.370 | **0.397** (2 draws) | **−0.027** | **1 / 2** |
+
+| statistic | value | exact p |
+|---|---|---|
+| Spearman's ρ (read accuracy vs. advantage) | **−0.900** | 0.083 |
+| Kendall's τ-b (read accuracy vs. advantage) | −0.800 | 0.083 |
+
+The correlation is **strongly negative**: the belief direction's steering advantage is *largest
+where the belief is least readable*, and it is **negative** at the two layers where the belief
+reads best. At layer 16 the belief direction is, on average, *worse* than a random direction of
+the same size.
+
+The exact p-value is 0.083, which with five layers is just short of conventional significance —
+the same limit that applies to every five-layer statistic in this document. The pattern is
+consistent across the three readable layers (L8, L12 positive; L16, L20 negative) and the
+ordering is monotone in read accuracy at the top end, but the honest description is
+**strongly suggestive, not established**.
+
+What this does establish, without any statistical framing at all, is the *qualitative* pattern:
+**the one layer where the belief direction demonstrably beats random steering (L4, 6/6) is the
+layer where the belief cannot be read at all.** That is the read-vs-bite dissociation with the
+controls attached.
 ## 6. The belief-accuracy frontier — what the intervention actually adds
 
 Phase 0 reported, in prose, that the score-level margin arms "re-rank with the probe rather than
@@ -385,7 +456,6 @@ unreported omission is worse.
 | not run | why | what it would change |
 |---|---|---|
 | **A second model.** Everything is `Qwen/Qwen2.5-0.5B-Instruct`. | 0.5B was chosen so the whole matrix fits in 3 GB and on a laptop. | The base model is at chance; a stronger model might have a partner-belief signal to steer, which would change every conclusion. **This is the most important omission.** |
-| **Repeated random-direction controls.** One random draw was run at layer 4. | 9.5 min per draw on this hardware. | The real-vs-random comparison (p = 0.189) is underpowered. Five to ten draws would turn it into a proper test. |
 | **Activation steering at layer 24.** | Not possible: the hook perturbs a decoder layer's input and layer 24 is the final output. | Leaves the deepest layer out of the bite curve. |
 | **Free-form generation, and with it the MAUVE / ΔPPL utility floor.** | Every arm scores three fixed candidate continuations; nothing generates text. | The utility floor is unmeasured, so we cannot say whether the steered model is still a fluent model. Task `C7` stays open. |
 | **The `Hi-ToM` real dataset** (`src/bmd/real_data.py`, task `D9`). | The synthetic generator gives exact ground truth for the two error modes; the real dataset does not label them. | No claim here transfers to real ToM data. |
@@ -414,8 +484,15 @@ unreported omission is worse.
    differences distinct ranks instead of their average rank, which made it anti-conservative.
    Every statistic here was recomputed with `tools/recompute_all_stats.py` from the stored
    per-item predictions, so the numbers can be re-derived independently.
-5. **The random-direction control is a single draw.** A single draw of a random variable is not
-   its distribution, and the real-vs-random comparison is the one this phase cannot settle.
+5. **The random-direction control now has a distribution, but few draws.** Six draws at layer 4,
+   two at L8 and L12 and L20, four at L16. Six draws can separate "the real arm is the best of
+   seven" (p = 1/7 = 0.143 under exchangeability) from "the real arm beats six of six by paired
+   sign" (p = 0.031), but it cannot do much more. The direction of the effect is consistent across
+   layers; its magnitude is not well resolved.
+6. **Five layers cannot establish a rank correlation.** Every correlation in this document is
+   computed over five layers, where even a perfect negative correlation reaches only p = 2/120.
+   The dissociation is reported as suggestive at p = 0.083, and the read-vs-bite correlation as
+   suggestive at p = 0.350.
 
 ---
 
@@ -469,8 +546,13 @@ without re-running the model.
   the probe's prediction on 83 % of items and its accuracy (0.720) is exactly the probe's (0.720).
   Across 180 configurations the arm beats its own probe in 91, but none survives a Bonferroni
   correction, while 13 are significantly worse. The break-even belief accuracy is ≈ 0.34.
-- Activation steering at layer 4 improves the model by 11 points over base, and beats its
-  sign-flipped control, but does **not** significantly beat a matched random direction.
+- Activation steering at layer 4 improves the model by 11 points over base, beats its sign-flipped
+  control (p = 0.0065), and beats **6 of 6** matched random directions of the same size at the
+  same layer (sign-test p = 0.031; no random draw reaches its accuracy).
+- **The belief direction's steering advantage over random directions is negative at the two layers
+  where the belief reads best** (−0.011 at L16, −0.027 at L20) and positive at the layer where it
+  cannot be read at all (+0.080 at L4). Spearman ρ(read accuracy, advantage) = **−0.900**, exact
+  permutation p = 0.083 — strongly suggestive, and short of significance with five layers.
 - `Qwen/Qwen2.5-0.5B-Instruct` has no measurable partner-belief signal on this task at baseline
   (0.370 vs 0.333 chance, p = 0.29), and stating the belief in the prompt lifts it to 0.510.
 
@@ -480,5 +562,9 @@ without re-running the model.
 - That the layer-16 signal is usable by the model.
 - That any of this transfers to a larger model, a real ToM dataset, or free-form generation.
 - That the in-sample margin numbers (up to 0.910) represent an intervention. They do not.
-- That the read/bite inversion is established. The rank correlation is −0.600, but with five layers
-  the exact permutation p-value is 0.350. The inversion is **suggestive, not demonstrated**.
+- That the read/bite inversion is established. The read-vs-bite rank correlation is −0.600 with an
+  exact permutation p-value of 0.350; the sharper advantage form is −0.900 with p = 0.083. Both are
+  **suggestive, not demonstrated**, and both are limited by having only five layers.
+- That the layer-4 steering effect is *about the partner belief*. It is distinguishable from a
+  random direction, but it happens at the one layer where the belief cannot be read, and at the
+  layers where the belief can be read the belief direction steers no better than a random one.

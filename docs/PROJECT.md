@@ -174,8 +174,8 @@ the existing claim say exactly what it can support.
 | I2 | `src/run_controls.py` — item-count guard: a cache built for a different `n_items` is rejected rather than silently mis-paired with the items | CODE | DONE |
 | I3 | `tools/read_bite_dissociation.py` — read-vs-bite rank correlation with an **exact permutation** p-value (5! orderings), plus the random-direction distribution and the per-draw paired tests | CODE | DONE |
 | I4 | `tests/test_dissociation.py` — SciPy equivalence for the rank statistics; regression test for the correctness-vector bug; the published L4 comparison pinned | TEST | DONE |
-| I5 | Random-direction sweep: 6 draws at L4, 4 at L16, 2 each at L8, L12, L20 | RES | IN PROGRESS |
-| I6 | `results/RESULTS.md` — the random-direction distribution and the dissociation statistics, with the "one draw is not a distribution" caveat | RES | IN PROGRESS |
+| I5 | Random-direction sweep: 6 draws at L4, 4 at L16, 2 each at L8, L12, L20 | RES | DONE |
+| I6 | `results/RESULTS.md` — the random-direction distribution and the dissociation statistics, with the "one draw is not a distribution" caveat | RES | DONE |
 | I7 | `tools/belief_accuracy_frontier.py` — the belief-accuracy × steering-gain frontier, computed from the cached base pass with no model loaded | CODE | DONE |
 | I8 | `tests/test_frontier.py` — the noise-0 row must reproduce the published held-out analysis exactly; the fold protocol must match `tools/analyze_heldout.py`; the arm must never significantly beat its own probe | TEST | DONE |
 | I9 | The frontier measured and reported: break-even belief accuracy, the arm-versus-probe gap, and the α grid that shows the mechanism | RES | DONE |

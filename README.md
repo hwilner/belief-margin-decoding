@@ -21,15 +21,20 @@ so that any positive result has to beat a matched control before it counts.
 > | `prompt_oracle` (ORACLE, upper bound) | 0.510 | p = 2.6 × 10⁻⁷ vs chance |
 > | belief probe, out-of-fold 3-way ranking at L16 | **0.720** | shuffled control 0.375, p = 2.5 × 10⁻¹¹ |
 > | activation steering at L4 (the best forward-pass arm) | 0.480 | p = 0.00387 vs base |
-> | ...vs a **matched random direction** at L4 | 0.430 | paired p = **0.189 — not significant** |
 > | ...vs the **sign-flipped** belief direction at L4 | 0.380 | paired p = 0.0065 |
+> | ...vs **6 matched random directions** at L4 | 0.400 mean | real arm beats **6 / 6**, sign-test p = **0.031** |
 
-The probe works. The intervention does not: the one forward-pass effect is **directional but not
-shown to be belief-specific**, and it appears at layer 4, which is exactly where the belief
-*cannot* be read.
+The probe works. The intervention does not: the one forward-pass effect is real and directional,
+but it appears at layer 4 — exactly where the belief *cannot* be read.
 
-Two findings from this phase matter beyond the headline:
+Three findings from this phase matter beyond the headline:
 
+- **The steering effect is anti-correlated with belief readability.** The belief direction's
+  advantage over matched random directions is **+0.080 at L4**, where the probe reads 0.420, and
+  **−0.011 at L16** and **−0.027 at L20**, where it reads 0.720 and 0.695. Spearman ρ = **−0.900**
+  (exact permutation p = 0.083 — suggestive, and short of significance with five layers). At the
+  layer where the belief is most readable, pushing along the belief direction is *worse* than
+  pushing along an arbitrary one.
 - **The read and bite curves are inverted.** The belief reads best at layer 16 (0.720) and steers
   nothing there; the only layer where steering does anything is layer 4, where the probe has no
   signal at all (0.420, p = 0.55). As a rank statistic over the five steerable layers this is
@@ -98,6 +103,15 @@ is present but unused, or present and used, and the probe cannot tell you which.
 ![Every arm, ranked](docs/figures/phase0_arm_matrix.svg)
 
 The concept figure is in [`docs/figures/concept_figure.svg`](docs/figures/concept_figure.svg).
+
+## The belief-accuracy frontier
+
+![Phase 0b — the belief-margin intervention is a dial, not a gain](docs/figures/phase0b_frontier.svg)
+
+The red curve is the intervention; the teal diagonal is what the probe alone
+achieves. The arm sits **on** the diagonal — it does not improve on the probe
+that produced its margin — and crosses the base model only just above chance.
+That crossing is the break-even belief accuracy.
 
 ## Install and run
 
