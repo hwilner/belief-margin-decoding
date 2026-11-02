@@ -91,7 +91,7 @@ def main(argv: list[str] | None = None) -> int:
     if states.shape[2] != len(layers):
         raise SystemExit(
             f"cache was built for {states.shape[2]} layers {layers}, but the controls need "
-            f"{len(layers)}. Re-run the base pass with --layers {','.join(str(l) for l in layers)}."
+            f"{len(layers)}. Re-run the base pass with --layers {','.join(str(ly) for ly in layers)}."
         )
     li = layers.index(layer)
     X = states[:, :, li, :].reshape(-1, states.shape[-1]).astype(np.float64)

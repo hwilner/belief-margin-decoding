@@ -102,7 +102,7 @@ class BeliefSubspace:
         )
 
     @classmethod
-    def load(cls, path: str | Path) -> "BeliefSubspace":
+    def load(cls, path: str | Path) -> BeliefSubspace:
         """Load a subspace saved by :meth:`save`."""
         with np.load(Path(path), allow_pickle=False) as data:
             w = np.asarray(data["w"], dtype=np.float64)

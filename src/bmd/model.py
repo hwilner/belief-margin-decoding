@@ -203,16 +203,19 @@ def score_item(
     encoded = [_split_ids(tokenizer, prompt, c) for c in candidates]
     exact = all(e[2] for e in encoded)
     p_ids = encoded[0][0]
+    # Extract the candidate ids by index rather than by tuple unpacking: the
+    # arity of `_split_ids`' return value is an implementation detail, and
+    # unpacking it in the loop silently couples the two.
+    cand_id_list = [e[1] for e in encoded]
 
     results: list[CandidateScore] = []
     with _steer_ctx(model, steerer):
         p_tensor = p_ids.unsqueeze(0).to(device)
         out = model(p_tensor, output_hidden_states=True, use_cache=True)
         past = out.past_key_values
-        prompt_len = int(p_ids.shape[0])
         prompt_last_logits = out.logits[0, -1]
 
-        for p_none, cand_ids, _ in encoded:
+        for cand_ids in cand_id_list:
             c_tensor = cand_ids.unsqueeze(0).to(device)
             # The model appends the candidate tokens to the cache in place.
             # Each candidate must be scored against the SAME prompt context,
@@ -222,7 +225,7 @@ def score_item(
             c_out = model(c_tensor, past_key_values=copy.deepcopy(past), output_hidden_states=True, use_cache=True)
             cand_logits = c_out.logits[0]
             logprob = _logprob_of(prompt_last_logits, cand_ids, cand_logits)
-            states = {l: c_out.hidden_states[l][0, -1].float().cpu().numpy() for l in layers}
+            states = {ly: c_out.hidden_states[ly][0, -1].float().cpu().numpy() for ly in layers}
             final = c_out.hidden_states[-1][0, -1].float().cpu().numpy()
             results.append(
                 CandidateScore(

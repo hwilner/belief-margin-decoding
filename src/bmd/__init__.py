@@ -20,15 +20,15 @@ from .data import (
     render_candidate,
     render_prompt,
 )
-from .subspace import BeliefSubspace, fit_subspace, normalize_margins
-from .intervene import ActivationSteerer, LogitBias, margin_scores
 from .evaluate import (
     bootstrap_ci,
     error_breakdown,
     paired_test,
     tom_accuracy,
 )
+from .intervene import ActivationSteerer, LogitBias, margin_scores
 from .model import extract_states, load_model
+from .subspace import BeliefSubspace, fit_subspace, normalize_margins
 
 __version__ = "0.1.0"
 

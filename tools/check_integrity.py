@@ -172,7 +172,7 @@ def check_matrix_arms_are_unique() -> tuple[bool, str]:
     arms = build_arms(config)
     labels = [a.label for a in arms]
     if len(set(labels)) != len(labels):
-        dupes = sorted({l for l in labels if labels.count(l) > 1})
+        dupes = sorted({lab for lab in labels if labels.count(lab) > 1})
         return False, "duplicate arm labels: " + ", ".join(dupes)
     if len(arms) != expected_arm_count(config):
         return False, (

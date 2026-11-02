@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 import pytest
+import torch
 
 from bmd.data import generate_items
 from bmd.evaluate import bootstrap_ci, error_breakdown, paired_test, tom_accuracy
@@ -70,3 +71,31 @@ def test_paired_test_detects_a_clear_difference():
 def test_paired_test_rejects_length_mismatch():
     with pytest.raises(ValueError):
         paired_test(np.zeros(3), np.zeros(4))
+
+
+def test_candidate_id_extraction_does_not_depend_on_tuple_arity():
+    """Regression: `score_item` must not unpack `_split_ids` output by position.
+
+    A lint autofix once turned ``for _, cand_ids, _ in encoded`` into
+    ``for cand_ids, _ in encoded``, which raised ``ValueError`` at runtime in a
+    code path that no unit test covered (it needs a model). The candidate ids
+    are now extracted by index, so the arity of the helper's return value is
+    not part of the caller's contract.
+    """
+    from bmd.model import _split_ids
+
+    class _FakeTokenizer:
+        def __call__(self, text, return_tensors=None, add_special_tokens=True):
+            class _Out:
+                def __init__(self, ids):
+                    self.input_ids = ids
+
+            n = max(1, len(text.split()))
+            return _Out(torch.arange(n).unsqueeze(0))
+
+    tok = _FakeTokenizer()
+    encoded = [_split_ids(tok, "hello world", " drawer.")]
+    assert len(encoded[0]) == 3
+    cand_ids = [e[1] for e in encoded]
+    assert len(cand_ids) == 1
+    assert torch.equal(cand_ids[0], encoded[0][1])

@@ -238,7 +238,7 @@ def run_matrix(config: MatrixConfig, verbose: bool = True) -> dict:
             os_ = score_item(model, tokenizer, oracle_prompt(item), cands, layers, device)
             bl.append([c.logprob for c in bs.candidates])
             ol.append([c.logprob for c in os_.candidates])
-            st.append([[c.states[l] for l in layers] for c in bs.candidates])
+            st.append([[c.states[layer] for layer in layers] for c in bs.candidates])
             fs.append([[c.final_state for c in bs.candidates]][0])
             exact = exact and bs.exact_tokenisation
             if verbose and (i + 1) % 25 == 0:

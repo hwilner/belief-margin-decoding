@@ -35,7 +35,7 @@ def error_breakdown(pred_index: np.ndarray, items: list[ToMItem]) -> dict:
     if len(pred_index) != len(items):
         raise ValueError(f"{len(pred_index)} predictions for {len(items)} items")
     out = {"correct": 0, "world": 0, "other": 0}
-    for p, item in zip(pred_index, items):
+    for p, item in zip(pred_index, items, strict=True):
         if p == item.correct_index:
             out["correct"] += 1
         elif p == item.world_index:

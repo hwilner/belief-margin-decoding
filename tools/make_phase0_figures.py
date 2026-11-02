@@ -66,18 +66,18 @@ def chart_read_bite(summary: dict) -> str:
     layers = _layers(summary)
     subs = summary["subspaces"]
     arms = summary["arms"]
-    read = [(int(l), subs[str(l)]["heldout_acc"]) for l in layers]
-    read_train = [(int(l), subs[str(l)]["train_acc"]) for l in layers]
+    read = [(int(layer), subs[str(layer)]["heldout_acc"]) for layer in layers]
+    read_train = [(int(layer), subs[str(layer)]["train_acc"]) for layer in layers]
 
     # best "bite" per layer: the margin arm with the highest accuracy at alpha=1
     bite: list[tuple[int, float, str]] = []
-    for l in layers:
+    for layer in layers:
         best = None
         for label, payload in arms.items():
             mech = payload["arm"]["mechanism"]
             if mech not in {"margin", "act", "logit"}:
                 continue
-            if payload["arm"].get("layer") != l:
+            if payload["arm"].get("layer") != layer:
                 continue
             a = payload["arm"].get("alpha") or 0.0
             if mech == "margin" and a != 1.0:
@@ -85,7 +85,7 @@ def chart_read_bite(summary: dict) -> str:
             if best is None or payload["accuracy"] > best[1]:
                 best = (label, payload["accuracy"])
         if best is not None:
-            bite.append((l, best[1], best[0]))
+            bite.append((layer, best[1], best[0]))
 
     base_acc = arms["none"]["accuracy"]
     oracle_acc = arms["prompt_oracle"]["accuracy"]
@@ -121,9 +121,9 @@ def chart_read_bite(summary: dict) -> str:
         )
     p.append(f'<line x1="{ml}" y1="{mt}" x2="{ml}" y2="{mt+ph}" stroke="{C_AXIS}" stroke-width="1.2"/>')
     p.append(f'<line x1="{ml}" y1="{mt+ph}" x2="{ml+pw}" y2="{mt+ph}" stroke="{C_AXIS}" stroke-width="1.2"/>')
-    for l in layers:
+    for layer in layers:
         p.append(
-            f'<text x="{x(l):.1f}" y="{mt+ph+20}" font-size="11" fill="{C_MUTED}" text-anchor="middle">L{l}</text>'
+            f'<text x="{x(layer):.1f}" y="{mt+ph+20}" font-size="11" fill="{C_MUTED}" text-anchor="middle">L{layer}</text>'
         )
     p.append(
         f'<text x="{ml+pw/2:.1f}" y="{mt+ph+42}" font-size="11.5" fill="{C_AXIS}" text-anchor="middle">'
@@ -144,16 +144,16 @@ def chart_read_bite(summary: dict) -> str:
         )
 
     def polyline(pts, col, dash=None):
-        d = " ".join(f"{x(l):.1f},{y(v):.1f}" for l, v in pts)
+        d = " ".join(f"{x(layer):.1f},{y(v):.1f}" for layer, v in pts)
         extra = f' stroke-dasharray="{dash}"' if dash else ""
         p.append(f'<polyline points="{d}" fill="none" stroke="{col}" stroke-width="2.4"{extra}/>')
-        for l, v in pts:
-            p.append(f'<circle cx="{x(l):.1f}" cy="{y(v):.1f}" r="4" fill="#ffffff" stroke="{col}" stroke-width="2.2"/>')
+        for layer, v in pts:
+            p.append(f'<circle cx="{x(layer):.1f}" cy="{y(v):.1f}" r="4" fill="#ffffff" stroke="{col}" stroke-width="2.2"/>')
 
     polyline(read_train, C_READ, "5 4")
     polyline(read, C_READ)
     if bite:
-        polyline([(l, v) for l, v, _ in bite], C_BITE)
+        polyline([(layer, v) for layer, v, _ in bite], C_BITE)
 
     # legend
     lx, ly = ml + pw + 130, mt + 6
@@ -176,10 +176,10 @@ def chart_read_bite(summary: dict) -> str:
     p.append(
         f'<text x="{lx}" y="{yy+17}" font-size="10" fill="{C_MUTED}">layer  read   bite</text>'
     )
-    for i, (l, rv) in enumerate(read):
-        bv = next((v for ll, v, _ in bite if ll == l), float("nan"))
+    for i, (layer, rv) in enumerate(read):
+        bv = next((v for ll, v, _ in bite if ll == layer), float("nan"))
         p.append(
-            f'<text x="{lx}" y="{yy+34+i*15}" font-size="10.5" fill="{C_TEXT}">L{l:<3d} '
+            f'<text x="{lx}" y="{yy+34+i*15}" font-size="10.5" fill="{C_TEXT}">L{layer:<3d} '
             f"{rv:.3f}  {bv:.3f}</text>"
         )
     p.append("</svg>")
@@ -245,10 +245,10 @@ def chart_alpha_sweep(summary: dict) -> str:
                 pts.append((payload["arm"]["alpha"], payload["accuracy"]))
         return sorted(pts)
 
-    for i, l in enumerate(layers):
+    for i, layer in enumerate(layers):
         col = shades[i % len(shades)]
         for mech, dash, width in (("margin", None, 2.2), ("margin_shuffled", "5 4", 1.6), ("logit", "2 3", 1.8)):
-            pts = series(mech, l)
+            pts = series(mech, layer)
             if not pts:
                 continue
             d = " ".join(f"{x(a):.1f},{y(v):.1f}" for a, v in pts)
@@ -263,11 +263,11 @@ def chart_alpha_sweep(summary: dict) -> str:
 
     lx, ly = ml + pw + 22, mt + 6
     p.append(f'<text x="{lx}" y="{ly}" font-size="12" font-weight="bold" fill="{C_TEXT}">Layer</text>')
-    for i, l in enumerate(layers):
+    for i, layer in enumerate(layers):
         col = shades[i % len(shades)]
         yy = ly + 20 + i * 18
         p.append(f'<line x1="{lx}" y1="{yy}" x2="{lx+22}" y2="{yy}" stroke="{col}" stroke-width="2.2"/>')
-        p.append(f'<text x="{lx+28}" y="{yy+4}" font-size="11" fill="{C_TEXT}">L{l}</text>')
+        p.append(f'<text x="{lx+28}" y="{yy+4}" font-size="11" fill="{C_TEXT}">L{layer}</text>')
     yy = ly + 20 + len(layers) * 18 + 12
     for text, dash in (("margin", None), ("margin_shuffled", "5 4"), ("logit", "2 3")):
         extra = f' stroke-dasharray="{dash}"' if dash else ""
@@ -342,8 +342,6 @@ def markdown_tables(summary: dict) -> str:
     arms = summary["arms"]
     layers = _layers(summary)
     subs = summary["subspaces"]
-    base = arms["none"]
-    oracle = arms["prompt_oracle"]
     lines: list[str] = []
 
     lines.append("### Baselines\n")
@@ -362,24 +360,24 @@ def markdown_tables(summary: dict) -> str:
     lines.append("\n### The read curve — belief probe, per layer\n")
     lines.append("| layer | probe train acc | probe held-out acc | shuffled control held-out acc | ‖w‖ |")
     lines.append("|---|---|---|---|---|")
-    for l in layers:
-        s = subs[str(l)]
+    for layer in layers:
+        s = subs[str(layer)]
         lines.append(
-            f"| L{l} | {s['train_acc']:.3f} | **{s['heldout_acc']:.3f}** | "
+            f"| L{layer} | {s['train_acc']:.3f} | **{s['heldout_acc']:.3f}** | "
             f"{s['shuffled_heldout_acc']:.3f} | {s['w_norm']:.3e} |"
         )
 
     lines.append("\n### Scoring arms at alpha = 1.0 — margin, its control, and logit\n")
     lines.append("| layer | margin | margin_shuffled (control) | logit | margin − control |")
     lines.append("|---|---|---|---|---|")
-    for l in layers:
-        m = arms.get(f"margin-L{l}-a1")
-        c = arms.get(f"margin_shuffled-L{l}-a1")
-        g = arms.get(f"logit-L{l}-a1")
+    for layer in layers:
+        m = arms.get(f"margin-L{layer}-a1")
+        c = arms.get(f"margin_shuffled-L{layer}-a1")
+        g = arms.get(f"logit-L{layer}-a1")
         if not (m and c and g):
             continue
         lines.append(
-            f"| L{l} | {m['accuracy']:.3f} | {c['accuracy']:.3f} | {g['accuracy']:.3f} | "
+            f"| L{layer} | {m['accuracy']:.3f} | {c['accuracy']:.3f} | {g['accuracy']:.3f} | "
             f"{m['accuracy'] - c['accuracy']:+.3f} |"
         )
 
@@ -388,23 +386,23 @@ def markdown_tables(summary: dict) -> str:
     header = "| layer | " + " | ".join(f"a={_fmt_alpha(a)}" for a in alphas) + " |"
     lines.append(header)
     lines.append("|---" * (len(alphas) + 1) + "|")
-    for l in layers:
+    for layer in layers:
         cells = []
         for a in alphas:
-            payload = arms.get(f"margin-L{l}-a{_fmt_alpha(a)}")
+            payload = arms.get(f"margin-L{layer}-a{_fmt_alpha(a)}")
             cells.append(f"{payload['accuracy']:.3f}" if payload else "—")
-        lines.append(f"| L{l} | " + " | ".join(cells) + " |")
+        lines.append(f"| L{layer} | " + " | ".join(cells) + " |")
 
     lines.append("\n### Activation-steering arms (alpha = 1.0)\n")
     lines.append("| layer | accuracy | 95% CI | world rate | other rate | p vs base |")
     lines.append("|---|---|---|---|---|---|")
-    for l in layers:
-        payload = arms.get(f"act-L{l}-a1")
+    for layer in layers:
+        payload = arms.get(f"act-L{layer}-a1")
         if not payload:
             continue
         lo, hi = payload["accuracy_ci95"]
         lines.append(
-            f"| L{l} | {payload['accuracy']:.3f} | [{lo:.3f}, {hi:.3f}] | "
+            f"| L{layer} | {payload['accuracy']:.3f} | [{lo:.3f}, {hi:.3f}] | "
             f"{payload['world_rate']:.3f} | {payload['other_rate']:.3f} | "
             f"{payload['vs_none_wilcoxon']['p_value']:.3g} |"
         )
