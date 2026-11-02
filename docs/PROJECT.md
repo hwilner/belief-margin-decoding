@@ -175,7 +175,11 @@ the existing claim say exactly what it can support.
 | I3 | `tools/read_bite_dissociation.py` — read-vs-bite rank correlation with an **exact permutation** p-value (5! orderings), plus the random-direction distribution and the per-draw paired tests | CODE | DONE |
 | I4 | `tests/test_dissociation.py` — SciPy equivalence for the rank statistics; regression test for the correctness-vector bug; the published L4 comparison pinned | TEST | DONE |
 | I5 | Random-direction sweep: 6 draws at L4, 4 at L16, 2 each at L8, L12, L20 | RES | IN PROGRESS |
-| I6 | `results/RESULTS.md` — the random-direction distribution and the dissociation statistics, with the "one draw is not a distribution" caveat | RES | TODO |
+| I6 | `results/RESULTS.md` — the random-direction distribution and the dissociation statistics, with the "one draw is not a distribution" caveat | RES | IN PROGRESS |
+| I7 | `tools/belief_accuracy_frontier.py` — the belief-accuracy × steering-gain frontier, computed from the cached base pass with no model loaded | CODE | DONE |
+| I8 | `tests/test_frontier.py` — the noise-0 row must reproduce the published held-out analysis exactly; the fold protocol must match `tools/analyze_heldout.py`; the arm must never significantly beat its own probe | TEST | DONE |
+| I9 | The frontier measured and reported: break-even belief accuracy, the arm-versus-probe gap, and the α grid that shows the mechanism | RES | DONE |
+| I10 | `bmd.model.load_model` — a selectable dtype (default `float32`, so the recorded run stays reproducible) plus `tools/run_second_model_macos.sh` for the 1.5B model on Apple Silicon | CODE | DONE |
 
 **Pre-registered reading of the sweep.** The L4 real arm (accuracy 0.480) is
 compared against the distribution of matched random directions at L4. The
@@ -192,6 +196,23 @@ result is reported whichever way it falls:
 
 No threshold was chosen after seeing the result, and no post-hoc exclusion of
 draws is permitted.
+
+### The frontier, added to the same section
+
+The same phase also answers the Roadmap's Phase-2 question — *how accurate must
+a belief estimate be before intervening on it is net-positive?* — which turned
+out to be computable **without a model**, because the score-level mechanism
+acts entirely on cached quantities. A probe of a given quality is simulated by
+corrupting its training labels; the x-axis is the *achieved* out-of-fold read
+accuracy, not the nominal noise rate. The pre-registered headline alpha is 4
+(the largest value in the Phase-0 sweep), fixed before the frontier was
+computed.
+
+**Pre-registered reading.** The intervention's contribution over the probe that
+produced its margin is reported at every noise level, with the paired Wilcoxon
+test, and across all 180 configurations with a Bonferroni correction. A
+frontier on which the arm never beats its own probe is a **negative** result
+about the mechanism and is reported as one.
 
 ---
 

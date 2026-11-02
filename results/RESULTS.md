@@ -255,9 +255,111 @@ Two readings of that inversion are consistent with these data, and this phase ca
 The matched control is what makes reading 2 the more parsimonious one, and it is the reason the
 control exists.
 
+### The inversion, as a statistic
+
+"The best-reading layer is not the best-biting layer" was, until now, a claim about two tables.
+`tools/read_bite_dissociation.py` turns it into a rank correlation over the five steerable layers,
+with an **exact permutation** p-value over all 5! = 120 orderings of the bite vector:
+
+| statistic | value | exact p |
+|---|---|---|
+| Spearman's ρ (read vs. bite) | **−0.600** | 0.350 |
+| Kendall's τ-b (read vs. bite) | −0.400 | 0.483 |
+
+**The correlation is negative and it is not significant**, and both halves of that sentence matter.
+With five layers the asymptotic p-value is meaningless, so the exact permutation test is used; and
+with five layers even a *perfect* negative correlation would reach only p = 2/120 = 0.017. The data
+are therefore **suggestive, not established**: the layers where the belief reads best are the layers
+where steering it does least, but five layers cannot demonstrate that.
+
+The per-layer numbers behind it are in `results/dissociation/read_bite_dissociation.md`.
+
 ---
 
-## 6. Cost
+## 6. The belief-accuracy frontier — what the intervention actually adds
+
+Phase 0 reported, in prose, that the score-level margin arms "re-rank with the probe rather than
+change the model". That claim can be measured exactly, and cheaply: the score-level mechanism acts
+entirely on **cached** quantities (the base log-probabilities and the probe's margin), so the whole
+frontier is computable from `results/base_cache.npz` with **no model loaded**.
+
+`tools/belief_accuracy_frontier.py` simulates a probe of a given quality by corrupting its
+**training labels** (each item's belief-consistent candidate is relabelled as an incorrect one with
+probability *noise*), then runs the Phase-0 protocol unchanged: item-level 5-fold cross-validation,
+out-of-fold quantities, 3-way ranking accuracy, and a matched shuffled-label control for every arm.
+The x-axis is the **achieved** out-of-fold read accuracy of the degraded probe, not the nominal noise
+rate — the achieved number is what a deployed estimator would actually deliver.
+
+### The frontier at the best-reading layer
+
+Layer 16, α = 4 (fixed before the sweep, not chosen after):
+
+| label noise | achieved read acc | margin arm | shuffled control | arm − base | p vs control | p vs base |
+|---|---|---|---|---|---|---|
+| 0 | **0.720** | **0.720** | 0.330 | +0.350 | 2.03e-14 | 2.21e-14 |
+| 0.15 | 0.655 | 0.635 | 0.320 | +0.265 | 1.59e-10 | 1.54e-09 |
+| 0.30 | 0.535 | 0.575 | 0.400 | +0.205 | 4.97e-04 | 6.78e-06 |
+| 0.45 | 0.490 | 0.515 | 0.340 | +0.145 | 1.75e-04 | 3.22e-04 |
+| 0.60 | 0.350 | 0.405 | 0.365 | +0.035 | 0.365 | 0.392 |
+| 0.75 | 0.280 | 0.290 | 0.310 | −0.080 | 0.655 | 0.0455 |
+
+**The break-even belief accuracy is ≈ 0.34** — barely above the 0.333 chance level. Below that the
+intervention is net-negative; above it, it is net-positive *relative to the base model*. The
+least-squares crossing of the fitted arm-accuracy line with the base model is at a read accuracy of
+**0.337**. The bracket is [0.280, 0.350]: the achieved read accuracy is not monotone in the noise
+rate (one corruption draw per level), so the break-even is a bracket, not a measured threshold.
+
+### The arm's accuracy is the probe's accuracy
+
+| label noise | achieved read acc | margin arm | arm − probe | p (paired) | arm picks what the probe picks |
+|---|---|---|---|---|---|
+| 0 | 0.720 | 0.720 | +0.000 | 1 | **0.830** |
+| 0.15 | 0.655 | 0.635 | −0.020 | 0.45 | 0.835 |
+| 0.30 | 0.535 | 0.575 | +0.040 | 0.144 | 0.805 |
+| 0.45 | 0.490 | 0.515 | +0.025 | 0.384 | 0.780 |
+| 0.60 | 0.350 | 0.405 | +0.055 | 0.063 | 0.745 |
+| 0.75 | 0.280 | 0.290 | +0.010 | 0.695 | 0.760 |
+
+Mean contribution of the intervention over the probe that produced its margin: **+0.018**, and **no
+single level is significant**.
+
+The last column is the mechanism. At α = 4 the arm's prediction *is* the probe's prediction on
+**83 % of items**: the standardised margin, multiplied by 4, overwhelms the difference between the
+base model's candidate log-probabilities. The α grid shows the slide:
+
+| α | arm accuracy | arm − probe | arm picks what the probe picks |
+|---|---|---|---|
+| 0.25 | 0.405 | −0.315 | 0.425 |
+| 0.5 | 0.450 | −0.270 | 0.475 |
+| 1 | 0.530 | −0.190 | 0.565 |
+| 2 | 0.605 | −0.115 | 0.675 |
+| 4 | 0.720 | +0.000 | 0.830 |
+
+As α grows, the arm moves monotonically from the base model's ranking (0.370) to the probe's
+ranking (0.720) and **never passes the probe**. The score-level belief-margin intervention is a
+*dial between "the model decides" and "the probe decides"*, and it never produces an answer that
+neither of them would have given on its own.
+
+### Does it ever beat its own probe?
+
+Across all 180 configurations (every layer × every label-noise level × every α), the arm beats the
+probe that produced its margin in **91** of them, and the beat is nominally significant in 15.
+**None survives a Bonferroni correction** over the 180 comparisons; in the other direction, **13 are
+significantly *worse* than the probe**.
+
+Where the beats come from is the interesting part: **86 of the 91 are at layers where the probe is
+weak** (achieved read accuracy < 0.5). There the base model's ranking still carries information, so
+base + probe can beat probe alone. The largest such beat is +0.095 at L4, where the probe reads
+0.420 and the base model reads 0.370 — an arm that beats the probe but gains little over the base
+model it was supposed to improve on. At a strong-probe layer the arm slides from base to probe and
+does not pass it.
+
+*(The paired Wilcoxon test is two-sided, so a small p-value on a negative difference means the arm
+is significantly **worse** than the probe. Only the sign carries the claim.)*
+
+---
+
+## 7. Cost
 
 | quantity | measured |
 |---|---|
@@ -275,7 +377,7 @@ rather than sampled.
 
 ---
 
-## 7. What was NOT run
+## 8. What was NOT run
 
 This section exists because a null result that is not reported is a hidden result, and an
 unreported omission is worse.
@@ -295,7 +397,7 @@ unreported omission is worse.
 
 ---
 
-## 8. Threats to validity
+## 9. Threats to validity
 
 1. **One model, one seed, one scale.** Every conclusion is about a 0.5B model on 200 synthetic
    items. The base model is at chance, which is a property of *this* model on *this* task.
@@ -317,13 +419,16 @@ unreported omission is worse.
 
 ---
 
-## 9. Reproducing this
+## 10. Reproducing this
 
 ```bash
 python src/run_phase0.py --n-items 200 --layers 4,8,12,16,20,24 \
     --act-alphas 1.0 --score-alphas 0.25,0.5,1.0,2.0,4.0 --out-dir results
 python src/run_controls.py --layer 4 --alpha 1.0 --n-items 200 --out-dir results/controls
+bash tools/run_random_control_sweep.sh    # the repeated random-direction controls
 python tools/analyze_heldout.py
+python tools/read_bite_dissociation.py     # the read-vs-bite rank correlation
+python tools/belief_accuracy_frontier.py  # the belief-accuracy frontier (no model loaded)
 python tools/recompute_stats.py            # re-derives every statistic from the stored predictions
 python tools/make_phase0_figures.py
 python tools/check_integrity.py
@@ -340,14 +445,17 @@ without re-running the model.
 |---|---|
 | `results/phase0_summary.json` | the matrix summary: config, per-layer probe fits, every arm |
 | `results/ablation/*.json` | one file per arm |
-| `results/controls/*.json` | the three matched activation arms, with per-item predictions |
+| `results/controls/*.json` | the matched activation arms, with per-item predictions |
+| `results/controls/act_random_s*.json` | the repeated random-direction draws, one file per draw |
 | `results/heldout/heldout_analysis.json` | the leakage-controlled cross-validation |
+| `results/dissociation/read_bite_dissociation.json` | the read-vs-bite rank correlation |
+| `results/frontier/belief_accuracy_frontier.json` | the belief-accuracy × steering-gain frontier |
 | `results/tables.md` | the tables above, generated from the JSON |
 | `results/base_cache.npz` | the cached activations (not committed — 14 MB) |
 
 ---
 
-## 10. What this phase licenses us to say
+## 11. What this phase licenses us to say
 
 **Supported by these data:**
 
@@ -356,6 +464,11 @@ without re-running the model.
   layer 4.
 - Score-level belief-margin interventions outperform a shuffled-label control at every layer from 8
   upward, and their accuracy converges to the probe's own read-out accuracy.
+- **The score-level intervention is a dial between "the model decides" and "the probe decides", and
+  it never produces an answer neither would have given.** At L16 and α = 4 the arm's prediction is
+  the probe's prediction on 83 % of items and its accuracy (0.720) is exactly the probe's (0.720).
+  Across 180 configurations the arm beats its own probe in 91, but none survives a Bonferroni
+  correction, while 13 are significantly worse. The break-even belief accuracy is ≈ 0.34.
 - Activation steering at layer 4 improves the model by 11 points over base, and beats its
   sign-flipped control, but does **not** significantly beat a matched random direction.
 - `Qwen/Qwen2.5-0.5B-Instruct` has no measurable partner-belief signal on this task at baseline
@@ -367,3 +480,5 @@ without re-running the model.
 - That the layer-16 signal is usable by the model.
 - That any of this transfers to a larger model, a real ToM dataset, or free-form generation.
 - That the in-sample margin numbers (up to 0.910) represent an intervention. They do not.
+- That the read/bite inversion is established. The rank correlation is −0.600, but with five layers
+  the exact permutation p-value is 0.350. The inversion is **suggestive, not demonstrated**.

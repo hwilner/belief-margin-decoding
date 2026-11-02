@@ -177,6 +177,53 @@ norm, layer and `alpha`:
 These are run after the matrix, at the layer the matrix identified as most promising, and are
 reported with the same statistics as every other arm.
 
+**One random draw is not a distribution.** A single random direction answers "is the real direction
+better than *this* direction?", which is weaker than the question the control is used to answer.
+`--random-draws N` therefore runs N independent random directions, each with a recorded seed and its
+cosine to the real direction, so the real arm can be placed inside the distribution of matched
+random directions: how many draws beat it, where it sits, and the paired test against each draw.
+
+Two guards make the comparison meaningful, and both were added after they were found to be missing:
+
+- the control runner **refuses a cache built for a different item count** — a control steered with a
+  direction fitted on one item set and scored on another is not a control;
+- it **refuses a dtype that does not match the base pass**, for the same reason in a different
+  dimension.
+
+The real arm is not re-run in the sweep: the control code path was verified to reproduce the matrix
+code path byte-identically (the L4 `act_real` predictions equal the `act-L4-a1` predictions exactly),
+so the stored matrix arms are valid real arms at every layer.
+
+### The belief-accuracy frontier `[I7]`
+
+The Roadmap's Phase-2 question — *how accurate must a belief estimate be before intervening on it
+is net-positive?* — is answerable **without a model**, because the score-level `margin` mechanism
+acts entirely on cached quantities: the base log-probabilities and the probe's margin.
+
+A probe of a given quality is simulated by corrupting its **training labels**: each item's
+belief-consistent candidate is relabelled as one of the two incorrect candidates with probability
+*noise*. The class balance is unchanged, so only the label's *meaning* degrades. The error pattern is
+one seeded draw per noise level, reused across folds, so the folds differ only in which items the
+probe was trained on.
+
+Everything else follows the protocol above unchanged: the split is at the level of the **item**,
+5-fold cross-validated; every scored quantity is **out-of-fold**; the metric is **3-way ranking
+accuracy**; every arm ships its **matched shuffled-label control**; and the statistics are the
+Wilcoxon signed-rank test and the item-level bootstrap.
+
+The x-axis is the **achieved** out-of-fold read accuracy of the degraded probe, not the nominal
+noise rate: those are different numbers, and only the achieved one is what a deployed estimator
+would deliver. The headline alpha is fixed at 4 (the largest value in the Phase-0 sweep) *before*
+the frontier is computed.
+
+Two implementation facts that the tests pin:
+
+- the cross-validation folds must be **the same ones** `tools/analyze_heldout.py` uses, or the
+  noise-0 row of the frontier silently disagrees with the published read curve;
+- `bmd.subspace.fit_subspace` splits its input with a deterministic **tail** split, so the rows that
+  actually train the probe depend on the **order** in which the caller passes them. The training
+  rows are therefore assembled in the same order as the published analysis.
+
 ### Statistics `[D6]`
 
 Headline comparisons use **non-parametric** statistics by default: Wilcoxon signed-rank on paired
