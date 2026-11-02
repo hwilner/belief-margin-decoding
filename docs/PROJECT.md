@@ -45,12 +45,12 @@ Status vocabulary: `DONE` · `IN PROGRESS` · `TODO` · `N/A` (dropped, with rea
 
 | ID | Task | Tags | Status |
 |---|---|---|---|
-| B1 | §1 — the problem: what "misreading the partner" means, with a concrete wrong answer | EXT | TODO |
-| B2 | §2 — the idea in one picture (mermaid flow) + a hand-checkable numeric toy example | EXT | TODO |
-| B3 | §3 — the four ideas recapped (dot product, Gaussian, hyperplane, softmax) | EXT | TODO |
-| B4 | §4 — what "belief-consistent" and "belief-violating" continuations are, side by side | EXT | TODO |
-| B5 | §5 — what this repository does **not** do (no training, no partner model at deployment, no RL) | EXT | TODO |
-| B6 | §6 — how to read the results (including how to read a null result) | EXT | TODO |
+| B1 | §1 — the problem: what "misreading the partner" means, with a concrete wrong answer | EXT | DONE |
+| B2 | §2 — the idea in one picture (mermaid flow) + a hand-checkable numeric toy example | EXT | DONE |
+| B3 | §3 — the four ideas recapped (dot product, Gaussian, hyperplane, softmax) | EXT | DONE |
+| B4 | §4 — what "belief-consistent" and "belief-violating" continuations are, side by side | EXT | DONE |
+| B5 | §5 — what this repository does **not** do (no training, no partner model at deployment, no RL) | EXT | DONE |
+| B6 | §6 — how to read the results (including how to read a null result) | EXT | DONE |
 
 ---
 
@@ -58,12 +58,12 @@ Status vocabulary: `DONE` · `IN PROGRESS` · `TODO` · `N/A` (dropped, with rea
 
 | ID | Task | Tags | Status |
 |---|---|---|---|
-| C1 | Done — synthetic BigToM-style item generator with ground truth (protagonist belief vs. world state) | MET, CODE | TODO |
-| C2 | Done — base-model answer collection and automatic belief-consistency labelling | MET, CODE | TODO |
-| C3 | Done — per-layer hidden-state extraction | MET, CODE | TODO |
-| C4 | Done — closed-form Fisher-LDA belief subspace with regularisation and **margin normalisation** | MET, CODE | TODO |
-| C5 | Done — the four intervention mechanisms (`none`, `prompt`, `activation`, `logit`) with a layer sweep | MET, CODE | TODO |
-| C6 | Done — the two curves: probe accuracy per layer ("read") and intervention effect per layer ("bite") | MET, CODE | TODO |
+| C1 | Done — synthetic BigToM-style item generator with ground truth (protagonist belief vs. world state) | MET, CODE | DONE |
+| C2 | Done — base-model answer collection and automatic belief-consistency labelling | MET, CODE | DONE |
+| C3 | Done — per-layer hidden-state extraction | MET, CODE | DONE |
+| C4 | Done — closed-form Fisher-LDA belief subspace with regularisation and **margin normalisation** | MET, CODE | DONE |
+| C5 | Done — the four intervention mechanisms (`none`, `prompt`, `activation`, `logit`) with a layer sweep | MET, CODE | DONE |
+| C6 | Done — the two curves: probe accuracy per layer ("read") and intervention effect per layer ("bite") | MET, CODE | DONE |
 | C7 | Done — fluency guard (ΔPPL and MAUVE) | MET, CODE | TODO |
 | C8 | Intended — loader for the real `Hi-ToM/Hi-ToM_Dataset` | MET, CODE | TODO |
 | C9 | Intended — second-order belief subspace (what the partner believes about *me*) | MET, CODE | TODO |
@@ -83,14 +83,14 @@ Every undecided choice must record **both options** and a **selection rule fixed
 
 | ID | Task | Tags | Status |
 |---|---|---|---|
-| D1 | Package skeleton `src/bmd/__init__.py` with public exports | CODE | TODO |
-| D2 | `src/bmd/data.py` — synthetic item generator (deterministic, seeded) | CODE | TODO |
-| D3 | `src/bmd/model.py` — model loading, per-layer hidden-state extraction, answer scoring | CODE | TODO |
-| D4 | `src/bmd/subspace.py` — Fisher-LDA learner, margin computation, margin normalisation | CODE | TODO |
-| D5 | `src/bmd/intervene.py` — activation steering and logit steering | CODE | TODO |
-| D6 | `src/bmd/evaluate.py` — metrics (accuracy, ΔPPL, MAUVE) and statistics (Wilcoxon, bootstrap CI) | CODE | TODO |
-| D7 | `src/bmd/matrix.py` — Phase-0 falsification matrix runner, JSON output | CODE | TODO |
-| D8 | `src/run_phase0.py` — CLI entry point | CODE | TODO |
+| D1 | Package skeleton `src/bmd/__init__.py` with public exports | CODE | DONE |
+| D2 | `src/bmd/data.py` — synthetic item generator (deterministic, seeded) | CODE | DONE |
+| D3 | `src/bmd/model.py` — model loading, per-layer hidden-state extraction, answer scoring | CODE | DONE |
+| D4 | `src/bmd/subspace.py` — Fisher-LDA learner, margin computation, margin normalisation | CODE | DONE |
+| D5 | `src/bmd/intervene.py` — activation steering and logit steering | CODE | DONE |
+| D6 | `src/bmd/evaluate.py` — metrics (accuracy, error-mode breakdown) and statistics (Wilcoxon, bootstrap CI). *ΔPPL and MAUVE are deferred to `C7` — see revision log.* | CODE | DONE |
+| D7 | `src/bmd/matrix.py` — Phase-0 falsification matrix runner, JSON output | CODE | DONE |
+| D8 | `src/run_phase0.py` — CLI entry point | CODE | DONE |
 | D9 | `src/bmd/real_data.py` — `Hi-ToM/Hi-ToM_Dataset` loader | CODE | TODO |
 
 ---
@@ -99,14 +99,14 @@ Every undecided choice must record **both options** and a **selection rule fixed
 
 | ID | Task | Tags | Status |
 |---|---|---|---|
-| E1 | Generator determinism and label correctness | TEST | TODO |
-| E2 | Subspace separates trivially separable data; save/load round-trip | TEST | TODO |
-| E3 | Margin normalisation is scale-invariant | TEST | TODO |
-| E4 | Activation steering moves the intended logit direction | TEST | TODO |
-| E5 | Logit steering sign and magnitude are correct | TEST | TODO |
-| E6 | Metrics against hand-computed values; bootstrap CI on known data | TEST | TODO |
-| E7 | Matrix runner emits the expected arms and never writes NaN | TEST | TODO |
-| E8 | The whole suite runs on CPU with no CUDA available | TEST | TODO |
+| E1 | Generator determinism and label correctness | TEST | DONE |
+| E2 | Subspace separates trivially separable data; save/load round-trip | TEST | DONE |
+| E3 | Margin normalisation is scale-invariant | TEST | DONE |
+| E4 | Activation steering moves the intended logit direction | TEST | DONE |
+| E5 | Logit steering sign and magnitude are correct | TEST | DONE |
+| E6 | Metrics against hand-computed values; bootstrap CI on known data | TEST | DONE |
+| E7 | Matrix runner emits the expected arms and never writes NaN | TEST | DONE |
+| E8 | The whole suite runs on CPU with no CUDA available | TEST | DONE |
 
 ---
 
@@ -114,13 +114,13 @@ Every undecided choice must record **both options** and a **selection rule fixed
 
 | ID | Task | Tags | Status |
 |---|---|---|---|
-| F1 | `pyproject.toml` — packaging, pytest configuration | INFRA | TODO |
-| F2 | `requirements.txt` / `requirements-dev.txt` (CPU-only torch) | INFRA | TODO |
-| F3 | `.github/workflows/ci.yml` — Python 3.10 / 3.11 / 3.12, CPU-only torch, no model download in CI | INFRA | TODO |
-| F4 | `tools/check_integrity.py` — checks that can fail | INFRA | TODO |
-| F5 | `.github/ISSUE_TEMPLATE/task.md` | INFRA | TODO |
-| F6 | `.github/PULL_REQUEST_TEMPLATE.md` | INFRA | TODO |
-| F7 | `CONTRIBUTING.md`, `LICENSE`, `.gitignore` | INFRA | TODO |
+| F1 | `pyproject.toml` — packaging, pytest configuration | INFRA | DONE |
+| F2 | `requirements.txt` / `requirements-dev.txt` (CPU-only torch) | INFRA | DONE |
+| F3 | `.github/workflows/ci.yml` — Python 3.10 / 3.11 / 3.12, CPU-only torch, no model download in CI | INFRA | DONE |
+| F4 | `tools/check_integrity.py` — checks that can fail | INFRA | DONE |
+| F5 | `.github/ISSUE_TEMPLATE/task.md` | INFRA | DONE |
+| F6 | `.github/PULL_REQUEST_TEMPLATE.md` | INFRA | DONE |
+| F7 | `CONTRIBUTING.md`, `LICENSE`, `.gitignore` | INFRA | DONE |
 | F8 | `README.md` — headline is the **measured** result | DOC | TODO |
 
 ---
@@ -143,11 +143,11 @@ Every undecided choice must record **both options** and a **selection rule fixed
 
 | ID | Task | Tags | Status |
 |---|---|---|---|
-| H1 | `docs/INTRODUCTION.md` — claim and caveats up front | DOC | TODO |
-| H2 | `docs/ROADMAP.md` — phases, each with its principal failure mode | DOC | TODO |
-| H3 | `docs/API_REFERENCE.md` | DOC | TODO |
+| H1 | `docs/INTRODUCTION.md` — claim and caveats up front | DOC | DONE |
+| H2 | `docs/ROADMAP.md` — phases, each with its principal failure mode | DOC | DONE |
+| H3 | `docs/API_REFERENCE.md` | DOC | DONE |
 | H4 | `docs/PROJECT.md` — this file | DOC | DONE |
-| H5 | `docs/figures/` — concept figure (SVG) and the Phase-0 plot | DOC | TODO |
+| H5 | `docs/figures/` — concept figure (SVG) and the Phase-0 plot | DOC | IN PROGRESS |
 
 ---
 
@@ -166,3 +166,20 @@ with no code, are both worse than publishing neither. The 50 % thresholds are se
 repository becomes public once it is *submittable*, not once it is *finished*.
 
 **This gate is fixed before the first result was measured and is not adjusted afterwards.**
+
+---
+
+## 10. Revision log
+
+The plan above was fixed before the first measurement. This log records **deviations**, so that the
+difference between the plan and what was actually built stays visible.
+
+| Date | Deviation | Reason |
+|---|---|---|
+| 2026-11-01 | The mechanism list grew from four (`none`, `prompt`, `activation`, `logit`) to **six**: `none`, `prompt_oracle`, `act`, `margin`, `logit`, `margin_shuffled`. | The pilot showed that the margin-re-weighting mechanism (SASA's exact mechanism) and the activation mechanism are **different interventions at different sites**, and that `margin` alone can be trivially explained by confidence. A `margin_shuffled` control was added to satisfy the "every forward-pass-changing mechanism ships a matched control" rule. |
+| 2026-11-01 | `prompt` renamed `prompt_oracle`. | The arm states the ground-truth belief in the prompt. It uses information a deployed system would not have, so every mention of it must be labelled ORACLE. |
+| 2026-11-01 | `C5` kept its original wording ("the four intervention mechanisms") for traceability, and the six-mechanism reality is documented in `docs/METHODS.md`. | Keeps the pre-registered task text unmodified. |
+| 2026-11-02 | `C7` (fluency guard: MAUVE and ΔPPL) remains `TODO`. | The Phase-0 matrix measures belief accuracy only; no free-form generation is produced by the arms, so there is nothing for MAUVE or ΔPPL to score yet. The guard belongs to the first arm that generates text, and it is **not** retro-fitted onto a metric that does not apply. |
+| 2026-11-02 | `D9` (`src/bmd/real_data.py`, the `Hi-ToM/Hi-ToM_Dataset` loader) remains `TODO`. | The synthetic generator is sufficient for Phase 0 and is the only source with exact, by-construction ground truth for the two error modes. The loader is scheduled for Phase 1. |
+| 2026-11-02 | `E7` is implemented as *arm-label uniqueness and arm-count consistency* plus the `tools/check_integrity.py` NaN scan, rather than "never writes NaN" inside the runner alone. | Splitting it gives a test that runs in CI without a model and an integrity check that runs over every committed result file. |
+| 2026-11-02 | `D6` was scoped to include ΔPPL and MAUVE; only the accuracy and error-mode metrics plus the statistics are implemented. The task text was corrected to match what exists rather than marked DONE against a description of something absent. | The two text-quality metrics need free-form generation, which the Phase-0 arms do not produce. Implementing them against a metric that does not apply would produce a number with no meaning. |

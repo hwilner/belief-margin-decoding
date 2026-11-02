@@ -1,0 +1,26 @@
+{
+  "arm": {
+    "mechanism": "prompt_oracle",
+    "layer": null,
+    "alpha": 0.0,
+    "label": "prompt_oracle"
+  },
+  "n_items": 200,
+  "accuracy": 0.51,
+  "accuracy_ci95": [
+    0.445,
+    0.585
+  ],
+  "error_breakdown": {
+    "correct": 102,
+    "world": 40,
+    "other": 58
+  },
+  "world_rate": 0.2,
+  "other_rate": 0.29,
+  "vs_none_wilcoxon": {
+    "statistic": 663.0,
+    "p_value": 1.1351001061310484e-06
+  },
+  "note": "ORACLE belief stated in the prompt; upper bound"
+}

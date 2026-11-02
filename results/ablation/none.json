@@ -1,0 +1,26 @@
+{
+  "arm": {
+    "mechanism": "none",
+    "layer": null,
+    "alpha": 0.0,
+    "label": "none"
+  },
+  "n_items": 200,
+  "accuracy": 0.37,
+  "accuracy_ci95": [
+    0.305,
+    0.4401249999999993
+  ],
+  "error_breakdown": {
+    "correct": 74,
+    "world": 56,
+    "other": 70
+  },
+  "world_rate": 0.28,
+  "other_rate": 0.35,
+  "vs_none_wilcoxon": {
+    "statistic": 0.0,
+    "p_value": 1.0
+  },
+  "note": "base model, no intervention"
+}
