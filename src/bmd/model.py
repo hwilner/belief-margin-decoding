@@ -27,7 +27,44 @@ import torch
 from .intervene import ActivationSteerer
 
 
-def load_model(model_id: str, device: str | None = None):
+def resolve_dtype(dtype: str | torch.dtype | None) -> torch.dtype:
+    """Resolve a dtype name to a :class:`torch.dtype`.
+
+    ``None`` keeps the historical default of ``float32``, which is what the
+    recorded Phase-0 run used. The default is deliberately **not** changed to
+    a smaller dtype: doing so would silently change the numbers of an already
+    published run.
+
+    ``bfloat16`` is the useful option on Apple Silicon for a 1.5B model
+    (3.1 GB instead of 6.2 GB); ``float16`` is the fallback when the platform
+    lacks bfloat16 support.
+    """
+    if dtype is None:
+        return torch.float32
+    if isinstance(dtype, torch.dtype):
+        return dtype
+    name = str(dtype).lower().replace("torch.", "")
+    mapping = {
+        "float32": torch.float32,
+        "fp32": torch.float32,
+        "float16": torch.float16,
+        "fp16": torch.float16,
+        "half": torch.float16,
+        "bfloat16": torch.bfloat16,
+        "bf16": torch.bfloat16,
+    }
+    if name not in mapping:
+        raise ValueError(
+            f"unknown dtype {dtype!r}; expected one of {sorted(mapping)} or None"
+        )
+    return mapping[name]
+
+
+def load_model(
+    model_id: str,
+    device: str | None = None,
+    dtype: str | torch.dtype | None = None,
+):
     """Load a causal LM and its tokenizer.
 
     Parameters
@@ -36,6 +73,10 @@ def load_model(model_id: str, device: str | None = None):
         HuggingFace model id, e.g. ``"Qwen/Qwen2.5-0.5B-Instruct"``.
     device:
         ``None`` selects ``mps`` when available, then ``cuda``, then ``cpu``.
+    dtype:
+        ``None`` (the default) loads in ``float32``, which is what the
+        recorded Phase-0 run used. Pass ``"bfloat16"`` to halve the memory
+        footprint of a larger model on Apple Silicon.
 
     Returns
     -------
@@ -50,10 +91,11 @@ def load_model(model_id: str, device: str | None = None):
             device = "cuda"
         else:
             device = "cpu"
+    torch_dtype = resolve_dtype(dtype)
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
-    model = AutoModelForCausalLM.from_pretrained(model_id, dtype=torch.float32)
+    model = AutoModelForCausalLM.from_pretrained(model_id, dtype=torch_dtype)
     model.to(device)
     model.eval()
     return model, tokenizer

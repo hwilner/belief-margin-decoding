@@ -151,6 +151,71 @@ Every undecided choice must record **both options** and a **selection rule fixed
 
 ---
 
+## I. Phase 0b — making the negative result an actual claim
+
+The Phase-0 results left two statements that were true but not yet *earned*:
+
+1. The L4 activation-steering effect was "not distinguishable from a random
+   direction of the same size (p = 0.189)". That p-value came from **one**
+   random draw. One draw answers "is the real direction better than *this*
+   direction?", which is a weaker question than the one the result is used to
+   answer.
+2. The read and bite curves are *inverted* — the layer where the belief reads
+   best is the layer where steering it does least — but that was reported in
+   prose rather than as a statistic with a test attached.
+
+These tasks turn both into numbers, using the stored per-item predictions
+wherever possible. No new mechanism, no new model: this phase is about making
+the existing claim say exactly what it can support.
+
+| ID | Task | Tags | Status |
+|---|---|---|---|
+| I1 | `src/run_controls.py` — repeated random-direction draws (`--random-draws`), each with a recorded seed and its cosine to the real direction, so the real arm is compared against a *distribution* | CODE | DONE |
+| I2 | `src/run_controls.py` — item-count guard: a cache built for a different `n_items` is rejected rather than silently mis-paired with the items | CODE | DONE |
+| I3 | `tools/read_bite_dissociation.py` — read-vs-bite rank correlation with an **exact permutation** p-value (5! orderings), plus the random-direction distribution and the per-draw paired tests | CODE | DONE |
+| I4 | `tests/test_dissociation.py` — SciPy equivalence for the rank statistics; regression test for the correctness-vector bug; the published L4 comparison pinned | TEST | DONE |
+| I5 | Random-direction sweep: 6 draws at L4, 4 at L16, 2 each at L8, L12, L20 | RES | DONE |
+| I6 | `results/RESULTS.md` — the random-direction distribution and the dissociation statistics, with the "one draw is not a distribution" caveat | RES | DONE |
+| I7 | `tools/belief_accuracy_frontier.py` — the belief-accuracy × steering-gain frontier, computed from the cached base pass with no model loaded | CODE | DONE |
+| I8 | `tests/test_frontier.py` — the noise-0 row must reproduce the published held-out analysis exactly; the fold protocol must match `tools/analyze_heldout.py`; the arm must never significantly beat its own probe | TEST | DONE |
+| I9 | The frontier measured and reported: break-even belief accuracy, the arm-versus-probe gap, and the α grid that shows the mechanism | RES | DONE |
+| I10 | `bmd.model.load_model` — a selectable dtype (default `float32`, so the recorded run stays reproducible) plus `tools/run_second_model_macos.sh` for the 1.5B model on Apple Silicon | CODE | DONE |
+
+**Pre-registered reading of the sweep.** The L4 real arm (accuracy 0.480) is
+compared against the distribution of matched random directions at L4. The
+result is reported whichever way it falls:
+
+- if the real arm sits **above** the random distribution, the L4 effect is
+  directional and the Phase-0 "directional but not belief-specific" reading
+  is upgraded;
+- if it sits **inside** the distribution, the Phase-0 reading is confirmed and
+  strengthened from "one draw was not beaten" to "the real direction is not an
+  outlier among matched random directions";
+- if it sits **below** it, the Phase-0 L4 effect is an artefact of the single
+  draw and must be retracted in `results/RESULTS.md`.
+
+No threshold was chosen after seeing the result, and no post-hoc exclusion of
+draws is permitted.
+
+### The frontier, added to the same section
+
+The same phase also answers the Roadmap's Phase-2 question — *how accurate must
+a belief estimate be before intervening on it is net-positive?* — which turned
+out to be computable **without a model**, because the score-level mechanism
+acts entirely on cached quantities. A probe of a given quality is simulated by
+corrupting its training labels; the x-axis is the *achieved* out-of-fold read
+accuracy, not the nominal noise rate. The pre-registered headline alpha is 4
+(the largest value in the Phase-0 sweep), fixed before the frontier was
+computed.
+
+**Pre-registered reading.** The intervention's contribution over the probe that
+produced its margin is reported at every noise level, with the paired Wilcoxon
+test, and across all 180 configurations with a Bonferroni correction. A
+frontier on which the arm never beats its own probe is a **negative** result
+about the mechanism and is reported as one.
+
+---
+
 ## 9. Publication gate — **pre-registered**
 
 The repository starts **private**. It is flipped to **public** when **all four** conditions hold:

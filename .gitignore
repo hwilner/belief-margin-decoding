@@ -15,3 +15,11 @@ dist/
 results/**/*.tmp
 data/cache/
 .DS_Store
+
+# Transient run logs (the result JSONs themselves are committed)
+sweep_log.txt
+sweep_waiter.log
+pytest_out.txt
+
+# Transient frontier run output
+frontier_out.txt

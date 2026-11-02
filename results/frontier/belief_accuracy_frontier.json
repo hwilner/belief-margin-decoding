@@ -1,0 +1,4198 @@
+{
+  "cache_key": "Qwen/Qwen2.5-0.5B-Instruct|n200|s0|L4-8-12-16-20-24",
+  "n_items": 200,
+  "seed": 0,
+  "probe_kind": "lda",
+  "n_folds": 5,
+  "split": "item-level 5-fold cross-validation, out-of-fold",
+  "base_accuracy": 0.37,
+  "headline_layer": 16,
+  "headline_alpha": 4.0,
+  "noise_levels": [
+    0.0,
+    0.15,
+    0.3,
+    0.45,
+    0.6,
+    0.75
+  ],
+  "alphas": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "rows": [
+    {
+      "layer": 4,
+      "noise": 0.0,
+      "achieved_read_acc": 0.42,
+      "achieved_read_ci95": [
+        0.355,
+        0.49
+      ],
+      "read_shuffled_acc": 0.43,
+      "read_vs_base_p": 0.33140594694491454,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.39,
+          "cv_ci95": [
+            0.325,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": 0.010000000000000009,
+          "margin_vs_control_p": 0.31731050786291415,
+          "margin_vs_base_p": 0.04550026389635839,
+          "margin_minus_base": 0.020000000000000018,
+          "margin_minus_read": -0.02999999999999997,
+          "margin_vs_read_p": 0.5562984612747348,
+          "margin_vs_read_statistic": 2572.5,
+          "arm_equals_probe_rate": 0.31,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.39,
+          "cv_ci95": [
+            0.325,
+            0.465
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.015000000000000013,
+          "margin_vs_control_p": 0.40538055645894233,
+          "margin_vs_base_p": 0.2059032107320684,
+          "margin_minus_base": 0.020000000000000018,
+          "margin_minus_read": -0.02999999999999997,
+          "margin_vs_read_p": 0.5524529048817779,
+          "margin_vs_read_statistic": 2472.0,
+          "arm_equals_probe_rate": 0.34,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.425,
+          "cv_ci95": [
+            0.355,
+            0.495
+          ],
+          "cv_acc_shuffled_control": 0.4,
+          "margin_minus_control": 0.024999999999999967,
+          "margin_vs_control_p": 0.36917141633269157,
+          "margin_vs_base_p": 0.03426400773486914,
+          "margin_minus_base": 0.05499999999999999,
+          "margin_minus_read": 0.0050000000000000044,
+          "margin_vs_read_p": 0.9155825203905921,
+          "margin_vs_read_statistic": 1980.0,
+          "arm_equals_probe_rate": 0.43,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.425,
+          "cv_ci95": [
+            0.36,
+            0.495
+          ],
+          "cv_acc_shuffled_control": 0.385,
+          "margin_minus_control": 0.03999999999999998,
+          "margin_vs_control_p": 0.2935105954425006,
+          "margin_vs_base_p": 0.10860060138221973,
+          "margin_minus_base": 0.05499999999999999,
+          "margin_minus_read": 0.0050000000000000044,
+          "margin_vs_read_p": 0.9068274467904143,
+          "margin_vs_read_statistic": 1332.0,
+          "arm_equals_probe_rate": 0.525,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.42,
+          "cv_ci95": [
+            0.355,
+            0.495
+          ],
+          "cv_acc_shuffled_control": 0.39,
+          "margin_minus_control": 0.02999999999999997,
+          "margin_vs_control_p": 0.5126907602619235,
+          "margin_vs_base_p": 0.23199772362873405,
+          "margin_minus_base": 0.04999999999999999,
+          "margin_minus_read": 0.0,
+          "margin_vs_read_p": 1.0,
+          "margin_vs_read_statistic": 410.0,
+          "arm_equals_probe_rate": 0.725,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 4,
+      "noise": 0.15,
+      "achieved_read_acc": 0.42,
+      "achieved_read_ci95": [
+        0.354875,
+        0.49
+      ],
+      "read_shuffled_acc": 0.405,
+      "read_vs_base_p": 0.326799567668966,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.395,
+          "cv_ci95": [
+            0.33,
+            0.465
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.030000000000000027,
+          "margin_vs_control_p": 0.033894853524689246,
+          "margin_vs_base_p": 0.025347318677468252,
+          "margin_minus_base": 0.025000000000000022,
+          "margin_minus_read": -0.024999999999999967,
+          "margin_vs_read_p": 0.6222495669535157,
+          "margin_vs_read_statistic": 2548.0,
+          "arm_equals_probe_rate": 0.285,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.4,
+          "cv_ci95": [
+            0.33,
+            0.475
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.04500000000000004,
+          "margin_vs_control_p": 0.038947455742025384,
+          "margin_vs_base_p": 0.13361440253771614,
+          "margin_minus_base": 0.030000000000000027,
+          "margin_minus_read": -0.019999999999999962,
+          "margin_vs_read_p": 0.6891565167793516,
+          "margin_vs_read_statistic": 2424.0,
+          "arm_equals_probe_rate": 0.335,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.395,
+          "cv_ci95": [
+            0.325,
+            0.465
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.4927166772270877,
+          "margin_vs_base_p": 0.31731050786291415,
+          "margin_minus_base": 0.025000000000000022,
+          "margin_minus_read": -0.024999999999999967,
+          "margin_vs_read_p": 0.5919196634009787,
+          "margin_vs_read_statistic": 1804.0,
+          "arm_equals_probe_rate": 0.405,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.39,
+          "cv_ci95": [
+            0.325,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.385,
+          "margin_minus_control": 0.0050000000000000044,
+          "margin_vs_control_p": 0.8997412986871715,
+          "margin_vs_base_p": 0.5929800980174267,
+          "margin_minus_base": 0.020000000000000018,
+          "margin_minus_read": -0.02999999999999997,
+          "margin_vs_read_p": 0.4226780741706355,
+          "margin_vs_read_statistic": 712.5,
+          "arm_equals_probe_rate": 0.58,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.4,
+          "cv_ci95": [
+            0.335,
+            0.47
+          ],
+          "cv_acc_shuffled_control": 0.41,
+          "margin_minus_control": -0.009999999999999953,
+          "margin_vs_control_p": 0.8292484591829462,
+          "margin_vs_base_p": 0.4912971242158931,
+          "margin_minus_base": 0.030000000000000027,
+          "margin_minus_read": -0.019999999999999962,
+          "margin_vs_read_p": 0.47950012218695337,
+          "margin_vs_read_statistic": 231.0,
+          "arm_equals_probe_rate": 0.74,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 4,
+      "noise": 0.3,
+      "achieved_read_acc": 0.365,
+      "achieved_read_ci95": [
+        0.305,
+        0.435
+      ],
+      "read_shuffled_acc": 0.335,
+      "read_vs_base_p": 0.9215091265496015,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.365,
+          "cv_ci95": [
+            0.3,
+            0.435
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.0,
+          "margin_vs_control_p": 1.0,
+          "margin_vs_base_p": 0.7388826803635273,
+          "margin_minus_base": -0.0050000000000000044,
+          "margin_minus_read": 0.0,
+          "margin_vs_read_p": 1.0,
+          "margin_vs_read_statistic": 2425.5,
+          "arm_equals_probe_rate": 0.385,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.355,
+          "cv_ci95": [
+            0.29,
+            0.42
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": -0.020000000000000018,
+          "margin_vs_control_p": 0.3457785861511603,
+          "margin_vs_base_p": 0.4385780260809998,
+          "margin_minus_base": -0.015000000000000013,
+          "margin_minus_read": -0.010000000000000009,
+          "margin_vs_read_p": 0.8348273291852392,
+          "margin_vs_read_statistic": 2092.5,
+          "arm_equals_probe_rate": 0.415,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.345,
+          "cv_ci95": [
+            0.28,
+            0.415
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": -0.03500000000000003,
+          "margin_vs_control_p": 0.2086677876982641,
+          "margin_vs_base_p": 0.3359238131517357,
+          "margin_minus_base": -0.025000000000000022,
+          "margin_minus_read": -0.020000000000000018,
+          "margin_vs_read_p": 0.6547208460185769,
+          "margin_vs_read_statistic": 1539.0,
+          "arm_equals_probe_rate": 0.485,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.375,
+          "cv_ci95": [
+            0.31,
+            0.44
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": -0.0050000000000000044,
+          "margin_vs_control_p": 0.8964169676673134,
+          "margin_vs_base_p": 0.8886378608950078,
+          "margin_minus_base": 0.0050000000000000044,
+          "margin_minus_read": 0.010000000000000009,
+          "margin_vs_read_p": 0.7962534147376392,
+          "margin_vs_read_statistic": 884.5,
+          "arm_equals_probe_rate": 0.62,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.37,
+          "cv_ci95": [
+            0.305,
+            0.435
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.0050000000000000044,
+          "margin_vs_control_p": 0.9080725552559752,
+          "margin_vs_base_p": 1.0,
+          "margin_minus_base": 0.0,
+          "margin_minus_read": 0.0050000000000000044,
+          "margin_vs_read_p": 0.8618044330490108,
+          "margin_vs_read_statistic": 272.0,
+          "arm_equals_probe_rate": 0.8,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 4,
+      "noise": 0.45,
+      "achieved_read_acc": 0.34,
+      "achieved_read_ci95": [
+        0.28,
+        0.41
+      ],
+      "read_shuffled_acc": 0.305,
+      "read_vs_base_p": 0.5316145768816123,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.38,
+          "cv_ci95": [
+            0.315,
+            0.455
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.0050000000000000044,
+          "margin_vs_control_p": 0.763024600552995,
+          "margin_vs_base_p": 0.47950012218695337,
+          "margin_minus_base": 0.010000000000000009,
+          "margin_minus_read": 0.03999999999999998,
+          "margin_vs_read_p": 0.38273308888522595,
+          "margin_vs_read_statistic": 1615.0,
+          "arm_equals_probe_rate": 0.38,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.405,
+          "cv_ci95": [
+            0.34,
+            0.48
+          ],
+          "cv_acc_shuffled_control": 0.385,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.3937686346429927,
+          "margin_vs_base_p": 0.05220363534131467,
+          "margin_minus_base": 0.03500000000000003,
+          "margin_minus_read": 0.065,
+          "margin_vs_read_p": 0.15359852170573332,
+          "margin_vs_read_statistic": 1470.0,
+          "arm_equals_probe_rate": 0.395,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.39,
+          "cv_ci95": [
+            0.324875,
+            0.465
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.015000000000000013,
+          "margin_vs_control_p": 0.5774686624272996,
+          "margin_vs_base_p": 0.4142161782425252,
+          "margin_minus_base": 0.020000000000000018,
+          "margin_minus_read": 0.04999999999999999,
+          "margin_vs_read_p": 0.25751798224906275,
+          "margin_vs_read_statistic": 1343.0,
+          "arm_equals_probe_rate": 0.445,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.395,
+          "cv_ci95": [
+            0.33,
+            0.465
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.040000000000000036,
+          "margin_vs_control_p": 0.27630291733748347,
+          "margin_vs_base_p": 0.4457659079148423,
+          "margin_minus_base": 0.025000000000000022,
+          "margin_minus_read": 0.05499999999999999,
+          "margin_vs_read_p": 0.16578668398105822,
+          "margin_vs_read_statistic": 832.0,
+          "arm_equals_probe_rate": 0.57,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.34,
+          "cv_ci95": [
+            0.275,
+            0.41
+          ],
+          "cv_acc_shuffled_control": 0.315,
+          "margin_minus_control": 0.025000000000000022,
+          "margin_vs_control_p": 0.5472212227674071,
+          "margin_vs_base_p": 0.446059549370744,
+          "margin_minus_base": -0.02999999999999997,
+          "margin_minus_read": 0.0,
+          "margin_vs_read_p": 1.0,
+          "margin_vs_read_statistic": 333.0,
+          "arm_equals_probe_rate": 0.73,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 4,
+      "noise": 0.6,
+      "achieved_read_acc": 0.35,
+      "achieved_read_ci95": [
+        0.285,
+        0.4151249999999993
+      ],
+      "read_shuffled_acc": 0.345,
+      "read_vs_base_p": 0.6698153575994166,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.375,
+          "cv_ci95": [
+            0.31,
+            0.45
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.0050000000000000044,
+          "margin_vs_control_p": 0.7054569861112734,
+          "margin_vs_base_p": 0.6547208460185769,
+          "margin_minus_base": 0.0050000000000000044,
+          "margin_minus_read": 0.025000000000000022,
+          "margin_vs_read_p": 0.5875938479556577,
+          "margin_vs_read_statistic": 1720.0,
+          "arm_equals_probe_rate": 0.39,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.385,
+          "cv_ci95": [
+            0.32,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.385,
+          "margin_minus_control": 0.0,
+          "margin_vs_control_p": 1.0,
+          "margin_vs_base_p": 0.40538055645894233,
+          "margin_minus_base": 0.015000000000000013,
+          "margin_minus_read": 0.03500000000000003,
+          "margin_vs_read_p": 0.4250306527849277,
+          "margin_vs_read_statistic": 1365.0,
+          "arm_equals_probe_rate": 0.43,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.37,
+          "cv_ci95": [
+            0.305,
+            0.44
+          ],
+          "cv_acc_shuffled_control": 0.395,
+          "margin_minus_control": -0.025000000000000022,
+          "margin_vs_control_p": 0.36917141633269157,
+          "margin_vs_base_p": 1.0,
+          "margin_minus_base": 0.0,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.6170750774519738,
+          "margin_vs_read_statistic": 975.0,
+          "arm_equals_probe_rate": 0.52,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.39,
+          "cv_ci95": [
+            0.32,
+            0.455
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.015000000000000013,
+          "margin_vs_control_p": 0.6802795473344503,
+          "margin_vs_base_p": 0.5637028616507731,
+          "margin_minus_base": 0.020000000000000018,
+          "margin_minus_read": 0.040000000000000036,
+          "margin_vs_read_p": 0.21704390775694227,
+          "margin_vs_read_statistic": 365.5,
+          "arm_equals_probe_rate": 0.65,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.385,
+          "cv_ci95": [
+            0.32,
+            0.45012499999999933
+          ],
+          "cv_acc_shuffled_control": 0.395,
+          "margin_minus_control": -0.010000000000000009,
+          "margin_vs_control_p": 0.8161533547581272,
+          "margin_vs_base_p": 0.713985795669382,
+          "margin_minus_base": 0.015000000000000013,
+          "margin_minus_read": 0.03500000000000003,
+          "margin_vs_read_p": 0.16151331846754213,
+          "margin_vs_read_statistic": 117.0,
+          "arm_equals_probe_rate": 0.795,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 4,
+      "noise": 0.75,
+      "achieved_read_acc": 0.255,
+      "achieved_read_ci95": [
+        0.195,
+        0.315
+      ],
+      "read_shuffled_acc": 0.34,
+      "read_vs_base_p": 0.015906444101703374,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.34,
+          "cv_ci95": [
+            0.275,
+            0.415
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": -0.02999999999999997,
+          "margin_vs_control_p": 0.033894853524689246,
+          "margin_vs_base_p": 0.057779571123597245,
+          "margin_minus_base": -0.02999999999999997,
+          "margin_minus_read": 0.08500000000000002,
+          "margin_vs_read_p": 0.05890671861566192,
+          "margin_vs_read_statistic": 1312.0,
+          "arm_equals_probe_rate": 0.425,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.34,
+          "cv_ci95": [
+            0.275,
+            0.41
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": -0.034999999999999976,
+          "margin_vs_control_p": 0.0895550744136426,
+          "margin_vs_base_p": 0.15729920705028502,
+          "margin_minus_base": -0.02999999999999997,
+          "margin_minus_read": 0.08500000000000002,
+          "margin_vs_read_p": 0.04964722965745621,
+          "margin_vs_read_statistic": 1102.0,
+          "arm_equals_probe_rate": 0.47,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.31,
+          "cv_ci95": [
+            0.25,
+            0.38
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": -0.065,
+          "margin_vs_control_p": 0.032582798385612746,
+          "margin_vs_base_p": 0.03389485352468927,
+          "margin_minus_base": -0.06,
+          "margin_minus_read": 0.05499999999999999,
+          "margin_vs_read_p": 0.16578668398105822,
+          "margin_vs_read_statistic": 832.0,
+          "arm_equals_probe_rate": 0.54,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.31,
+          "cv_ci95": [
+            0.25,
+            0.375
+          ],
+          "cv_acc_shuffled_control": 0.39,
+          "margin_minus_control": -0.08000000000000002,
+          "margin_vs_control_p": 0.04215345023570544,
+          "margin_vs_base_p": 0.0960923294556733,
+          "margin_minus_base": -0.06,
+          "margin_minus_read": 0.05499999999999999,
+          "margin_vs_read_p": 0.10105025592540992,
+          "margin_vs_read_statistic": 391.0,
+          "arm_equals_probe_rate": 0.69,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.315,
+          "cv_ci95": [
+            0.25,
+            0.38
+          ],
+          "cv_acc_shuffled_control": 0.39,
+          "margin_minus_control": -0.07500000000000001,
+          "margin_vs_control_p": 0.07915379197752347,
+          "margin_vs_base_p": 0.16578668398105822,
+          "margin_minus_base": -0.05499999999999999,
+          "margin_minus_read": 0.06,
+          "margin_vs_read_p": 0.039591763236690385,
+          "margin_vs_read_statistic": 192.5,
+          "arm_equals_probe_rate": 0.775,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 8,
+      "noise": 0.0,
+      "achieved_read_acc": 0.545,
+      "achieved_read_ci95": [
+        0.475,
+        0.615
+      ],
+      "read_shuffled_acc": 0.345,
+      "read_vs_base_p": 0.0010994160521898037,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.405,
+          "cv_ci95": [
+            0.34,
+            0.475
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.04500000000000004,
+          "margin_vs_control_p": 0.0026997960632601866,
+          "margin_vs_base_p": 0.019630657257290667,
+          "margin_minus_base": 0.03500000000000003,
+          "margin_minus_read": -0.14,
+          "margin_vs_read_p": 0.0065360846580197335,
+          "margin_vs_read_statistic": 2086.5,
+          "arm_equals_probe_rate": 0.365,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.415,
+          "cv_ci95": [
+            0.349875,
+            0.485
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.044999999999999984,
+          "margin_vs_control_p": 0.006655605482949377,
+          "margin_vs_base_p": 0.012554918596966547,
+          "margin_minus_base": 0.044999999999999984,
+          "margin_minus_read": -0.13000000000000006,
+          "margin_vs_read_p": 0.01004188659094589,
+          "margin_vs_read_statistic": 1957.0,
+          "arm_equals_probe_rate": 0.39,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.44,
+          "cv_ci95": [
+            0.37,
+            0.5101249999999993
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.07,
+          "margin_vs_control_p": 0.006039559048656822,
+          "margin_vs_base_p": 0.006039559048656822,
+          "margin_minus_base": 0.07,
+          "margin_minus_read": -0.10500000000000004,
+          "margin_vs_read_p": 0.0294359369343824,
+          "margin_vs_read_statistic": 1692.0,
+          "arm_equals_probe_rate": 0.465,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.505,
+          "cv_ci95": [
+            0.44,
+            0.58
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": 0.125,
+          "margin_vs_control_p": 0.0009285334224661572,
+          "margin_vs_base_p": 0.00015635271159998695,
+          "margin_minus_base": 0.135,
+          "margin_minus_read": -0.040000000000000036,
+          "margin_vs_read_p": 0.3457785861511603,
+          "margin_vs_read_statistic": 1168.0,
+          "arm_equals_probe_rate": 0.595,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.545,
+          "cv_ci95": [
+            0.475,
+            0.615
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.19000000000000006,
+          "margin_vs_control_p": 4.173740327283214e-05,
+          "margin_vs_base_p": 8.222946701510733e-05,
+          "margin_minus_base": 0.17500000000000004,
+          "margin_minus_read": 0.0,
+          "margin_vs_read_p": 1.0,
+          "margin_vs_read_statistic": 588.0,
+          "arm_equals_probe_rate": 0.74,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 8,
+      "noise": 0.15,
+      "achieved_read_acc": 0.47,
+      "achieved_read_ci95": [
+        0.4,
+        0.54
+      ],
+      "read_shuffled_acc": 0.41,
+      "read_vs_base_p": 0.054291828366854596,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.385,
+          "cv_ci95": [
+            0.32,
+            0.45512499999999934
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.025000000000000022,
+          "margin_vs_control_p": 0.025347318677468252,
+          "margin_vs_base_p": 0.17971249487899976,
+          "margin_minus_base": 0.015000000000000013,
+          "margin_minus_read": -0.08499999999999996,
+          "margin_vs_read_p": 0.09392250461169213,
+          "margin_vs_read_statistic": 2236.0,
+          "arm_equals_probe_rate": 0.355,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.39,
+          "cv_ci95": [
+            0.32,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.03500000000000003,
+          "margin_vs_control_p": 0.10829365589900902,
+          "margin_vs_base_p": 0.31731050786291415,
+          "margin_minus_base": 0.020000000000000018,
+          "margin_minus_read": -0.07999999999999996,
+          "margin_vs_read_p": 0.09529283802345664,
+          "margin_vs_read_statistic": 1767.0,
+          "arm_equals_probe_rate": 0.41,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.415,
+          "cv_ci95": [
+            0.345,
+            0.485
+          ],
+          "cv_acc_shuffled_control": 0.35,
+          "margin_minus_control": 0.065,
+          "margin_vs_control_p": 0.009322376047437493,
+          "margin_vs_base_p": 0.07186063822585158,
+          "margin_minus_base": 0.044999999999999984,
+          "margin_minus_read": -0.05499999999999999,
+          "margin_vs_read_p": 0.2272754949999649,
+          "margin_vs_read_statistic": 1512.0,
+          "arm_equals_probe_rate": 0.47,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.44,
+          "cv_ci95": [
+            0.37,
+            0.51
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.07,
+          "margin_vs_control_p": 0.05220363534131467,
+          "margin_vs_base_p": 0.034808478811867126,
+          "margin_minus_base": 0.07,
+          "margin_minus_read": -0.02999999999999997,
+          "margin_vs_read_p": 0.4532547047537364,
+          "margin_vs_read_statistic": 942.5,
+          "arm_equals_probe_rate": 0.585,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.49,
+          "cv_ci95": [
+            0.42,
+            0.56
+          ],
+          "cv_acc_shuffled_control": 0.35,
+          "margin_minus_control": 0.14,
+          "margin_vs_control_p": 0.0046777349810472576,
+          "margin_vs_base_p": 0.006578413612826374,
+          "margin_minus_base": 0.12,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.5049850750938458,
+          "margin_vs_read_statistic": 296.0,
+          "arm_equals_probe_rate": 0.77,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 8,
+      "noise": 0.3,
+      "achieved_read_acc": 0.42,
+      "achieved_read_ci95": [
+        0.355,
+        0.49
+      ],
+      "read_shuffled_acc": 0.33,
+      "read_vs_base_p": 0.31731050786291415,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.365,
+          "cv_ci95": [
+            0.3,
+            0.44
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.0,
+          "margin_vs_control_p": 1.0,
+          "margin_vs_base_p": 0.7054569861112734,
+          "margin_minus_base": -0.0050000000000000044,
+          "margin_minus_read": -0.05499999999999999,
+          "margin_vs_read_p": 0.25907666070235447,
+          "margin_vs_read_statistic": 2016.0,
+          "arm_equals_probe_rate": 0.39,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.38,
+          "cv_ci95": [
+            0.315,
+            0.455
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.010000000000000009,
+          "margin_vs_control_p": 0.5637028616507731,
+          "margin_vs_base_p": 0.6170750774519738,
+          "margin_minus_base": 0.010000000000000009,
+          "margin_minus_read": -0.03999999999999998,
+          "margin_vs_read_p": 0.3883232289789247,
+          "margin_vs_read_statistic": 1696.5,
+          "arm_equals_probe_rate": 0.44,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.385,
+          "cv_ci95": [
+            0.32,
+            0.45512499999999934
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.4927166772270877,
+          "margin_vs_base_p": 0.6015081344405899,
+          "margin_minus_base": 0.015000000000000013,
+          "margin_minus_read": -0.034999999999999976,
+          "margin_vs_read_p": 0.4061164782195569,
+          "margin_vs_read_statistic": 1152.0,
+          "arm_equals_probe_rate": 0.53,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.415,
+          "cv_ci95": [
+            0.35,
+            0.485
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.044999999999999984,
+          "margin_vs_control_p": 0.20757844233562417,
+          "margin_vs_base_p": 0.20757844233562417,
+          "margin_minus_base": 0.044999999999999984,
+          "margin_minus_read": -0.0050000000000000044,
+          "margin_vs_read_p": 0.892738400944348,
+          "margin_vs_read_statistic": 756.0,
+          "arm_equals_probe_rate": 0.62,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.44,
+          "cv_ci95": [
+            0.375,
+            0.51
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.08000000000000002,
+          "margin_vs_control_p": 0.07004133687461596,
+          "margin_vs_base_p": 0.09426430684121027,
+          "margin_minus_base": 0.07,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.5049850750938458,
+          "margin_vs_read_statistic": 296.0,
+          "arm_equals_probe_rate": 0.745,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 8,
+      "noise": 0.45,
+      "achieved_read_acc": 0.385,
+      "achieved_read_ci95": [
+        0.32,
+        0.455
+      ],
+      "read_shuffled_acc": 0.295,
+      "read_vs_base_p": 0.7582394636149119,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.385,
+          "cv_ci95": [
+            0.324875,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.025000000000000022,
+          "margin_vs_control_p": 0.13166801602281422,
+          "margin_vs_base_p": 0.25683925795785656,
+          "margin_minus_base": 0.015000000000000013,
+          "margin_minus_read": 0.0,
+          "margin_vs_read_p": 1.0,
+          "margin_vs_read_statistic": 2047.5,
+          "arm_equals_probe_rate": 0.405,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.405,
+          "cv_ci95": [
+            0.34,
+            0.48
+          ],
+          "cv_acc_shuffled_control": 0.35,
+          "margin_minus_control": 0.05500000000000005,
+          "margin_vs_control_p": 0.011616891434158364,
+          "margin_vs_base_p": 0.05220363534131467,
+          "margin_minus_base": 0.03500000000000003,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.6662276454096188,
+          "margin_vs_read_statistic": 1783.5,
+          "arm_equals_probe_rate": 0.435,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.405,
+          "cv_ci95": [
+            0.34,
+            0.475
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.040000000000000036,
+          "margin_vs_control_p": 0.17006696145390487,
+          "margin_vs_base_p": 0.12663045794761718,
+          "margin_minus_base": 0.03500000000000003,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.6506129639327536,
+          "margin_vs_read_statistic": 1461.5,
+          "arm_equals_probe_rate": 0.495,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.405,
+          "cv_ci95": [
+            0.34,
+            0.48
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.040000000000000036,
+          "margin_vs_control_p": 0.27630291733748347,
+          "margin_vs_base_p": 0.22301746994661498,
+          "margin_minus_base": 0.03500000000000003,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.6276258050283594,
+          "margin_vs_read_statistic": 1104.0,
+          "arm_equals_probe_rate": 0.565,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.39,
+          "cv_ci95": [
+            0.32,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.030000000000000027,
+          "margin_vs_control_p": 0.5023349543605021,
+          "margin_vs_base_p": 0.5994262792958636,
+          "margin_minus_base": 0.020000000000000018,
+          "margin_minus_read": 0.0050000000000000044,
+          "margin_vs_read_p": 0.8814974521910136,
+          "margin_vs_read_statistic": 506.0,
+          "arm_equals_probe_rate": 0.715,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 8,
+      "noise": 0.6,
+      "achieved_read_acc": 0.335,
+      "achieved_read_ci95": [
+        0.27,
+        0.4
+      ],
+      "read_shuffled_acc": 0.335,
+      "read_vs_base_p": 0.4860994597361773,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.385,
+          "cv_ci95": [
+            0.32,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.010000000000000009,
+          "margin_vs_control_p": 0.4142161782425253,
+          "margin_vs_base_p": 0.25683925795785656,
+          "margin_minus_base": 0.015000000000000013,
+          "margin_minus_read": 0.04999999999999999,
+          "margin_vs_read_p": 0.30743416592739536,
+          "margin_vs_read_statistic": 2085.5,
+          "arm_equals_probe_rate": 0.355,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.38,
+          "cv_ci95": [
+            0.315,
+            0.45
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.0050000000000000044,
+          "margin_vs_control_p": 0.8083651559145103,
+          "margin_vs_base_p": 0.6170750774519738,
+          "margin_minus_base": 0.010000000000000009,
+          "margin_minus_read": 0.044999999999999984,
+          "margin_vs_read_p": 0.3345942595854855,
+          "margin_vs_read_statistic": 1716.0,
+          "arm_equals_probe_rate": 0.4,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.4,
+          "cv_ci95": [
+            0.33,
+            0.47
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.025000000000000022,
+          "margin_vs_control_p": 0.39802471950693785,
+          "margin_vs_base_p": 0.2888443663464849,
+          "margin_minus_base": 0.030000000000000027,
+          "margin_minus_read": 0.065,
+          "margin_vs_read_p": 0.12812565674429424,
+          "margin_vs_read_statistic": 1110.0,
+          "arm_equals_probe_rate": 0.485,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.39,
+          "cv_ci95": [
+            0.32,
+            0.45512499999999934
+          ],
+          "cv_acc_shuffled_control": 0.39,
+          "margin_minus_control": 0.0,
+          "margin_vs_control_p": 1.0,
+          "margin_vs_base_p": 0.5790997419539189,
+          "margin_minus_base": 0.020000000000000018,
+          "margin_minus_read": 0.05499999999999999,
+          "margin_vs_read_p": 0.13801073756865956,
+          "margin_vs_read_statistic": 616.0,
+          "arm_equals_probe_rate": 0.6,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.365,
+          "cv_ci95": [
+            0.3,
+            0.43
+          ],
+          "cv_acc_shuffled_control": 0.405,
+          "margin_minus_control": -0.040000000000000036,
+          "margin_vs_control_p": 0.36503027183830394,
+          "margin_vs_base_p": 0.9041774974987763,
+          "margin_minus_base": -0.0050000000000000044,
+          "margin_minus_read": 0.02999999999999997,
+          "margin_vs_read_p": 0.31731050786291415,
+          "margin_vs_read_statistic": 277.5,
+          "arm_equals_probe_rate": 0.725,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 8,
+      "noise": 0.75,
+      "achieved_read_acc": 0.285,
+      "achieved_read_ci95": [
+        0.225,
+        0.35
+      ],
+      "read_shuffled_acc": 0.35,
+      "read_vs_base_p": 0.06519641907812998,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.355,
+          "cv_ci95": [
+            0.29,
+            0.425
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": -0.010000000000000009,
+          "margin_vs_control_p": 0.47950012218695337,
+          "margin_vs_base_p": 0.31731050786291415,
+          "margin_minus_base": -0.015000000000000013,
+          "margin_minus_read": 0.07,
+          "margin_vs_read_p": 0.10829365589900902,
+          "margin_vs_read_statistic": 1193.5,
+          "arm_equals_probe_rate": 0.43,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.355,
+          "cv_ci95": [
+            0.29,
+            0.425
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": -0.015000000000000013,
+          "margin_vs_control_p": 0.36571229628151325,
+          "margin_vs_base_p": 0.40538055645894233,
+          "margin_minus_base": -0.015000000000000013,
+          "margin_minus_read": 0.07,
+          "margin_vs_read_p": 0.09896015401940578,
+          "margin_vs_read_statistic": 1058.5,
+          "arm_equals_probe_rate": 0.465,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.38,
+          "cv_ci95": [
+            0.315,
+            0.445
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.015000000000000013,
+          "margin_vs_control_p": 0.5774686624272996,
+          "margin_vs_base_p": 0.6948866023724733,
+          "margin_minus_base": 0.010000000000000009,
+          "margin_minus_read": 0.09500000000000003,
+          "margin_vs_read_p": 0.01498668249896256,
+          "margin_vs_read_statistic": 651.0,
+          "arm_equals_probe_rate": 0.53,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.365,
+          "cv_ci95": [
+            0.3,
+            0.43
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": -0.010000000000000009,
+          "margin_vs_control_p": 0.7928489826282048,
+          "margin_vs_base_p": 0.8787937179592977,
+          "margin_minus_base": -0.0050000000000000044,
+          "margin_minus_read": 0.08000000000000002,
+          "margin_vs_read_p": 0.02092133533779403,
+          "margin_vs_read_statistic": 392.0,
+          "arm_equals_probe_rate": 0.64,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.33,
+          "cv_ci95": [
+            0.265,
+            0.395
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": -0.044999999999999984,
+          "margin_vs_control_p": 0.29217129931682506,
+          "margin_vs_base_p": 0.30169958247834794,
+          "margin_minus_base": -0.03999999999999998,
+          "margin_minus_read": 0.04500000000000004,
+          "margin_vs_read_p": 0.0946707198455088,
+          "margin_vs_read_statistic": 150.0,
+          "arm_equals_probe_rate": 0.77,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 12,
+      "noise": 0.0,
+      "achieved_read_acc": 0.53,
+      "achieved_read_ci95": [
+        0.465,
+        0.6
+      ],
+      "read_shuffled_acc": 0.385,
+      "read_vs_base_p": 0.0020755629257427,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.415,
+          "cv_ci95": [
+            0.35,
+            0.485
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.03999999999999998,
+          "margin_vs_control_p": 0.020921335337794014,
+          "margin_vs_base_p": 0.006655605482949377,
+          "margin_minus_base": 0.044999999999999984,
+          "margin_minus_read": -0.11500000000000005,
+          "margin_vs_read_p": 0.022103444993420453,
+          "margin_vs_read_statistic": 1989.0,
+          "arm_equals_probe_rate": 0.42,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.43,
+          "cv_ci95": [
+            0.365,
+            0.505
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.06,
+          "margin_vs_control_p": 0.0026997960632601866,
+          "margin_vs_base_p": 0.0013406411172294783,
+          "margin_minus_base": 0.06,
+          "margin_minus_read": -0.10000000000000003,
+          "margin_vs_read_p": 0.04335175126086261,
+          "margin_vs_read_statistic": 1930.5,
+          "arm_equals_probe_rate": 0.455,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.505,
+          "cv_ci95": [
+            0.435,
+            0.58
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": 0.125,
+          "margin_vs_control_p": 1.3493733270227875e-05,
+          "margin_vs_base_p": 2.6003831259784736e-06,
+          "margin_minus_base": 0.135,
+          "margin_minus_read": -0.025000000000000022,
+          "margin_vs_read_p": 0.5831280913801375,
+          "margin_vs_read_statistic": 1638.0,
+          "arm_equals_probe_rate": 0.555,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.55,
+          "cv_ci95": [
+            0.485,
+            0.62
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.18000000000000005,
+          "margin_vs_control_p": 3.3585183293285484e-06,
+          "margin_vs_base_p": 1.504008486009085e-06,
+          "margin_minus_base": 0.18000000000000005,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.6055766163353462,
+          "margin_vs_read_statistic": 854.0,
+          "arm_equals_probe_rate": 0.675,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.59,
+          "cv_ci95": [
+            0.52,
+            0.66
+          ],
+          "cv_acc_shuffled_control": 0.41,
+          "margin_minus_control": 0.18,
+          "margin_vs_control_p": 0.00017455002670346034,
+          "margin_vs_base_p": 8.68322808545465e-07,
+          "margin_minus_base": 0.21999999999999997,
+          "margin_minus_read": 0.05999999999999994,
+          "margin_vs_read_p": 0.04550026389635839,
+          "margin_vs_read_statistic": 222.0,
+          "arm_equals_probe_rate": 0.805,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 12,
+      "noise": 0.15,
+      "achieved_read_acc": 0.49,
+      "achieved_read_ci95": [
+        0.424875,
+        0.555
+      ],
+      "read_shuffled_acc": 0.37,
+      "read_vs_base_p": 0.014305878435429619,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.395,
+          "cv_ci95": [
+            0.33,
+            0.47
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.24821307898992362,
+          "margin_vs_base_p": 0.025347318677468252,
+          "margin_minus_base": 0.025000000000000022,
+          "margin_minus_read": -0.09499999999999997,
+          "margin_vs_read_p": 0.04881451186583109,
+          "margin_vs_read_statistic": 1739.0,
+          "arm_equals_probe_rate": 0.385,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.42,
+          "cv_ci95": [
+            0.355,
+            0.495
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.044999999999999984,
+          "margin_vs_control_p": 0.02904902216194057,
+          "margin_vs_base_p": 0.003892417122778628,
+          "margin_minus_base": 0.04999999999999999,
+          "margin_minus_read": -0.07,
+          "margin_vs_read_p": 0.13113050286965086,
+          "margin_vs_read_statistic": 1566.0,
+          "arm_equals_probe_rate": 0.43,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.47,
+          "cv_ci95": [
+            0.4,
+            0.545
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.10499999999999998,
+          "margin_vs_control_p": 0.001362545022779016,
+          "margin_vs_base_p": 0.0004069520174449578,
+          "margin_minus_base": 0.09999999999999998,
+          "margin_minus_read": -0.020000000000000018,
+          "margin_vs_read_p": 0.6373518882339371,
+          "margin_vs_read_statistic": 1241.0,
+          "arm_equals_probe_rate": 0.535,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.5,
+          "cv_ci95": [
+            0.43,
+            0.57
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.13,
+          "margin_vs_control_p": 0.0016162222150599888,
+          "margin_vs_base_p": 0.0006402427027768719,
+          "margin_minus_base": 0.13,
+          "margin_minus_read": 0.010000000000000009,
+          "margin_vs_read_p": 0.7680825619009432,
+          "margin_vs_read_statistic": 517.0,
+          "arm_equals_probe_rate": 0.685,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.49,
+          "cv_ci95": [
+            0.42,
+            0.56
+          ],
+          "cv_acc_shuffled_control": 0.385,
+          "margin_minus_control": 0.10499999999999998,
+          "margin_vs_control_p": 0.031196709732934015,
+          "margin_vs_base_p": 0.005271726797141752,
+          "margin_minus_base": 0.12,
+          "margin_minus_read": 0.0,
+          "margin_vs_read_p": 1.0,
+          "margin_vs_read_statistic": 203.0,
+          "arm_equals_probe_rate": 0.805,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 12,
+      "noise": 0.3,
+      "achieved_read_acc": 0.43,
+      "achieved_read_ci95": [
+        0.365,
+        0.5
+      ],
+      "read_shuffled_acc": 0.37,
+      "read_vs_base_p": 0.26105418957965754,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.385,
+          "cv_ci95": [
+            0.32,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.025000000000000022,
+          "margin_vs_control_p": 0.0955807045456294,
+          "margin_vs_base_p": 0.31731050786291415,
+          "margin_minus_base": 0.015000000000000013,
+          "margin_minus_read": -0.044999999999999984,
+          "margin_vs_read_p": 0.3886634945233082,
+          "margin_vs_read_statistic": 2750.0,
+          "arm_equals_probe_rate": 0.36,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.41,
+          "cv_ci95": [
+            0.34,
+            0.485
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.04999999999999999,
+          "margin_vs_control_p": 0.018422125454099002,
+          "margin_vs_base_p": 0.05934643879191985,
+          "margin_minus_base": 0.03999999999999998,
+          "margin_minus_read": -0.020000000000000018,
+          "margin_vs_read_p": 0.6920614909359382,
+          "margin_vs_read_statistic": 2523.5,
+          "arm_equals_probe_rate": 0.405,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.45,
+          "cv_ci95": [
+            0.38,
+            0.52
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.08500000000000002,
+          "margin_vs_control_p": 0.007931923532795267,
+          "margin_vs_base_p": 0.007660761135179473,
+          "margin_minus_base": 0.08000000000000002,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.6625205835400574,
+          "margin_vs_read_statistic": 1700.0,
+          "arm_equals_probe_rate": 0.52,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.475,
+          "cv_ci95": [
+            0.405,
+            0.545
+          ],
+          "cv_acc_shuffled_control": 0.385,
+          "margin_minus_control": 0.08999999999999997,
+          "margin_vs_control_p": 0.022254124823099162,
+          "margin_vs_base_p": 0.007171485075801834,
+          "margin_minus_base": 0.10499999999999998,
+          "margin_minus_read": 0.044999999999999984,
+          "margin_vs_read_p": 0.24131744318383797,
+          "margin_vs_read_statistic": 750.0,
+          "arm_equals_probe_rate": 0.65,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.44,
+          "cv_ci95": [
+            0.37,
+            0.505
+          ],
+          "cv_acc_shuffled_control": 0.405,
+          "margin_minus_control": 0.034999999999999976,
+          "margin_vs_control_p": 0.45296640275106703,
+          "margin_vs_base_p": 0.11752486809663916,
+          "margin_minus_base": 0.07,
+          "margin_minus_read": 0.010000000000000009,
+          "margin_vs_read_p": 0.7518296340458492,
+          "margin_vs_read_statistic": 389.5,
+          "arm_equals_probe_rate": 0.76,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 12,
+      "noise": 0.45,
+      "achieved_read_acc": 0.41,
+      "achieved_read_ci95": [
+        0.345,
+        0.48
+      ],
+      "read_shuffled_acc": 0.285,
+      "read_vs_base_p": 0.4142161782425252,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.375,
+          "cv_ci95": [
+            0.31,
+            0.445
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.2059032107320684,
+          "margin_vs_base_p": 0.7388826803635273,
+          "margin_minus_base": 0.0050000000000000044,
+          "margin_minus_read": -0.034999999999999976,
+          "margin_vs_read_p": 0.45296640275106703,
+          "margin_vs_read_statistic": 1760.0,
+          "arm_equals_probe_rate": 0.435,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.37,
+          "cv_ci95": [
+            0.305,
+            0.44
+          ],
+          "cv_acc_shuffled_control": 0.35,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.24821307898992362,
+          "margin_vs_base_p": 1.0,
+          "margin_minus_base": 0.0,
+          "margin_minus_read": -0.03999999999999998,
+          "margin_vs_read_p": 0.3883232289789247,
+          "margin_vs_read_statistic": 1696.5,
+          "arm_equals_probe_rate": 0.435,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.385,
+          "cv_ci95": [
+            0.319875,
+            0.455
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.47950012218695337,
+          "margin_vs_base_p": 0.5316145768816123,
+          "margin_minus_base": 0.015000000000000013,
+          "margin_minus_read": -0.024999999999999967,
+          "margin_vs_read_p": 0.5637028616507731,
+          "margin_vs_read_statistic": 1330.0,
+          "arm_equals_probe_rate": 0.5,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.415,
+          "cv_ci95": [
+            0.35,
+            0.485
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.06,
+          "margin_vs_control_p": 0.12133525035848211,
+          "margin_vs_base_p": 0.20757844233562417,
+          "margin_minus_base": 0.044999999999999984,
+          "margin_minus_read": 0.0050000000000000044,
+          "margin_vs_read_p": 0.8886378608950078,
+          "margin_vs_read_statistic": 650.0,
+          "arm_equals_probe_rate": 0.675,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.41,
+          "cv_ci95": [
+            0.345,
+            0.48
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.05499999999999999,
+          "margin_vs_control_p": 0.19793657403507403,
+          "margin_vs_base_p": 0.3247557654026184,
+          "margin_minus_base": 0.03999999999999998,
+          "margin_minus_read": 0.0,
+          "margin_vs_read_p": 1.0,
+          "margin_vs_read_statistic": 333.0,
+          "arm_equals_probe_rate": 0.77,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 12,
+      "noise": 0.6,
+      "achieved_read_acc": 0.28,
+      "achieved_read_ci95": [
+        0.22,
+        0.34
+      ],
+      "read_shuffled_acc": 0.355,
+      "read_vs_base_p": 0.06337402939972912,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.365,
+          "cv_ci95": [
+            0.305,
+            0.435
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": -0.015000000000000013,
+          "margin_vs_control_p": 0.17971249487899976,
+          "margin_vs_base_p": 0.6547208460185769,
+          "margin_minus_base": -0.0050000000000000044,
+          "margin_minus_read": 0.08499999999999996,
+          "margin_vs_read_p": 0.07154597258900638,
+          "margin_vs_read_statistic": 1620.0,
+          "arm_equals_probe_rate": 0.39,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.365,
+          "cv_ci95": [
+            0.3,
+            0.435
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": -0.0050000000000000044,
+          "margin_vs_control_p": 0.7815112949987133,
+          "margin_vs_base_p": 0.763024600552995,
+          "margin_minus_base": -0.0050000000000000044,
+          "margin_minus_read": 0.08499999999999996,
+          "margin_vs_read_p": 0.0620424260314264,
+          "margin_vs_read_statistic": 1386.0,
+          "arm_equals_probe_rate": 0.425,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.355,
+          "cv_ci95": [
+            0.29,
+            0.425
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": -0.010000000000000009,
+          "margin_vs_control_p": 0.6948866023724733,
+          "margin_vs_base_p": 0.5316145768816123,
+          "margin_minus_base": -0.015000000000000013,
+          "margin_minus_read": 0.07499999999999996,
+          "margin_vs_read_p": 0.07504773652740872,
+          "margin_vs_read_statistic": 1008.0,
+          "arm_equals_probe_rate": 0.5,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.36,
+          "cv_ci95": [
+            0.295,
+            0.425
+          ],
+          "cv_acc_shuffled_control": 0.405,
+          "margin_minus_control": -0.04500000000000004,
+          "margin_vs_control_p": 0.22491588401596185,
+          "margin_vs_base_p": 0.7680825619009432,
+          "margin_minus_base": -0.010000000000000009,
+          "margin_minus_read": 0.07999999999999996,
+          "margin_vs_read_p": 0.023651616655355978,
+          "margin_vs_read_statistic": 433.5,
+          "arm_equals_probe_rate": 0.62,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.345,
+          "cv_ci95": [
+            0.28,
+            0.41
+          ],
+          "cv_acc_shuffled_control": 0.42,
+          "margin_minus_control": -0.07500000000000001,
+          "margin_vs_control_p": 0.07915379197752347,
+          "margin_vs_base_p": 0.5413007280472231,
+          "margin_minus_base": -0.025000000000000022,
+          "margin_minus_read": 0.06499999999999995,
+          "margin_vs_read_p": 0.015776756388928077,
+          "margin_vs_read_statistic": 120.0,
+          "arm_equals_probe_rate": 0.79,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 12,
+      "noise": 0.75,
+      "achieved_read_acc": 0.265,
+      "achieved_read_ci95": [
+        0.205,
+        0.325
+      ],
+      "read_shuffled_acc": 0.325,
+      "read_vs_base_p": 0.027707849358079864,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.36,
+          "cv_ci95": [
+            0.295,
+            0.43
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": -0.020000000000000018,
+          "margin_vs_control_p": 0.15729920705028502,
+          "margin_vs_base_p": 0.5270892568655381,
+          "margin_minus_base": -0.010000000000000009,
+          "margin_minus_read": 0.09499999999999997,
+          "margin_vs_read_p": 0.04164865748904789,
+          "margin_vs_read_statistic": 1496.0,
+          "arm_equals_probe_rate": 0.375,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.355,
+          "cv_ci95": [
+            0.29,
+            0.425
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": -0.025000000000000022,
+          "margin_vs_control_p": 0.16551785869747015,
+          "margin_vs_base_p": 0.4385780260809998,
+          "margin_minus_base": -0.015000000000000013,
+          "margin_minus_read": 0.08999999999999997,
+          "margin_vs_read_p": 0.046837413083638584,
+          "margin_vs_read_statistic": 1328.0,
+          "arm_equals_probe_rate": 0.395,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.35,
+          "cv_ci95": [
+            0.285,
+            0.42
+          ],
+          "cv_acc_shuffled_control": 0.39,
+          "margin_minus_control": -0.040000000000000036,
+          "margin_vs_control_p": 0.10247043485974937,
+          "margin_vs_base_p": 0.4142161782425252,
+          "margin_minus_base": -0.020000000000000018,
+          "margin_minus_read": 0.08499999999999996,
+          "margin_vs_read_p": 0.04364035668584734,
+          "margin_vs_read_statistic": 972.0,
+          "arm_equals_probe_rate": 0.46,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.35,
+          "cv_ci95": [
+            0.285,
+            0.42
+          ],
+          "cv_acc_shuffled_control": 0.385,
+          "margin_minus_control": -0.03500000000000003,
+          "margin_vs_control_p": 0.31731050786291415,
+          "margin_vs_base_p": 0.5553463166714221,
+          "margin_minus_base": -0.020000000000000018,
+          "margin_minus_read": 0.08499999999999996,
+          "margin_vs_read_p": 0.021889518120566134,
+          "margin_vs_read_statistic": 532.0,
+          "arm_equals_probe_rate": 0.595,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.33,
+          "cv_ci95": [
+            0.265,
+            0.395
+          ],
+          "cv_acc_shuffled_control": 0.325,
+          "margin_minus_control": 0.0050000000000000044,
+          "margin_vs_control_p": 0.898119787253741,
+          "margin_vs_base_p": 0.30962890273063304,
+          "margin_minus_base": -0.03999999999999998,
+          "margin_minus_read": 0.065,
+          "margin_vs_read_p": 0.037372988340651475,
+          "margin_vs_read_statistic": 260.0,
+          "arm_equals_probe_rate": 0.735,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "noise": 0.0,
+      "achieved_read_acc": 0.72,
+      "achieved_read_ci95": [
+        0.655,
+        0.78
+      ],
+      "read_shuffled_acc": 0.375,
+      "read_vs_base_p": 2.4851981467402263e-11,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.405,
+          "cv_ci95": [
+            0.34,
+            0.475
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.040000000000000036,
+          "margin_vs_control_p": 0.011412036386001651,
+          "margin_vs_base_p": 0.0081509715935027,
+          "margin_minus_base": 0.03500000000000003,
+          "margin_minus_read": -0.31499999999999995,
+          "margin_vs_read_p": 7.838177343355187e-10,
+          "margin_vs_read_statistic": 1113.0,
+          "arm_equals_probe_rate": 0.425,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.45,
+          "cv_ci95": [
+            0.38,
+            0.5201249999999993
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.08500000000000002,
+          "margin_vs_control_p": 9.616588268883476e-05,
+          "margin_vs_base_p": 6.334248366623973e-05,
+          "margin_minus_base": 0.08000000000000002,
+          "margin_minus_read": -0.26999999999999996,
+          "margin_vs_read_p": 3.560879370765604e-08,
+          "margin_vs_read_statistic": 1018.5,
+          "arm_equals_probe_rate": 0.475,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.53,
+          "cv_ci95": [
+            0.465,
+            0.6
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.17000000000000004,
+          "margin_vs_control_p": 7.621291296382934e-08,
+          "margin_vs_base_p": 4.066142456598801e-08,
+          "margin_minus_base": 0.16000000000000003,
+          "margin_minus_read": -0.18999999999999995,
+          "margin_vs_read_p": 2.151786437812018e-05,
+          "margin_vs_read_statistic": 850.5,
+          "arm_equals_probe_rate": 0.565,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.605,
+          "cv_ci95": [
+            0.535,
+            0.675
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.25,
+          "margin_vs_control_p": 2.2848239252562593e-09,
+          "margin_vs_base_p": 4.80629052662246e-10,
+          "margin_minus_base": 0.235,
+          "margin_minus_read": -0.11499999999999999,
+          "margin_vs_read_p": 0.003231131067255672,
+          "margin_vs_read_statistic": 589.0,
+          "arm_equals_probe_rate": 0.675,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.72,
+          "cv_ci95": [
+            0.66,
+            0.78
+          ],
+          "cv_acc_shuffled_control": 0.33,
+          "margin_minus_control": 0.38999999999999996,
+          "margin_vs_control_p": 2.032909454840273e-14,
+          "margin_vs_base_p": 2.2126319776132104e-14,
+          "margin_minus_base": 0.35,
+          "margin_minus_read": 0.0,
+          "margin_vs_read_p": 1.0,
+          "margin_vs_read_statistic": 264.0,
+          "arm_equals_probe_rate": 0.83,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "noise": 0.15,
+      "achieved_read_acc": 0.655,
+      "achieved_read_ci95": [
+        0.585,
+        0.725
+      ],
+      "read_shuffled_acc": 0.35,
+      "read_vs_base_p": 1.0119391415088911e-08,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.405,
+          "cv_ci95": [
+            0.344875,
+            0.475
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.040000000000000036,
+          "margin_vs_control_p": 0.011412036386001651,
+          "margin_vs_base_p": 0.0081509715935027,
+          "margin_minus_base": 0.03500000000000003,
+          "margin_minus_read": -0.25,
+          "margin_vs_read_p": 2.507955312429117e-07,
+          "margin_vs_read_statistic": 1045.0,
+          "arm_equals_probe_rate": 0.44,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.425,
+          "cv_ci95": [
+            0.36,
+            0.495
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.05499999999999999,
+          "margin_vs_control_p": 0.016377308341494895,
+          "margin_vs_base_p": 0.0045086983649042355,
+          "margin_minus_base": 0.05499999999999999,
+          "margin_minus_read": -0.23000000000000004,
+          "margin_vs_read_p": 9.408810897720122e-07,
+          "margin_vs_read_statistic": 934.5,
+          "arm_equals_probe_rate": 0.48,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.485,
+          "cv_ci95": [
+            0.415,
+            0.555
+          ],
+          "cv_acc_shuffled_control": 0.345,
+          "margin_minus_control": 0.14,
+          "margin_vs_control_p": 5.567024236927999e-06,
+          "margin_vs_base_p": 9.58400566647125e-06,
+          "margin_minus_base": 0.11499999999999999,
+          "margin_minus_read": -0.17000000000000004,
+          "margin_vs_read_p": 0.00011824234847146927,
+          "margin_vs_read_statistic": 869.0,
+          "arm_equals_probe_rate": 0.54,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.595,
+          "cv_ci95": [
+            0.53,
+            0.665
+          ],
+          "cv_acc_shuffled_control": 0.325,
+          "margin_minus_control": 0.26999999999999996,
+          "margin_vs_control_p": 5.8132692499589263e-11,
+          "margin_vs_base_p": 2.516280111892313e-09,
+          "margin_minus_base": 0.22499999999999998,
+          "margin_minus_read": -0.06000000000000005,
+          "margin_vs_read_p": 0.0960923294556733,
+          "margin_vs_read_statistic": 530.0,
+          "arm_equals_probe_rate": 0.695,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.635,
+          "cv_ci95": [
+            0.57,
+            0.705
+          ],
+          "cv_acc_shuffled_control": 0.32,
+          "margin_minus_control": 0.315,
+          "margin_vs_control_p": 1.5879074599059602e-10,
+          "margin_vs_base_p": 1.5419968463885655e-09,
+          "margin_minus_base": 0.265,
+          "margin_minus_read": -0.020000000000000018,
+          "margin_vs_read_p": 0.4496917979688909,
+          "margin_vs_read_statistic": 174.0,
+          "arm_equals_probe_rate": 0.835,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "noise": 0.3,
+      "achieved_read_acc": 0.535,
+      "achieved_read_ci95": [
+        0.465,
+        0.605
+      ],
+      "read_shuffled_acc": 0.35,
+      "read_vs_base_p": 0.0014215940314218835,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.375,
+          "cv_ci95": [
+            0.31,
+            0.45
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.10247043485974941,
+          "margin_vs_base_p": 0.7054569861112734,
+          "margin_minus_base": 0.0050000000000000044,
+          "margin_minus_read": -0.16000000000000003,
+          "margin_vs_read_p": 0.0013742758758316942,
+          "margin_vs_read_statistic": 1717.0,
+          "arm_equals_probe_rate": 0.42,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.4,
+          "cv_ci95": [
+            0.335,
+            0.47
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.03500000000000003,
+          "margin_vs_control_p": 0.05220363534131467,
+          "margin_vs_base_p": 0.0832645166635504,
+          "margin_minus_base": 0.030000000000000027,
+          "margin_minus_read": -0.135,
+          "margin_vs_read_p": 0.005603193599934253,
+          "margin_vs_read_statistic": 1632.0,
+          "arm_equals_probe_rate": 0.445,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.475,
+          "cv_ci95": [
+            0.41,
+            0.55
+          ],
+          "cv_acc_shuffled_control": 0.385,
+          "margin_minus_control": 0.08999999999999997,
+          "margin_vs_control_p": 0.0035004758217558273,
+          "margin_vs_base_p": 0.00016213175204392636,
+          "margin_minus_base": 0.10499999999999998,
+          "margin_minus_read": -0.06000000000000005,
+          "margin_vs_read_p": 0.17423138824802498,
+          "margin_vs_read_statistic": 1303.5,
+          "arm_equals_probe_rate": 0.535,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.525,
+          "cv_ci95": [
+            0.455,
+            0.595
+          ],
+          "cv_acc_shuffled_control": 0.41,
+          "margin_minus_control": 0.11500000000000005,
+          "margin_vs_control_p": 0.010601843568486579,
+          "margin_vs_base_p": 5.440352218250091e-05,
+          "margin_minus_base": 0.15500000000000003,
+          "margin_minus_read": -0.010000000000000009,
+          "margin_vs_read_p": 0.7854947471183542,
+          "margin_vs_read_statistic": 715.0,
+          "arm_equals_probe_rate": 0.67,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.575,
+          "cv_ci95": [
+            0.51,
+            0.645
+          ],
+          "cv_acc_shuffled_control": 0.4,
+          "margin_minus_control": 0.17499999999999993,
+          "margin_vs_control_p": 0.0004965137755319053,
+          "margin_vs_base_p": 6.784656077124206e-06,
+          "margin_minus_base": 0.20499999999999996,
+          "margin_minus_read": 0.039999999999999925,
+          "margin_vs_read_p": 0.14412703481601521,
+          "margin_vs_read_statistic": 170.5,
+          "arm_equals_probe_rate": 0.805,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "noise": 0.45,
+      "achieved_read_acc": 0.49,
+      "achieved_read_ci95": [
+        0.425,
+        0.555
+      ],
+      "read_shuffled_acc": 0.31,
+      "read_vs_base_p": 0.01234336035345503,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.39,
+          "cv_ci95": [
+            0.325,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.025000000000000022,
+          "margin_vs_control_p": 0.05878172135535886,
+          "margin_vs_base_p": 0.10247043485974941,
+          "margin_minus_base": 0.020000000000000018,
+          "margin_minus_read": -0.09999999999999998,
+          "margin_vs_read_p": 0.031032519500144917,
+          "margin_vs_read_statistic": 1435.5,
+          "arm_equals_probe_rate": 0.42,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.4,
+          "cv_ci95": [
+            0.335,
+            0.47
+          ],
+          "cv_acc_shuffled_control": 0.345,
+          "margin_minus_control": 0.05500000000000005,
+          "margin_vs_control_p": 0.0045086983649042355,
+          "margin_vs_base_p": 0.0832645166635504,
+          "margin_minus_base": 0.030000000000000027,
+          "margin_minus_read": -0.08999999999999997,
+          "margin_vs_read_p": 0.046837413083638584,
+          "margin_vs_read_statistic": 1328.0,
+          "arm_equals_probe_rate": 0.45,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.435,
+          "cv_ci95": [
+            0.369875,
+            0.51
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.07,
+          "margin_vs_control_p": 0.006039559048656822,
+          "margin_vs_base_p": 0.006714389785549478,
+          "margin_minus_base": 0.065,
+          "margin_minus_read": -0.05499999999999999,
+          "margin_vs_read_p": 0.19793657403507403,
+          "margin_vs_read_statistic": 1147.0,
+          "arm_equals_probe_rate": 0.515,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.46,
+          "cv_ci95": [
+            0.395,
+            0.53
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.09500000000000003,
+          "margin_vs_control_p": 0.016675975260467973,
+          "margin_vs_base_p": 0.007955438571009407,
+          "margin_minus_base": 0.09000000000000002,
+          "margin_minus_read": -0.02999999999999997,
+          "margin_vs_read_p": 0.3961439091520741,
+          "margin_vs_read_statistic": 561.0,
+          "arm_equals_probe_rate": 0.65,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.515,
+          "cv_ci95": [
+            0.45,
+            0.58
+          ],
+          "cv_acc_shuffled_control": 0.34,
+          "margin_minus_control": 0.175,
+          "margin_vs_control_p": 0.00017515398878862552,
+          "margin_vs_base_p": 0.0003218994490963234,
+          "margin_minus_base": 0.14500000000000002,
+          "margin_minus_read": 0.025000000000000022,
+          "margin_vs_read_p": 0.384088249473852,
+          "margin_vs_read_statistic": 238.0,
+          "arm_equals_probe_rate": 0.78,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "noise": 0.6,
+      "achieved_read_acc": 0.35,
+      "achieved_read_ci95": [
+        0.285,
+        0.415
+      ],
+      "read_shuffled_acc": 0.315,
+      "read_vs_base_p": 0.6861678498552393,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.37,
+          "cv_ci95": [
+            0.305,
+            0.44
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.0,
+          "margin_vs_control_p": 1.0,
+          "margin_vs_base_p": 1.0,
+          "margin_minus_base": 0.0,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.6698153575994166,
+          "margin_vs_read_statistic": 1869.0,
+          "arm_equals_probe_rate": 0.385,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.37,
+          "cv_ci95": [
+            0.305,
+            0.44
+          ],
+          "cv_acc_shuffled_control": 0.35,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.31731050786291415,
+          "margin_vs_base_p": 1.0,
+          "margin_minus_base": 0.0,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.6625205835400574,
+          "margin_vs_read_statistic": 1700.0,
+          "arm_equals_probe_rate": 0.42,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.355,
+          "cv_ci95": [
+            0.29,
+            0.42
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.0,
+          "margin_vs_control_p": 1.0,
+          "margin_vs_base_p": 0.590013887163346,
+          "margin_minus_base": -0.015000000000000013,
+          "margin_minus_read": 0.0050000000000000044,
+          "margin_vs_read_p": 0.9041774974987763,
+          "margin_vs_read_statistic": 1190.0,
+          "arm_equals_probe_rate": 0.49,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.37,
+          "cv_ci95": [
+            0.305,
+            0.435
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": -0.010000000000000009,
+          "margin_vs_control_p": 0.8025873486341526,
+          "margin_vs_base_p": 1.0,
+          "margin_minus_base": 0.0,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.5790997419539189,
+          "margin_vs_read_statistic": 636.0,
+          "arm_equals_probe_rate": 0.6,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.405,
+          "cv_ci95": [
+            0.335,
+            0.47
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.040000000000000036,
+          "margin_vs_control_p": 0.36503027183830394,
+          "margin_vs_base_p": 0.3924481242475758,
+          "margin_minus_base": 0.03500000000000003,
+          "margin_minus_read": 0.05500000000000005,
+          "margin_vs_read_p": 0.06297905121445523,
+          "margin_vs_read_statistic": 216.0,
+          "arm_equals_probe_rate": 0.745,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "noise": 0.75,
+      "achieved_read_acc": 0.28,
+      "achieved_read_ci95": [
+        0.22,
+        0.34
+      ],
+      "read_shuffled_acc": 0.28,
+      "read_vs_base_p": 0.05500883362926572,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.35,
+          "cv_ci95": [
+            0.285,
+            0.42
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": -0.020000000000000018,
+          "margin_vs_control_p": 0.2059032107320684,
+          "margin_vs_base_p": 0.15729920705028502,
+          "margin_minus_base": -0.020000000000000018,
+          "margin_minus_read": 0.06999999999999995,
+          "margin_vs_read_p": 0.12209457811740836,
+          "margin_vs_read_statistic": 1411.0,
+          "arm_equals_probe_rate": 0.37,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.37,
+          "cv_ci95": [
+            0.305,
+            0.44
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.010000000000000009,
+          "margin_vs_control_p": 0.6170750774519738,
+          "margin_vs_base_p": 1.0,
+          "margin_minus_base": 0.0,
+          "margin_minus_read": 0.08999999999999997,
+          "margin_vs_read_p": 0.038947455742025384,
+          "margin_vs_read_statistic": 1116.5,
+          "arm_equals_probe_rate": 0.42,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.365,
+          "cv_ci95": [
+            0.3,
+            0.435
+          ],
+          "cv_acc_shuffled_control": 0.35,
+          "margin_minus_control": 0.015000000000000013,
+          "margin_vs_control_p": 0.6120898800892568,
+          "margin_vs_base_p": 0.8526836843346426,
+          "margin_minus_base": -0.0050000000000000044,
+          "margin_minus_read": 0.08499999999999996,
+          "margin_vs_read_p": 0.034979944635443724,
+          "margin_vs_read_statistic": 792.0,
+          "arm_equals_probe_rate": 0.49,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.31,
+          "cv_ci95": [
+            0.245,
+            0.375
+          ],
+          "cv_acc_shuffled_control": 0.345,
+          "margin_minus_control": -0.034999999999999976,
+          "margin_vs_control_p": 0.3924481242475758,
+          "margin_vs_base_p": 0.0960923294556733,
+          "margin_minus_base": -0.06,
+          "margin_minus_read": 0.02999999999999997,
+          "margin_vs_read_p": 0.3545394797735013,
+          "margin_vs_read_statistic": 387.0,
+          "arm_equals_probe_rate": 0.635,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.29,
+          "cv_ci95": [
+            0.225,
+            0.35
+          ],
+          "cv_acc_shuffled_control": 0.31,
+          "margin_minus_control": -0.020000000000000018,
+          "margin_vs_control_p": 0.6547208460185769,
+          "margin_vs_base_p": 0.04550026389635839,
+          "margin_minus_base": -0.08000000000000002,
+          "margin_minus_read": 0.009999999999999953,
+          "margin_vs_read_p": 0.6948866023724733,
+          "margin_vs_read_statistic": 162.0,
+          "arm_equals_probe_rate": 0.76,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 20,
+      "noise": 0.0,
+      "achieved_read_acc": 0.695,
+      "achieved_read_ci95": [
+        0.63,
+        0.755
+      ],
+      "read_shuffled_acc": 0.36,
+      "read_vs_base_p": 6.849459195246075e-10,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.405,
+          "cv_ci95": [
+            0.34,
+            0.4751249999999993
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.030000000000000027,
+          "margin_vs_control_p": 0.057779571123597245,
+          "margin_vs_base_p": 0.0081509715935027,
+          "margin_minus_base": 0.03500000000000003,
+          "margin_minus_read": -0.2899999999999999,
+          "margin_vs_read_p": 1.2901231329521955e-08,
+          "margin_vs_read_statistic": 1207.5,
+          "arm_equals_probe_rate": 0.41,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.425,
+          "cv_ci95": [
+            0.36,
+            0.4951249999999993
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.04999999999999999,
+          "margin_vs_control_p": 0.018422125454099002,
+          "margin_vs_base_p": 0.0045086983649042355,
+          "margin_minus_base": 0.05499999999999999,
+          "margin_minus_read": -0.26999999999999996,
+          "margin_vs_read_p": 3.560879370765604e-08,
+          "margin_vs_read_statistic": 1018.5,
+          "arm_equals_probe_rate": 0.46,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.475,
+          "cv_ci95": [
+            0.41,
+            0.545
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": 0.09499999999999997,
+          "margin_vs_control_p": 0.0006436975254696864,
+          "margin_vs_base_p": 2.669149803181262e-05,
+          "margin_minus_base": 0.10499999999999998,
+          "margin_minus_read": -0.21999999999999997,
+          "margin_vs_read_p": 2.0887539043901877e-06,
+          "margin_vs_read_statistic": 913.5,
+          "arm_equals_probe_rate": 0.52,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.575,
+          "cv_ci95": [
+            0.505,
+            0.645
+          ],
+          "cv_acc_shuffled_control": 0.41,
+          "margin_minus_control": 0.16499999999999998,
+          "margin_vs_control_p": 1.7372415303251244e-05,
+          "margin_vs_base_p": 2.225020085812255e-09,
+          "margin_minus_base": 0.20499999999999996,
+          "margin_minus_read": -0.12,
+          "margin_vs_read_p": 0.003609346935945442,
+          "margin_vs_read_statistic": 759.0,
+          "arm_equals_probe_rate": 0.63,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.695,
+          "cv_ci95": [
+            0.63,
+            0.755
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.32499999999999996,
+          "margin_vs_control_p": 1.5818398471873083e-11,
+          "margin_vs_base_p": 1.287631627978522e-13,
+          "margin_minus_base": 0.32499999999999996,
+          "margin_minus_read": 0.0,
+          "margin_vs_read_p": 1.0,
+          "margin_vs_read_statistic": 410.0,
+          "arm_equals_probe_rate": 0.785,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 20,
+      "noise": 0.15,
+      "achieved_read_acc": 0.615,
+      "achieved_read_ci95": [
+        0.545,
+        0.685
+      ],
+      "read_shuffled_acc": 0.335,
+      "read_vs_base_p": 4.974495951054886e-07,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.385,
+          "cv_ci95": [
+            0.32,
+            0.455
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.015000000000000013,
+          "margin_vs_control_p": 0.25683925795785656,
+          "margin_vs_base_p": 0.17971249487899976,
+          "margin_minus_base": 0.015000000000000013,
+          "margin_minus_read": -0.22999999999999998,
+          "margin_vs_read_p": 1.62001398246647e-06,
+          "margin_vs_read_statistic": 1069.5,
+          "arm_equals_probe_rate": 0.455,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.415,
+          "cv_ci95": [
+            0.35,
+            0.485
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.044999999999999984,
+          "margin_vs_control_p": 0.02013675155034634,
+          "margin_vs_base_p": 0.02013675155034634,
+          "margin_minus_base": 0.044999999999999984,
+          "margin_minus_read": -0.2,
+          "margin_vs_read_p": 1.2749674921097057e-05,
+          "margin_vs_read_statistic": 935.0,
+          "arm_equals_probe_rate": 0.505,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.465,
+          "cv_ci95": [
+            0.4,
+            0.5351249999999993
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.11000000000000004,
+          "margin_vs_control_p": 0.00024573277993030434,
+          "margin_vs_base_p": 0.0004183778458646427,
+          "margin_minus_base": 0.09500000000000003,
+          "margin_minus_read": -0.14999999999999997,
+          "margin_vs_read_p": 0.0005790632172192767,
+          "margin_vs_read_statistic": 885.5,
+          "arm_equals_probe_rate": 0.565,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.57,
+          "cv_ci95": [
+            0.5,
+            0.64
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.21499999999999997,
+          "margin_vs_control_p": 2.2597602922301812e-07,
+          "margin_vs_base_p": 5.229935515506706e-08,
+          "margin_minus_base": 0.19999999999999996,
+          "margin_minus_read": -0.04500000000000004,
+          "margin_vs_read_p": 0.22491588401596185,
+          "margin_vs_read_statistic": 644.0,
+          "arm_equals_probe_rate": 0.685,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.605,
+          "cv_ci95": [
+            0.54,
+            0.67
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.235,
+          "margin_vs_control_p": 1.095422723089862e-06,
+          "margin_vs_base_p": 2.434761928720126e-08,
+          "margin_minus_base": 0.235,
+          "margin_minus_read": -0.010000000000000009,
+          "margin_vs_read_p": 0.7316005889599013,
+          "margin_vs_read_statistic": 280.0,
+          "arm_equals_probe_rate": 0.8,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 20,
+      "noise": 0.3,
+      "achieved_read_acc": 0.49,
+      "achieved_read_ci95": [
+        0.42,
+        0.555
+      ],
+      "read_shuffled_acc": 0.375,
+      "read_vs_base_p": 0.018602929901135743,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.385,
+          "cv_ci95": [
+            0.32,
+            0.455
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.030000000000000027,
+          "margin_vs_control_p": 0.014305878435429648,
+          "margin_vs_base_p": 0.17971249487899976,
+          "margin_minus_base": 0.015000000000000013,
+          "margin_minus_read": -0.10499999999999998,
+          "margin_vs_read_p": 0.034808478811867126,
+          "margin_vs_read_statistic": 1950.0,
+          "arm_equals_probe_rate": 0.395,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.39,
+          "cv_ci95": [
+            0.325,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.31731050786291415,
+          "margin_vs_base_p": 0.24821307898992362,
+          "margin_minus_base": 0.020000000000000018,
+          "margin_minus_read": -0.09999999999999998,
+          "margin_vs_read_p": 0.03705621856411893,
+          "margin_vs_read_statistic": 1674.0,
+          "arm_equals_probe_rate": 0.43,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.43,
+          "cv_ci95": [
+            0.364875,
+            0.5
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.07,
+          "margin_vs_control_p": 0.019630657257290667,
+          "margin_vs_base_p": 0.018602929901135743,
+          "margin_minus_base": 0.06,
+          "margin_minus_read": -0.06,
+          "margin_vs_read_p": 0.185112016614688,
+          "margin_vs_read_statistic": 1452.5,
+          "arm_equals_probe_rate": 0.495,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.445,
+          "cv_ci95": [
+            0.375,
+            0.515
+          ],
+          "cv_acc_shuffled_control": 0.4,
+          "margin_minus_control": 0.044999999999999984,
+          "margin_vs_control_p": 0.2785986718379625,
+          "margin_vs_base_p": 0.03212457120765663,
+          "margin_minus_base": 0.07500000000000001,
+          "margin_minus_read": -0.044999999999999984,
+          "margin_vs_read_p": 0.24918470526149716,
+          "margin_vs_read_statistic": 806.0,
+          "arm_equals_probe_rate": 0.625,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.495,
+          "cv_ci95": [
+            0.425,
+            0.56
+          ],
+          "cv_acc_shuffled_control": 0.39,
+          "margin_minus_control": 0.10499999999999998,
+          "margin_vs_control_p": 0.0366557155514159,
+          "margin_vs_base_p": 0.0034331928547018152,
+          "margin_minus_base": 0.125,
+          "margin_minus_read": 0.0050000000000000044,
+          "margin_vs_read_p": 0.8657723749926214,
+          "margin_vs_read_statistic": 306.0,
+          "arm_equals_probe_rate": 0.78,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 20,
+      "noise": 0.45,
+      "achieved_read_acc": 0.47,
+      "achieved_read_ci95": [
+        0.405,
+        0.54
+      ],
+      "read_shuffled_acc": 0.31,
+      "read_vs_base_p": 0.027200350616306535,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.4,
+          "cv_ci95": [
+            0.335,
+            0.475
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.04500000000000004,
+          "margin_vs_control_p": 0.006655605482949377,
+          "margin_vs_base_p": 0.033894853524689246,
+          "margin_minus_base": 0.030000000000000027,
+          "margin_minus_read": -0.06999999999999995,
+          "margin_vs_read_p": 0.10829365589900902,
+          "margin_vs_read_statistic": 1193.5,
+          "arm_equals_probe_rate": 0.46,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.395,
+          "cv_ci95": [
+            0.33,
+            0.46512499999999934
+          ],
+          "cv_acc_shuffled_control": 0.345,
+          "margin_minus_control": 0.050000000000000044,
+          "margin_vs_control_p": 0.012419330651552265,
+          "margin_vs_base_p": 0.16551785869747015,
+          "margin_minus_base": 0.025000000000000022,
+          "margin_minus_read": -0.07499999999999996,
+          "margin_vs_read_p": 0.07915379197752347,
+          "margin_vs_read_statistic": 1073.0,
+          "arm_equals_probe_rate": 0.48,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.435,
+          "cv_ci95": [
+            0.37,
+            0.51
+          ],
+          "cv_acc_shuffled_control": 0.35,
+          "margin_minus_control": 0.08500000000000002,
+          "margin_vs_control_p": 0.001069212754919368,
+          "margin_vs_base_p": 0.006714389785549478,
+          "margin_minus_base": 0.065,
+          "margin_minus_read": -0.034999999999999976,
+          "margin_vs_read_p": 0.3778216371000638,
+          "margin_vs_read_statistic": 896.0,
+          "arm_equals_probe_rate": 0.545,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.485,
+          "cv_ci95": [
+            0.42,
+            0.56
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.10999999999999999,
+          "margin_vs_control_p": 0.0014961642897455532,
+          "margin_vs_base_p": 0.0001560888275095421,
+          "margin_minus_base": 0.11499999999999999,
+          "margin_minus_read": 0.015000000000000013,
+          "margin_vs_read_p": 0.6682351417952492,
+          "margin_vs_read_statistic": 575.0,
+          "arm_equals_probe_rate": 0.645,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.495,
+          "cv_ci95": [
+            0.43,
+            0.565
+          ],
+          "cv_acc_shuffled_control": 0.335,
+          "margin_minus_control": 0.15999999999999998,
+          "margin_vs_control_p": 0.00010421194515808925,
+          "margin_vs_base_p": 0.0004640375320753484,
+          "margin_minus_base": 0.125,
+          "margin_minus_read": 0.025000000000000022,
+          "margin_vs_read_p": 0.39802471950693785,
+          "margin_vs_read_statistic": 270.0,
+          "arm_equals_probe_rate": 0.74,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 20,
+      "noise": 0.6,
+      "achieved_read_acc": 0.345,
+      "achieved_read_ci95": [
+        0.28,
+        0.415
+      ],
+      "read_shuffled_acc": 0.29,
+      "read_vs_base_p": 0.6255852315243253,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.38,
+          "cv_ci95": [
+            0.315,
+            0.45
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.010000000000000009,
+          "margin_vs_control_p": 0.4142161782425253,
+          "margin_vs_base_p": 0.4142161782425253,
+          "margin_minus_base": 0.010000000000000009,
+          "margin_minus_read": 0.03500000000000003,
+          "margin_vs_read_p": 0.4860994597361773,
+          "margin_vs_read_statistic": 2397.0,
+          "arm_equals_probe_rate": 0.35,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.375,
+          "cv_ci95": [
+            0.31,
+            0.445
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.015000000000000013,
+          "margin_vs_control_p": 0.4385780260809998,
+          "margin_vs_base_p": 0.7815112949987133,
+          "margin_minus_base": 0.0050000000000000044,
+          "margin_minus_read": 0.030000000000000027,
+          "margin_vs_read_p": 0.5360133695378217,
+          "margin_vs_read_statistic": 2090.0,
+          "arm_equals_probe_rate": 0.395,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.38,
+          "cv_ci95": [
+            0.315,
+            0.445
+          ],
+          "cv_acc_shuffled_control": 0.345,
+          "margin_minus_control": 0.03500000000000003,
+          "margin_vs_control_p": 0.2086677876982641,
+          "margin_vs_base_p": 0.6948866023724733,
+          "margin_minus_base": 0.010000000000000009,
+          "margin_minus_read": 0.03500000000000003,
+          "margin_vs_read_p": 0.4422793839072202,
+          "margin_vs_read_statistic": 1596.0,
+          "arm_equals_probe_rate": 0.445,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.37,
+          "cv_ci95": [
+            0.3,
+            0.435
+          ],
+          "cv_acc_shuffled_control": 0.35,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.5716076449533316,
+          "margin_vs_base_p": 1.0,
+          "margin_minus_base": 0.0,
+          "margin_minus_read": 0.025000000000000022,
+          "margin_vs_read_p": 0.522052723715288,
+          "margin_vs_read_statistic": 868.0,
+          "arm_equals_probe_rate": 0.58,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.355,
+          "cv_ci95": [
+            0.29,
+            0.42
+          ],
+          "cv_acc_shuffled_control": 0.345,
+          "margin_minus_control": 0.010000000000000009,
+          "margin_vs_control_p": 0.8110701293339075,
+          "margin_vs_base_p": 0.7098152665657174,
+          "margin_minus_base": -0.015000000000000013,
+          "margin_minus_read": 0.010000000000000009,
+          "margin_vs_read_p": 0.763024600552995,
+          "margin_vs_read_statistic": 472.5,
+          "arm_equals_probe_rate": 0.71,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 20,
+      "noise": 0.75,
+      "achieved_read_acc": 0.275,
+      "achieved_read_ci95": [
+        0.215,
+        0.34
+      ],
+      "read_shuffled_acc": 0.305,
+      "read_vs_base_p": 0.03702203943241622,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.35,
+          "cv_ci95": [
+            0.285,
+            0.42
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": -0.015000000000000013,
+          "margin_vs_control_p": 0.17971249487899976,
+          "margin_vs_base_p": 0.10247043485974941,
+          "margin_minus_base": -0.020000000000000018,
+          "margin_minus_read": 0.07499999999999996,
+          "margin_vs_read_p": 0.09148192105683219,
+          "margin_vs_read_statistic": 1280.0,
+          "arm_equals_probe_rate": 0.38,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.35,
+          "cv_ci95": [
+            0.285,
+            0.42
+          ],
+          "cv_acc_shuffled_control": 0.385,
+          "margin_minus_control": -0.03500000000000003,
+          "margin_vs_control_p": 0.07070114486598297,
+          "margin_vs_base_p": 0.31731050786291415,
+          "margin_minus_base": -0.020000000000000018,
+          "margin_minus_read": 0.07499999999999996,
+          "margin_vs_read_p": 0.07504773652740872,
+          "margin_vs_read_statistic": 1008.0,
+          "arm_equals_probe_rate": 0.435,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.345,
+          "cv_ci95": [
+            0.275,
+            0.415
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": -0.010000000000000009,
+          "margin_vs_control_p": 0.7456027889274615,
+          "margin_vs_base_p": 0.36917141633269157,
+          "margin_minus_base": -0.025000000000000022,
+          "margin_minus_read": 0.06999999999999995,
+          "margin_vs_read_p": 0.061368829139402156,
+          "margin_vs_read_statistic": 598.5,
+          "arm_equals_probe_rate": 0.525,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.34,
+          "cv_ci95": [
+            0.275,
+            0.405
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": -0.014999999999999958,
+          "margin_vs_control_p": 0.7054569861112734,
+          "margin_vs_base_p": 0.3763444934986555,
+          "margin_minus_base": -0.02999999999999997,
+          "margin_minus_read": 0.065,
+          "margin_vs_read_p": 0.04233022912136072,
+          "margin_vs_read_statistic": 294.0,
+          "arm_equals_probe_rate": 0.625,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.31,
+          "cv_ci95": [
+            0.245,
+            0.375
+          ],
+          "cv_acc_shuffled_control": 0.325,
+          "margin_minus_control": -0.015000000000000013,
+          "margin_vs_control_p": 0.7324398999038724,
+          "margin_vs_base_p": 0.1275083304905829,
+          "margin_minus_base": -0.06,
+          "margin_minus_read": 0.034999999999999976,
+          "margin_vs_read_p": 0.14439979221307142,
+          "margin_vs_read_statistic": 96.0,
+          "arm_equals_probe_rate": 0.765,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 24,
+      "noise": 0.0,
+      "achieved_read_acc": 0.595,
+      "achieved_read_ci95": [
+        0.529875,
+        0.66
+      ],
+      "read_shuffled_acc": 0.355,
+      "read_vs_base_p": 7.54630647402213e-06,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.4,
+          "cv_ci95": [
+            0.335,
+            0.47
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.030000000000000027,
+          "margin_vs_control_p": 0.014305878435429648,
+          "margin_vs_base_p": 0.014305878435429648,
+          "margin_minus_base": 0.030000000000000027,
+          "margin_minus_read": -0.19499999999999995,
+          "margin_vs_read_p": 6.299128174319685e-05,
+          "margin_vs_read_statistic": 1344.0,
+          "arm_equals_probe_rate": 0.425,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.415,
+          "cv_ci95": [
+            0.35,
+            0.49
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": 0.034999999999999976,
+          "margin_vs_control_p": 0.05220363534131467,
+          "margin_vs_base_p": 0.006655605482949377,
+          "margin_minus_base": 0.044999999999999984,
+          "margin_minus_read": -0.18,
+          "margin_vs_read_p": 0.00017455002670346034,
+          "margin_vs_read_statistic": 1302.0,
+          "arm_equals_probe_rate": 0.45,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.45,
+          "cv_ci95": [
+            0.38,
+            0.525
+          ],
+          "cv_acc_shuffled_control": 0.4,
+          "margin_minus_control": 0.04999999999999999,
+          "margin_vs_control_p": 0.04986020375690694,
+          "margin_vs_base_p": 0.0003466193511346668,
+          "margin_minus_base": 0.08000000000000002,
+          "margin_minus_read": -0.14499999999999996,
+          "margin_vs_read_p": 0.0016580793458904754,
+          "margin_vs_read_statistic": 1204.0,
+          "arm_equals_probe_rate": 0.495,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.55,
+          "cv_ci95": [
+            0.485,
+            0.615
+          ],
+          "cv_acc_shuffled_control": 0.415,
+          "margin_minus_control": 0.13500000000000006,
+          "margin_vs_control_p": 0.00011472012104656031,
+          "margin_vs_base_p": 5.7243624267391174e-08,
+          "margin_minus_base": 0.18000000000000005,
+          "margin_minus_read": -0.04499999999999993,
+          "margin_vs_read_p": 0.2715391358765703,
+          "margin_vs_read_statistic": 986.0,
+          "arm_equals_probe_rate": 0.62,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.625,
+          "cv_ci95": [
+            0.56,
+            0.69
+          ],
+          "cv_acc_shuffled_control": 0.405,
+          "margin_minus_control": 0.21999999999999997,
+          "margin_vs_control_p": 1.17987791921159e-06,
+          "margin_vs_base_p": 1.4253845254850245e-09,
+          "margin_minus_base": 0.255,
+          "margin_minus_read": 0.030000000000000027,
+          "margin_vs_read_p": 0.36571229628151325,
+          "margin_vs_read_statistic": 427.5,
+          "arm_equals_probe_rate": 0.76,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 24,
+      "noise": 0.15,
+      "achieved_read_acc": 0.535,
+      "achieved_read_ci95": [
+        0.47,
+        0.605
+      ],
+      "read_shuffled_acc": 0.39,
+      "read_vs_base_p": 0.0008062436020126933,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.385,
+          "cv_ci95": [
+            0.325,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.010000000000000009,
+          "margin_vs_control_p": 0.31731050786291415,
+          "margin_vs_base_p": 0.0832645166635504,
+          "margin_minus_base": 0.015000000000000013,
+          "margin_minus_read": -0.15000000000000002,
+          "margin_vs_read_p": 0.001973020087518942,
+          "margin_vs_read_statistic": 1520.0,
+          "arm_equals_probe_rate": 0.415,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.395,
+          "cv_ci95": [
+            0.33,
+            0.465
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": 0.015000000000000013,
+          "margin_vs_control_p": 0.40538055645894233,
+          "margin_vs_base_p": 0.0955807045456294,
+          "margin_minus_base": 0.025000000000000022,
+          "margin_minus_read": -0.14,
+          "margin_vs_read_p": 0.003162763790369106,
+          "margin_vs_read_statistic": 1410.5,
+          "arm_equals_probe_rate": 0.44,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.43,
+          "cv_ci95": [
+            0.365,
+            0.5001249999999993
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.07,
+          "margin_vs_control_p": 0.006039559048656822,
+          "margin_vs_base_p": 0.007290358091535638,
+          "margin_minus_base": 0.06,
+          "margin_minus_read": -0.10500000000000004,
+          "margin_vs_read_p": 0.01814310346496377,
+          "margin_vs_read_statistic": 1160.0,
+          "arm_equals_probe_rate": 0.5,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.46,
+          "cv_ci95": [
+            0.39,
+            0.53
+          ],
+          "cv_acc_shuffled_control": 0.39,
+          "margin_minus_control": 0.07,
+          "margin_vs_control_p": 0.034808478811867126,
+          "margin_vs_base_p": 0.005478553242547366,
+          "margin_minus_base": 0.09000000000000002,
+          "margin_minus_read": -0.07500000000000001,
+          "margin_vs_read_p": 0.05478806021494459,
+          "margin_vs_read_statistic": 713.0,
+          "arm_equals_probe_rate": 0.61,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.55,
+          "cv_ci95": [
+            0.48,
+            0.615
+          ],
+          "cv_acc_shuffled_control": 0.39,
+          "margin_minus_control": 0.16000000000000003,
+          "margin_vs_control_p": 0.0004096172279005818,
+          "margin_vs_base_p": 1.686355719600996e-05,
+          "margin_minus_base": 0.18000000000000005,
+          "margin_minus_read": 0.015000000000000013,
+          "margin_vs_read_p": 0.590013887163346,
+          "margin_vs_read_statistic": 224.0,
+          "arm_equals_probe_rate": 0.8,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 24,
+      "noise": 0.3,
+      "achieved_read_acc": 0.485,
+      "achieved_read_ci95": [
+        0.415,
+        0.55
+      ],
+      "read_shuffled_acc": 0.35,
+      "read_vs_base_p": 0.018287243988324032,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.39,
+          "cv_ci95": [
+            0.325,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.025000000000000022,
+          "margin_vs_control_p": 0.05878172135535886,
+          "margin_vs_base_p": 0.10247043485974941,
+          "margin_minus_base": 0.020000000000000018,
+          "margin_minus_read": -0.09499999999999997,
+          "margin_vs_read_p": 0.044009956390248774,
+          "margin_vs_read_statistic": 1575.0,
+          "arm_equals_probe_rate": 0.435,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.395,
+          "cv_ci95": [
+            0.325,
+            0.47
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.31731050786291415,
+          "margin_vs_base_p": 0.16551785869747015,
+          "margin_minus_base": 0.025000000000000022,
+          "margin_minus_read": -0.08999999999999997,
+          "margin_vs_read_p": 0.05225950031796976,
+          "margin_vs_read_statistic": 1479.0,
+          "arm_equals_probe_rate": 0.46,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.44,
+          "cv_ci95": [
+            0.375,
+            0.51
+          ],
+          "cv_acc_shuffled_control": 0.395,
+          "margin_minus_control": 0.044999999999999984,
+          "margin_vs_control_p": 0.0832645166635504,
+          "margin_vs_base_p": 0.00426672482217613,
+          "margin_minus_base": 0.07,
+          "margin_minus_read": -0.044999999999999984,
+          "margin_vs_read_p": 0.3050588592616782,
+          "margin_vs_read_statistic": 1326.0,
+          "arm_equals_probe_rate": 0.52,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.51,
+          "cv_ci95": [
+            0.44,
+            0.58
+          ],
+          "cv_acc_shuffled_control": 0.41,
+          "margin_minus_control": 0.10000000000000003,
+          "margin_vs_control_p": 0.004677734981047266,
+          "margin_vs_base_p": 2.4304960694778967e-05,
+          "margin_minus_base": 0.14,
+          "margin_minus_read": 0.025000000000000022,
+          "margin_vs_read_p": 0.522052723715288,
+          "margin_vs_read_statistic": 868.0,
+          "arm_equals_probe_rate": 0.63,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.525,
+          "cv_ci95": [
+            0.455,
+            0.595
+          ],
+          "cv_acc_shuffled_control": 0.455,
+          "margin_minus_control": 0.07,
+          "margin_vs_control_p": 0.11752486809663916,
+          "margin_vs_base_p": 5.440352218250091e-05,
+          "margin_minus_base": 0.15500000000000003,
+          "margin_minus_read": 0.040000000000000036,
+          "margin_vs_read_p": 0.23818494999202244,
+          "margin_vs_read_statistic": 446.5,
+          "arm_equals_probe_rate": 0.725,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 24,
+      "noise": 0.45,
+      "achieved_read_acc": 0.455,
+      "achieved_read_ci95": [
+        0.385,
+        0.525
+      ],
+      "read_shuffled_acc": 0.335,
+      "read_vs_base_p": 0.055792946955538054,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.38,
+          "cv_ci95": [
+            0.315,
+            0.455
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.015000000000000013,
+          "margin_vs_control_p": 0.31731050786291415,
+          "margin_vs_base_p": 0.4142161782425253,
+          "margin_minus_base": 0.010000000000000009,
+          "margin_minus_read": -0.07500000000000001,
+          "margin_vs_read_p": 0.07915379197752347,
+          "margin_vs_read_statistic": 1073.0,
+          "arm_equals_probe_rate": 0.435,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.395,
+          "cv_ci95": [
+            0.33,
+            0.47
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.030000000000000027,
+          "margin_vs_control_p": 0.10880943004054568,
+          "margin_vs_base_p": 0.13166801602281422,
+          "margin_minus_base": 0.025000000000000022,
+          "margin_minus_read": -0.06,
+          "margin_vs_read_p": 0.1630243843065704,
+          "margin_vs_read_statistic": 1162.5,
+          "arm_equals_probe_rate": 0.445,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.44,
+          "cv_ci95": [
+            0.375,
+            0.515
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.07500000000000001,
+          "margin_vs_control_p": 0.005345676872654233,
+          "margin_vs_base_p": 0.00426672482217613,
+          "margin_minus_base": 0.07,
+          "margin_minus_read": -0.015000000000000013,
+          "margin_vs_read_p": 0.7098152665657174,
+          "margin_vs_read_statistic": 1023.0,
+          "arm_equals_probe_rate": 0.51,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.49,
+          "cv_ci95": [
+            0.42,
+            0.56
+          ],
+          "cv_acc_shuffled_control": 0.35,
+          "margin_minus_control": 0.14,
+          "margin_vs_control_p": 1.5568043135114903e-05,
+          "margin_vs_base_p": 6.334248366623973e-05,
+          "margin_minus_base": 0.12,
+          "margin_minus_read": 0.034999999999999976,
+          "margin_vs_read_p": 0.34523107177184,
+          "margin_vs_read_statistic": 672.0,
+          "arm_equals_probe_rate": 0.605,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.465,
+          "cv_ci95": [
+            0.39987500000000004,
+            0.535
+          ],
+          "cv_acc_shuffled_control": 0.3,
+          "margin_minus_control": 0.16500000000000004,
+          "margin_vs_control_p": 3.215955563200678e-05,
+          "margin_vs_base_p": 0.009058174221473078,
+          "margin_minus_base": 0.09500000000000003,
+          "margin_minus_read": 0.010000000000000009,
+          "margin_vs_read_p": 0.7456027889274615,
+          "margin_vs_read_statistic": 351.0,
+          "arm_equals_probe_rate": 0.71,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 24,
+      "noise": 0.6,
+      "achieved_read_acc": 0.36,
+      "achieved_read_ci95": [
+        0.295,
+        0.425
+      ],
+      "read_shuffled_acc": 0.34,
+      "read_vs_base_p": 0.8348273291852392,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.38,
+          "cv_ci95": [
+            0.315,
+            0.45
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.0050000000000000044,
+          "margin_vs_control_p": 0.6547208460185769,
+          "margin_vs_base_p": 0.31731050786291415,
+          "margin_minus_base": 0.010000000000000009,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.6698153575994166,
+          "margin_vs_read_statistic": 1869.0,
+          "arm_equals_probe_rate": 0.405,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.375,
+          "cv_ci95": [
+            0.31,
+            0.445
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": 0.0,
+          "margin_vs_control_p": 1.0,
+          "margin_vs_base_p": 0.7054569861112734,
+          "margin_minus_base": 0.0050000000000000044,
+          "margin_minus_read": 0.015000000000000013,
+          "margin_vs_read_p": 0.7477301646241347,
+          "margin_vs_read_statistic": 1848.0,
+          "arm_equals_probe_rate": 0.415,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.365,
+          "cv_ci95": [
+            0.3,
+            0.435
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": -0.0050000000000000044,
+          "margin_vs_control_p": 0.8185458083820434,
+          "margin_vs_base_p": 0.8083651559145103,
+          "margin_minus_base": -0.0050000000000000044,
+          "margin_minus_read": 0.0050000000000000044,
+          "margin_vs_read_p": 0.9104200005098012,
+          "margin_vs_read_statistic": 1560.0,
+          "arm_equals_probe_rate": 0.47,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.36,
+          "cv_ci95": [
+            0.295,
+            0.425
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": -0.010000000000000009,
+          "margin_vs_control_p": 0.7815112949987133,
+          "margin_vs_base_p": 0.7316005889599013,
+          "margin_minus_base": -0.010000000000000009,
+          "margin_minus_read": 0.0,
+          "margin_vs_read_p": 1.0,
+          "margin_vs_read_statistic": 976.5,
+          "arm_equals_probe_rate": 0.57,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.38,
+          "cv_ci95": [
+            0.315,
+            0.445
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.010000000000000009,
+          "margin_vs_control_p": 0.8161533547581272,
+          "margin_vs_base_p": 0.7854947471183542,
+          "margin_minus_base": 0.010000000000000009,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.5464935954065822,
+          "margin_vs_read_statistic": 450.0,
+          "arm_equals_probe_rate": 0.695,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 24,
+      "noise": 0.75,
+      "achieved_read_acc": 0.29,
+      "achieved_read_ci95": [
+        0.225,
+        0.35
+      ],
+      "read_shuffled_acc": 0.345,
+      "read_vs_base_p": 0.09169028154942915,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.355,
+          "cv_ci95": [
+            0.29,
+            0.425
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": -0.015000000000000013,
+          "margin_vs_control_p": 0.25683925795785656,
+          "margin_vs_base_p": 0.17971249487899976,
+          "margin_minus_base": -0.015000000000000013,
+          "margin_minus_read": 0.065,
+          "margin_vs_read_p": 0.16339423080314586,
+          "margin_vs_read_statistic": 1628.0,
+          "arm_equals_probe_rate": 0.355,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.355,
+          "cv_ci95": [
+            0.29,
+            0.4251249999999993
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": -0.015000000000000013,
+          "margin_vs_control_p": 0.40538055645894233,
+          "margin_vs_base_p": 0.31731050786291415,
+          "margin_minus_base": -0.015000000000000013,
+          "margin_minus_read": 0.065,
+          "margin_vs_read_p": 0.15852551722895514,
+          "margin_vs_read_statistic": 1548.0,
+          "arm_equals_probe_rate": 0.37,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.345,
+          "cv_ci95": [
+            0.28,
+            0.42
+          ],
+          "cv_acc_shuffled_control": 0.375,
+          "margin_minus_control": -0.030000000000000027,
+          "margin_vs_control_p": 0.2008251226951454,
+          "margin_vs_base_p": 0.19670560245894686,
+          "margin_minus_base": -0.025000000000000022,
+          "margin_minus_read": 0.05499999999999999,
+          "margin_vs_read_p": 0.21586564200583258,
+          "margin_vs_read_statistic": 1360.0,
+          "arm_equals_probe_rate": 0.41,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.32,
+          "cv_ci95": [
+            0.259875,
+            0.39
+          ],
+          "cv_acc_shuffled_control": 0.39,
+          "margin_minus_control": -0.07,
+          "margin_vs_control_p": 0.026856695507524397,
+          "margin_vs_base_p": 0.10475748984973063,
+          "margin_minus_base": -0.04999999999999999,
+          "margin_minus_read": 0.030000000000000027,
+          "margin_vs_read_p": 0.4226780741706355,
+          "margin_vs_read_statistic": 712.5,
+          "arm_equals_probe_rate": 0.52,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.315,
+          "cv_ci95": [
+            0.25,
+            0.38
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": -0.05499999999999999,
+          "margin_vs_control_p": 0.16578668398105822,
+          "margin_vs_base_p": 0.145120357206937,
+          "margin_minus_base": -0.05499999999999999,
+          "margin_minus_read": 0.025000000000000022,
+          "margin_vs_read_p": 0.42333964158244364,
+          "margin_vs_read_statistic": 340.0,
+          "arm_equals_probe_rate": 0.68,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    }
+  ],
+  "break_even": {
+    "layer": 16,
+    "alpha": 4.0,
+    "n_levels": 6,
+    "n_levels_beating_base": 5,
+    "lowest_read_acc_that_beats_base": 0.35,
+    "highest_read_acc_that_fails_to_beat_base": 0.28,
+    "fitted_crossing_read_acc": 0.33657227923476496,
+    "note": "achieved read accuracy is not monotone in the noise rate (one corruption draw per level), so the break-even is a bracket, not a single measured threshold"
+  },
+  "headline_rows": [
+    {
+      "layer": 16,
+      "noise": 0.0,
+      "achieved_read_acc": 0.72,
+      "achieved_read_ci95": [
+        0.655,
+        0.78
+      ],
+      "read_shuffled_acc": 0.375,
+      "read_vs_base_p": 2.4851981467402263e-11,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.405,
+          "cv_ci95": [
+            0.34,
+            0.475
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.040000000000000036,
+          "margin_vs_control_p": 0.011412036386001651,
+          "margin_vs_base_p": 0.0081509715935027,
+          "margin_minus_base": 0.03500000000000003,
+          "margin_minus_read": -0.31499999999999995,
+          "margin_vs_read_p": 7.838177343355187e-10,
+          "margin_vs_read_statistic": 1113.0,
+          "arm_equals_probe_rate": 0.425,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.45,
+          "cv_ci95": [
+            0.38,
+            0.5201249999999993
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.08500000000000002,
+          "margin_vs_control_p": 9.616588268883476e-05,
+          "margin_vs_base_p": 6.334248366623973e-05,
+          "margin_minus_base": 0.08000000000000002,
+          "margin_minus_read": -0.26999999999999996,
+          "margin_vs_read_p": 3.560879370765604e-08,
+          "margin_vs_read_statistic": 1018.5,
+          "arm_equals_probe_rate": 0.475,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.53,
+          "cv_ci95": [
+            0.465,
+            0.6
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.17000000000000004,
+          "margin_vs_control_p": 7.621291296382934e-08,
+          "margin_vs_base_p": 4.066142456598801e-08,
+          "margin_minus_base": 0.16000000000000003,
+          "margin_minus_read": -0.18999999999999995,
+          "margin_vs_read_p": 2.151786437812018e-05,
+          "margin_vs_read_statistic": 850.5,
+          "arm_equals_probe_rate": 0.565,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.605,
+          "cv_ci95": [
+            0.535,
+            0.675
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.25,
+          "margin_vs_control_p": 2.2848239252562593e-09,
+          "margin_vs_base_p": 4.80629052662246e-10,
+          "margin_minus_base": 0.235,
+          "margin_minus_read": -0.11499999999999999,
+          "margin_vs_read_p": 0.003231131067255672,
+          "margin_vs_read_statistic": 589.0,
+          "arm_equals_probe_rate": 0.675,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.72,
+          "cv_ci95": [
+            0.66,
+            0.78
+          ],
+          "cv_acc_shuffled_control": 0.33,
+          "margin_minus_control": 0.38999999999999996,
+          "margin_vs_control_p": 2.032909454840273e-14,
+          "margin_vs_base_p": 2.2126319776132104e-14,
+          "margin_minus_base": 0.35,
+          "margin_minus_read": 0.0,
+          "margin_vs_read_p": 1.0,
+          "margin_vs_read_statistic": 264.0,
+          "arm_equals_probe_rate": 0.83,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "noise": 0.15,
+      "achieved_read_acc": 0.655,
+      "achieved_read_ci95": [
+        0.585,
+        0.725
+      ],
+      "read_shuffled_acc": 0.35,
+      "read_vs_base_p": 1.0119391415088911e-08,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.405,
+          "cv_ci95": [
+            0.344875,
+            0.475
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.040000000000000036,
+          "margin_vs_control_p": 0.011412036386001651,
+          "margin_vs_base_p": 0.0081509715935027,
+          "margin_minus_base": 0.03500000000000003,
+          "margin_minus_read": -0.25,
+          "margin_vs_read_p": 2.507955312429117e-07,
+          "margin_vs_read_statistic": 1045.0,
+          "arm_equals_probe_rate": 0.44,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.425,
+          "cv_ci95": [
+            0.36,
+            0.495
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.05499999999999999,
+          "margin_vs_control_p": 0.016377308341494895,
+          "margin_vs_base_p": 0.0045086983649042355,
+          "margin_minus_base": 0.05499999999999999,
+          "margin_minus_read": -0.23000000000000004,
+          "margin_vs_read_p": 9.408810897720122e-07,
+          "margin_vs_read_statistic": 934.5,
+          "arm_equals_probe_rate": 0.48,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.485,
+          "cv_ci95": [
+            0.415,
+            0.555
+          ],
+          "cv_acc_shuffled_control": 0.345,
+          "margin_minus_control": 0.14,
+          "margin_vs_control_p": 5.567024236927999e-06,
+          "margin_vs_base_p": 9.58400566647125e-06,
+          "margin_minus_base": 0.11499999999999999,
+          "margin_minus_read": -0.17000000000000004,
+          "margin_vs_read_p": 0.00011824234847146927,
+          "margin_vs_read_statistic": 869.0,
+          "arm_equals_probe_rate": 0.54,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.595,
+          "cv_ci95": [
+            0.53,
+            0.665
+          ],
+          "cv_acc_shuffled_control": 0.325,
+          "margin_minus_control": 0.26999999999999996,
+          "margin_vs_control_p": 5.8132692499589263e-11,
+          "margin_vs_base_p": 2.516280111892313e-09,
+          "margin_minus_base": 0.22499999999999998,
+          "margin_minus_read": -0.06000000000000005,
+          "margin_vs_read_p": 0.0960923294556733,
+          "margin_vs_read_statistic": 530.0,
+          "arm_equals_probe_rate": 0.695,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.635,
+          "cv_ci95": [
+            0.57,
+            0.705
+          ],
+          "cv_acc_shuffled_control": 0.32,
+          "margin_minus_control": 0.315,
+          "margin_vs_control_p": 1.5879074599059602e-10,
+          "margin_vs_base_p": 1.5419968463885655e-09,
+          "margin_minus_base": 0.265,
+          "margin_minus_read": -0.020000000000000018,
+          "margin_vs_read_p": 0.4496917979688909,
+          "margin_vs_read_statistic": 174.0,
+          "arm_equals_probe_rate": 0.835,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "noise": 0.3,
+      "achieved_read_acc": 0.535,
+      "achieved_read_ci95": [
+        0.465,
+        0.605
+      ],
+      "read_shuffled_acc": 0.35,
+      "read_vs_base_p": 0.0014215940314218835,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.375,
+          "cv_ci95": [
+            0.31,
+            0.45
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.10247043485974941,
+          "margin_vs_base_p": 0.7054569861112734,
+          "margin_minus_base": 0.0050000000000000044,
+          "margin_minus_read": -0.16000000000000003,
+          "margin_vs_read_p": 0.0013742758758316942,
+          "margin_vs_read_statistic": 1717.0,
+          "arm_equals_probe_rate": 0.42,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.4,
+          "cv_ci95": [
+            0.335,
+            0.47
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.03500000000000003,
+          "margin_vs_control_p": 0.05220363534131467,
+          "margin_vs_base_p": 0.0832645166635504,
+          "margin_minus_base": 0.030000000000000027,
+          "margin_minus_read": -0.135,
+          "margin_vs_read_p": 0.005603193599934253,
+          "margin_vs_read_statistic": 1632.0,
+          "arm_equals_probe_rate": 0.445,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.475,
+          "cv_ci95": [
+            0.41,
+            0.55
+          ],
+          "cv_acc_shuffled_control": 0.385,
+          "margin_minus_control": 0.08999999999999997,
+          "margin_vs_control_p": 0.0035004758217558273,
+          "margin_vs_base_p": 0.00016213175204392636,
+          "margin_minus_base": 0.10499999999999998,
+          "margin_minus_read": -0.06000000000000005,
+          "margin_vs_read_p": 0.17423138824802498,
+          "margin_vs_read_statistic": 1303.5,
+          "arm_equals_probe_rate": 0.535,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.525,
+          "cv_ci95": [
+            0.455,
+            0.595
+          ],
+          "cv_acc_shuffled_control": 0.41,
+          "margin_minus_control": 0.11500000000000005,
+          "margin_vs_control_p": 0.010601843568486579,
+          "margin_vs_base_p": 5.440352218250091e-05,
+          "margin_minus_base": 0.15500000000000003,
+          "margin_minus_read": -0.010000000000000009,
+          "margin_vs_read_p": 0.7854947471183542,
+          "margin_vs_read_statistic": 715.0,
+          "arm_equals_probe_rate": 0.67,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.575,
+          "cv_ci95": [
+            0.51,
+            0.645
+          ],
+          "cv_acc_shuffled_control": 0.4,
+          "margin_minus_control": 0.17499999999999993,
+          "margin_vs_control_p": 0.0004965137755319053,
+          "margin_vs_base_p": 6.784656077124206e-06,
+          "margin_minus_base": 0.20499999999999996,
+          "margin_minus_read": 0.039999999999999925,
+          "margin_vs_read_p": 0.14412703481601521,
+          "margin_vs_read_statistic": 170.5,
+          "arm_equals_probe_rate": 0.805,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "noise": 0.45,
+      "achieved_read_acc": 0.49,
+      "achieved_read_ci95": [
+        0.425,
+        0.555
+      ],
+      "read_shuffled_acc": 0.31,
+      "read_vs_base_p": 0.01234336035345503,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.39,
+          "cv_ci95": [
+            0.325,
+            0.46
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.025000000000000022,
+          "margin_vs_control_p": 0.05878172135535886,
+          "margin_vs_base_p": 0.10247043485974941,
+          "margin_minus_base": 0.020000000000000018,
+          "margin_minus_read": -0.09999999999999998,
+          "margin_vs_read_p": 0.031032519500144917,
+          "margin_vs_read_statistic": 1435.5,
+          "arm_equals_probe_rate": 0.42,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.4,
+          "cv_ci95": [
+            0.335,
+            0.47
+          ],
+          "cv_acc_shuffled_control": 0.345,
+          "margin_minus_control": 0.05500000000000005,
+          "margin_vs_control_p": 0.0045086983649042355,
+          "margin_vs_base_p": 0.0832645166635504,
+          "margin_minus_base": 0.030000000000000027,
+          "margin_minus_read": -0.08999999999999997,
+          "margin_vs_read_p": 0.046837413083638584,
+          "margin_vs_read_statistic": 1328.0,
+          "arm_equals_probe_rate": 0.45,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.435,
+          "cv_ci95": [
+            0.369875,
+            0.51
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.07,
+          "margin_vs_control_p": 0.006039559048656822,
+          "margin_vs_base_p": 0.006714389785549478,
+          "margin_minus_base": 0.065,
+          "margin_minus_read": -0.05499999999999999,
+          "margin_vs_read_p": 0.19793657403507403,
+          "margin_vs_read_statistic": 1147.0,
+          "arm_equals_probe_rate": 0.515,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.46,
+          "cv_ci95": [
+            0.395,
+            0.53
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.09500000000000003,
+          "margin_vs_control_p": 0.016675975260467973,
+          "margin_vs_base_p": 0.007955438571009407,
+          "margin_minus_base": 0.09000000000000002,
+          "margin_minus_read": -0.02999999999999997,
+          "margin_vs_read_p": 0.3961439091520741,
+          "margin_vs_read_statistic": 561.0,
+          "arm_equals_probe_rate": 0.65,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.515,
+          "cv_ci95": [
+            0.45,
+            0.58
+          ],
+          "cv_acc_shuffled_control": 0.34,
+          "margin_minus_control": 0.175,
+          "margin_vs_control_p": 0.00017515398878862552,
+          "margin_vs_base_p": 0.0003218994490963234,
+          "margin_minus_base": 0.14500000000000002,
+          "margin_minus_read": 0.025000000000000022,
+          "margin_vs_read_p": 0.384088249473852,
+          "margin_vs_read_statistic": 238.0,
+          "arm_equals_probe_rate": 0.78,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "noise": 0.6,
+      "achieved_read_acc": 0.35,
+      "achieved_read_ci95": [
+        0.285,
+        0.415
+      ],
+      "read_shuffled_acc": 0.315,
+      "read_vs_base_p": 0.6861678498552393,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.37,
+          "cv_ci95": [
+            0.305,
+            0.44
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": 0.0,
+          "margin_vs_control_p": 1.0,
+          "margin_vs_base_p": 1.0,
+          "margin_minus_base": 0.0,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.6698153575994166,
+          "margin_vs_read_statistic": 1869.0,
+          "arm_equals_probe_rate": 0.385,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.37,
+          "cv_ci95": [
+            0.305,
+            0.44
+          ],
+          "cv_acc_shuffled_control": 0.35,
+          "margin_minus_control": 0.020000000000000018,
+          "margin_vs_control_p": 0.31731050786291415,
+          "margin_vs_base_p": 1.0,
+          "margin_minus_base": 0.0,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.6625205835400574,
+          "margin_vs_read_statistic": 1700.0,
+          "arm_equals_probe_rate": 0.42,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.355,
+          "cv_ci95": [
+            0.29,
+            0.42
+          ],
+          "cv_acc_shuffled_control": 0.355,
+          "margin_minus_control": 0.0,
+          "margin_vs_control_p": 1.0,
+          "margin_vs_base_p": 0.590013887163346,
+          "margin_minus_base": -0.015000000000000013,
+          "margin_minus_read": 0.0050000000000000044,
+          "margin_vs_read_p": 0.9041774974987763,
+          "margin_vs_read_statistic": 1190.0,
+          "arm_equals_probe_rate": 0.49,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.37,
+          "cv_ci95": [
+            0.305,
+            0.435
+          ],
+          "cv_acc_shuffled_control": 0.38,
+          "margin_minus_control": -0.010000000000000009,
+          "margin_vs_control_p": 0.8025873486341526,
+          "margin_vs_base_p": 1.0,
+          "margin_minus_base": 0.0,
+          "margin_minus_read": 0.020000000000000018,
+          "margin_vs_read_p": 0.5790997419539189,
+          "margin_vs_read_statistic": 636.0,
+          "arm_equals_probe_rate": 0.6,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.405,
+          "cv_ci95": [
+            0.335,
+            0.47
+          ],
+          "cv_acc_shuffled_control": 0.365,
+          "margin_minus_control": 0.040000000000000036,
+          "margin_vs_control_p": 0.36503027183830394,
+          "margin_vs_base_p": 0.3924481242475758,
+          "margin_minus_base": 0.03500000000000003,
+          "margin_minus_read": 0.05500000000000005,
+          "margin_vs_read_p": 0.06297905121445523,
+          "margin_vs_read_statistic": 216.0,
+          "arm_equals_probe_rate": 0.745,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "noise": 0.75,
+      "achieved_read_acc": 0.28,
+      "achieved_read_ci95": [
+        0.22,
+        0.34
+      ],
+      "read_shuffled_acc": 0.28,
+      "read_vs_base_p": 0.05500883362926572,
+      "base_acc": 0.37,
+      "arms": {
+        "margin-a0.25": {
+          "cv_acc": 0.35,
+          "cv_ci95": [
+            0.285,
+            0.42
+          ],
+          "cv_acc_shuffled_control": 0.37,
+          "margin_minus_control": -0.020000000000000018,
+          "margin_vs_control_p": 0.2059032107320684,
+          "margin_vs_base_p": 0.15729920705028502,
+          "margin_minus_base": -0.020000000000000018,
+          "margin_minus_read": 0.06999999999999995,
+          "margin_vs_read_p": 0.12209457811740836,
+          "margin_vs_read_statistic": 1411.0,
+          "arm_equals_probe_rate": 0.37,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a0.5": {
+          "cv_acc": 0.37,
+          "cv_ci95": [
+            0.305,
+            0.44
+          ],
+          "cv_acc_shuffled_control": 0.36,
+          "margin_minus_control": 0.010000000000000009,
+          "margin_vs_control_p": 0.6170750774519738,
+          "margin_vs_base_p": 1.0,
+          "margin_minus_base": 0.0,
+          "margin_minus_read": 0.08999999999999997,
+          "margin_vs_read_p": 0.038947455742025384,
+          "margin_vs_read_statistic": 1116.5,
+          "arm_equals_probe_rate": 0.42,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a1": {
+          "cv_acc": 0.365,
+          "cv_ci95": [
+            0.3,
+            0.435
+          ],
+          "cv_acc_shuffled_control": 0.35,
+          "margin_minus_control": 0.015000000000000013,
+          "margin_vs_control_p": 0.6120898800892568,
+          "margin_vs_base_p": 0.8526836843346426,
+          "margin_minus_base": -0.0050000000000000044,
+          "margin_minus_read": 0.08499999999999996,
+          "margin_vs_read_p": 0.034979944635443724,
+          "margin_vs_read_statistic": 792.0,
+          "arm_equals_probe_rate": 0.49,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a2": {
+          "cv_acc": 0.31,
+          "cv_ci95": [
+            0.245,
+            0.375
+          ],
+          "cv_acc_shuffled_control": 0.345,
+          "margin_minus_control": -0.034999999999999976,
+          "margin_vs_control_p": 0.3924481242475758,
+          "margin_vs_base_p": 0.0960923294556733,
+          "margin_minus_base": -0.06,
+          "margin_minus_read": 0.02999999999999997,
+          "margin_vs_read_p": 0.3545394797735013,
+          "margin_vs_read_statistic": 387.0,
+          "arm_equals_probe_rate": 0.635,
+          "base_logprob_spread_median": 3.693151753395796
+        },
+        "margin-a4": {
+          "cv_acc": 0.29,
+          "cv_ci95": [
+            0.225,
+            0.35
+          ],
+          "cv_acc_shuffled_control": 0.31,
+          "margin_minus_control": -0.020000000000000018,
+          "margin_vs_control_p": 0.6547208460185769,
+          "margin_vs_base_p": 0.04550026389635839,
+          "margin_minus_base": -0.08000000000000002,
+          "margin_minus_read": 0.009999999999999953,
+          "margin_vs_read_p": 0.6948866023724733,
+          "margin_vs_read_statistic": 162.0,
+          "arm_equals_probe_rate": 0.76,
+          "base_logprob_spread_median": 3.693151753395796
+        }
+      }
+    }
+  ]
+}

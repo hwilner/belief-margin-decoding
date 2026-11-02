@@ -188,6 +188,82 @@ def main() -> int:
                 "b_better": int(((pb == 1) & (pa == 0)).sum()),
             }
 
+    # ---------------------------------------------- the random-direction sweep
+    # A single random draw is not a distribution. Where several draws exist at
+    # a layer, the real arm is compared against all of them, and the
+    # distribution is summarised rather than a single number being quoted.
+    random_by_layer: dict[int, list[tuple[str, np.ndarray]]] = {}
+    if controls_dir.exists():
+        for path in sorted(controls_dir.glob("act_random*.json")):
+            payload = json.loads(path.read_text())
+            if payload.get("control_kind") != "random":
+                continue
+            layer = payload.get("arm", {}).get("layer")
+            if layer is None or "predictions" not in payload:
+                continue
+            label = payload["arm"]["label"]
+            preds_vec = np.array(payload["predictions"], dtype=int)
+            random_by_layer.setdefault(int(layer), []).append((label, preds_vec))
+
+    distribution = {}
+    for layer, draws in sorted(random_by_layer.items()):
+        real_label = f"act-L{layer}-a1"
+        real_preds = preds.get(real_label)
+        if real_preds is None:
+            continue
+        rp = (real_preds == correct).astype(float)
+        entries = []
+        for label, draw_preds in draws:
+            dp = (draw_preds == correct).astype(float)
+            stat, pval = paired_test(rp, dp)
+            dlo, dhi = bootstrap_ci(rp - dp, seed=args.seed)
+            entries.append(
+                {
+                    "random_label": label,
+                    "random_accuracy": float(dp.mean()),
+                    "difference": float(rp.mean() - dp.mean()),
+                    "difference_ci95": [dlo, dhi],
+                    "wilcoxon": {"statistic": stat, "p_value": pval},
+                }
+            )
+        accs = [e["random_accuracy"] for e in entries]
+        # Aggregate test over the independent draws: the real arm's paired
+        # difference is positive against every one of them. Under the null
+        # that the real arm is exchangeable with the draws, each sign is a
+        # fair coin, so P(all n positive) = 2^-n and the two-sided exact
+        # binomial p-value is 2 * 2^-n for n >= 1.
+        #
+        # This is the right aggregate statement: the individual paired tests
+        # are correlated (they share the real arm and the base predictions),
+        # so quoting the smallest of them would be a multiple-comparison
+        # selection. The sign test uses every draw and does not cherry-pick.
+        n_pos = sum(1 for e in entries if e["difference"] > 0)
+        n_draws_total = len(entries)
+        sign_p = None
+        if n_draws_total > 0:
+            from math import comb
+
+            k = max(n_pos, n_draws_total - n_pos)
+            tail = sum(comb(n_draws_total, i) for i in range(k, n_draws_total + 1)) / (2**n_draws_total)
+            sign_p = min(1.0, 2.0 * tail)
+        distribution[f"L{layer}"] = {
+            "real_label": real_label,
+            "real_accuracy": float(rp.mean()),
+            "n_draws": len(accs),
+            "random_accuracies": accs,
+            "random_mean": float(np.mean(accs)),
+            "random_std": float(np.std(accs, ddof=1)) if len(accs) > 1 else 0.0,
+            "random_min": float(np.min(accs)),
+            "random_max": float(np.max(accs)),
+            "n_random_beating_real": int(sum(1 for a in accs if a > rp.mean())),
+            "n_random_tieing_real": int(sum(1 for a in accs if a == rp.mean())),
+            "n_draws_the_real_arm_beats": int(n_pos),
+            "sign_test_p": sign_p,
+            "paired_vs_each": entries,
+        }
+    if distribution:
+        comparisons["act_random_distribution"] = distribution
+
     # ------------------------------------------------------------------ write
     if not args.dry_run:
         for label, payload in rows:
@@ -230,12 +306,38 @@ def main() -> int:
         )
     print("\npaired control comparisons:")
     for name, c in comparisons.items():
+        if name == "act_random_distribution":
+            continue
         print(
             f"  {name:34s} diff={c['difference']:+.3f} "
             f"CI=[{c['difference_ci95'][0]:+.3f}, {c['difference_ci95'][1]:+.3f}] "
             f"p={c['wilcoxon']['p_value']:.4g} "
             f"({c['a_better']} vs {c['b_better']})"
         )
+    dist = comparisons.get("act_random_distribution")
+    if dist:
+        print("\nthe random-direction distribution (one draw is not a distribution):")
+        for layer, d in sorted(dist.items(), key=lambda kv: int(kv[0][1:])):
+            sign_txt = (
+                f"sign-test p={d['sign_test_p']:.4g}"
+                if d["sign_test_p"] is not None
+                else "sign-test n/a"
+            )
+            print(
+                f"  {layer:4s} real={d['real_accuracy']:.3f} | "
+                f"{d['n_draws']} draws: mean={d['random_mean']:.3f} "
+                f"sd={d['random_std']:.3f} min={d['random_min']:.3f} max={d['random_max']:.3f} | "
+                f"beats real: {d['n_random_beating_real']}/{d['n_draws']} | "
+                f"real beats draws: {d['n_draws_the_real_arm_beats']}/{d['n_draws']} | "
+                f"{sign_txt}"
+            )
+            for e in d["paired_vs_each"]:
+                print(
+                    f"        vs {e['random_label']:26s} acc={e['random_accuracy']:.3f} "
+                    f"diff={e['difference']:+.3f} "
+                    f"CI=[{e['difference_ci95'][0]:+.3f}, {e['difference_ci95'][1]:+.3f}] "
+                    f"p={e['wilcoxon']['p_value']:.4g}"
+                )
     return 0
 
 

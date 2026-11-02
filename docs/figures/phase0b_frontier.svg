@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica,Arial,sans-serif">
+<rect width="1000" height="500" fill="#ffffff"/>
+<text x="24" y="26" font-size="16" font-weight="bold" fill="#0f172a">Phase 0b — the belief-margin intervention is a dial, not a gain</text>
+<text x="24" y="44" font-size="11.5" fill="#64748b">Layer 16, alpha = 4. Each point is a probe of a different quality; the x-axis is its achieved out-of-fold</text>
+<text x="24" y="60" font-size="11.5" fill="#64748b">read accuracy (3-way, chance 1/3). The arm curve lies ON the probe diagonal: the intervention does not</text>
+<text x="24" y="76" font-size="11.5" fill="#64748b">improve on the probe that produced its margin, and it crosses the base model only just above chance.</text>
+<line x1="78" y1="436.0" x2="748" y2="436.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68" y="440.0" font-size="11" fill="#64748b" text-anchor="end">0.23</text>
+<text x="78.0" y="456.0" font-size="11" fill="#64748b" text-anchor="middle">0.23</text>
+<line x1="78" y1="368.0" x2="748" y2="368.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68" y="372.0" font-size="11" fill="#64748b" text-anchor="end">0.34</text>
+<text x="212.0" y="456.0" font-size="11" fill="#64748b" text-anchor="middle">0.34</text>
+<line x1="78" y1="300.0" x2="748" y2="300.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68" y="304.0" font-size="11" fill="#64748b" text-anchor="end">0.45</text>
+<text x="346.0" y="456.0" font-size="11" fill="#64748b" text-anchor="middle">0.45</text>
+<line x1="78" y1="232.0" x2="748" y2="232.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68" y="236.0" font-size="11" fill="#64748b" text-anchor="end">0.55</text>
+<text x="480.0" y="456.0" font-size="11" fill="#64748b" text-anchor="middle">0.55</text>
+<line x1="78" y1="164.0" x2="748" y2="164.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68" y="168.0" font-size="11" fill="#64748b" text-anchor="end">0.66</text>
+<text x="614.0" y="456.0" font-size="11" fill="#64748b" text-anchor="middle">0.66</text>
+<line x1="78" y1="96.0" x2="748" y2="96.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="68" y="100.0" font-size="11" fill="#64748b" text-anchor="end">0.77</text>
+<text x="748.0" y="456.0" font-size="11" fill="#64748b" text-anchor="middle">0.77</text>
+<line x1="78" y1="96" x2="78" y2="436" stroke="#334155" stroke-width="1.2"/>
+<line x1="78" y1="436" x2="748" y2="436" stroke="#334155" stroke-width="1.2"/>
+<line x1="78.0" y1="436.0" x2="748.0" y2="96.0" stroke="#0f766e" stroke-width="2" stroke-dasharray="7 4" opacity="0.85"/>
+<line x1="78" y1="347.9" x2="748" y2="347.9" stroke="#4338ca" stroke-width="2" stroke-dasharray="3 3"/>
+<polyline points="140.0,385.6 226.9,351.0 400.6,366.7 456.4,329.0 605.3,379.3 686.0,373.0" fill="none" stroke="#c2410c" stroke-width="1.6" opacity="0.7"/>
+<polyline points="140.0,398.2 226.9,325.8 400.6,256.6 456.4,218.8 605.3,181.0 686.0,127.5" fill="none" stroke="#b91c1c" stroke-width="2.6"/>
+<circle cx="140.0" cy="398.2" r="5" fill="#b91c1c" stroke="#ffffff" stroke-width="1.6"/>
+<text x="140.0" y="386.2" font-size="10" fill="#64748b" text-anchor="middle">noise 0.75</text>
+<circle cx="226.9" cy="325.8" r="5" fill="#b91c1c" stroke="#ffffff" stroke-width="1.6"/>
+<text x="226.9" y="313.8" font-size="10" fill="#64748b" text-anchor="middle">noise 0.6</text>
+<circle cx="400.6" cy="256.6" r="5" fill="#b91c1c" stroke="#ffffff" stroke-width="1.6"/>
+<text x="400.6" y="244.6" font-size="10" fill="#64748b" text-anchor="middle">noise 0.45</text>
+<circle cx="456.4" cy="218.8" r="5" fill="#b91c1c" stroke="#ffffff" stroke-width="1.6"/>
+<text x="456.4" y="206.8" font-size="10" fill="#64748b" text-anchor="middle">noise 0.3</text>
+<circle cx="605.3" cy="181.0" r="5" fill="#b91c1c" stroke="#ffffff" stroke-width="1.6"/>
+<text x="605.3" y="169.0" font-size="10" fill="#64748b" text-anchor="middle">noise 0.15</text>
+<circle cx="686.0" cy="127.5" r="5" fill="#b91c1c" stroke="#ffffff" stroke-width="1.6"/>
+<text x="686.0" y="115.5" font-size="10" fill="#64748b" text-anchor="middle">noise 0</text>
+<circle cx="210.2" cy="347.9" r="6.5" fill="none" stroke="#4338ca" stroke-width="2.2"/>
+<text x="413.0" y="482" font-size="12" fill="#0f172a" text-anchor="middle">achieved probe read accuracy (3-way ranking, out-of-fold)</text>
+<text x="22" y="266.0" font-size="12" fill="#0f172a" text-anchor="middle" transform="rotate(-90 22 266.0)">accuracy</text>
+<line x1="772" y1="110" x2="798" y2="110" stroke="#b91c1c" stroke-width="2.6"/>
+<text x="806" y="114" font-size="11.5" fill="#0f172a">margin arm (alpha = 4)</text>
+<text x="806" y="128" font-size="10" fill="#64748b">the intervention</text>
+<line x1="772" y1="152" x2="798" y2="152" stroke="#0f766e" stroke-width="2.6"/>
+<text x="806" y="156" font-size="11.5" fill="#0f172a">probe diagonal (y = x)</text>
+<text x="806" y="170" font-size="10" fill="#64748b">what the probe alone achieves</text>
+<line x1="772" y1="194" x2="798" y2="194" stroke="#4338ca" stroke-width="2.6"/>
+<text x="806" y="198" font-size="11.5" fill="#0f172a">base model (0.370)</text>
+<text x="806" y="212" font-size="10" fill="#64748b">the model unaided</text>
+<line x1="772" y1="236" x2="798" y2="236" stroke="#c2410c" stroke-width="2.6"/>
+<text x="806" y="240" font-size="11.5" fill="#0f172a">shuffled-label control</text>
+<text x="806" y="254" font-size="10" fill="#64748b">the matched control</text>
+<circle cx="785" cy="278" r="6.5" fill="none" stroke="#4338ca" stroke-width="2.2"/>
+<text x="806" y="282" font-size="11.5" fill="#0f172a">break-even belief accuracy 0.34</text>
+<text x="806" y="296" font-size="10" fill="#64748b">where the arm crosses base</text>
+</svg>

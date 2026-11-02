@@ -42,6 +42,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--probe-kind", default="lda", choices=["lda", "logreg", "mlp"])
     parser.add_argument("--out-dir", default="results")
     parser.add_argument("--device", default=None)
+    parser.add_argument(
+        "--dtype",
+        default=None,
+        choices=["float32", "bfloat16", "float16"],
+        help="model dtype; the default (float32) is what the recorded Phase-0 run used. "
+        "Use bfloat16 for a 1.5B model on Apple Silicon.",
+    )
     parser.add_argument("--no-skip-existing", action="store_true")
     args = parser.parse_args(argv)
 
@@ -55,6 +62,7 @@ def main(argv: list[str] | None = None) -> int:
         probe_kind=args.probe_kind,
         out_dir=args.out_dir,
         device=args.device,
+        dtype=args.dtype,
         skip_existing=not args.no_skip_existing,
     )
     summary = run_matrix(config)
