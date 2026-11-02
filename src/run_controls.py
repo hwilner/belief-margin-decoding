@@ -145,6 +145,9 @@ def main(argv: list[str] | None = None) -> int:
             "note": note,
             "scale": scale,
             "wall_clock_s": round(time.time() - t0, 1),
+            # Per-item predictions, so any statistic can be recomputed exactly
+            # later without re-running the model.
+            "predictions": [int(v) for v in pred],
         }
         (out_dir / f"{label}.json").write_text(json.dumps(payload, indent=2))
         print(
@@ -155,6 +158,12 @@ def main(argv: list[str] | None = None) -> int:
         return payload
 
     results = {}
+    results["act_real"] = record(
+        "act_real",
+        real_dir,
+        "the fitted belief direction, re-run at the control layer so that all three "
+        "arms are produced by the same code path on the same day",
+    )
     results["act_random"] = record(
         "act_random",
         rand_dir,

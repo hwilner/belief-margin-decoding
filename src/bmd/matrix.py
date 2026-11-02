@@ -286,6 +286,9 @@ def run_matrix(config: MatrixConfig, verbose: bool = True) -> dict:
             "world_rate": breakdown["world"] / len(items),
             "other_rate": breakdown["other"] / len(items),
             "vs_none_wilcoxon": {"statistic": stat, "p_value": pval},
+            # The per-item predictions are stored so that any statistic can be
+            # recomputed later, exactly, without re-running the model.
+            "predictions": [int(v) for v in pred],
         }
         if extra:
             payload.update(extra)

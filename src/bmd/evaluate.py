@@ -74,6 +74,39 @@ def bootstrap_ci(
     return (lo, hi)
 
 
+def _wilcoxon_normal_approx(a: np.ndarray, b: np.ndarray) -> tuple[float, float]:
+    """Tie-corrected normal approximation to the Wilcoxon signed-rank test.
+
+    This is the fallback used when SciPy is not importable. It is a separate
+    function so that the test suite can compare it against SciPy's exact test
+    on the machines where SciPy *is* available — otherwise a fallback that is
+    subtly wrong would go unnoticed everywhere SciPy is absent, which is
+    exactly where it gets used.
+    """
+    d = np.asarray(a, dtype=np.float64) - np.asarray(b, dtype=np.float64)
+    if np.allclose(d, 0.0):
+        return (0.0, 1.0)
+    d = d[d != 0]
+    n = len(d)
+    if n == 0:
+        return (0.0, 1.0)
+    order = np.argsort(np.abs(d))
+    ranks = np.empty(n, dtype=np.float64)
+    ranks[order] = np.arange(1, n + 1)
+    _, counts = np.unique(np.abs(d), return_counts=True)
+    tie_correction = float(np.sum(counts**3 - counts)) if counts.size else 0.0
+    w_plus = float(ranks[d > 0].sum())
+    mu = n * (n + 1) / 4.0
+    sigma = np.sqrt(n * (n + 1) * (2 * n + 1) / 24.0 - tie_correction / 48.0)
+    if sigma <= 0:
+        return (w_plus, 1.0)
+    z = (w_plus - mu) / sigma
+    from math import erf, sqrt
+
+    p = 2.0 * (1.0 - 0.5 * (1.0 + erf(abs(z) / sqrt(2.0))))
+    return (w_plus, float(min(1.0, p)))
+
+
 def paired_test(a: np.ndarray, b: np.ndarray) -> tuple[float, float]:
     """Wilcoxon signed-rank test on paired samples.
 
@@ -96,24 +129,4 @@ def paired_test(a: np.ndarray, b: np.ndarray) -> tuple[float, float]:
         return (float(res.statistic), float(res.pvalue))
     except Exception:
         pass
-    # Normal approximation with tie correction.
-    n = len(d)
-    d = d[d != 0]
-    n = len(d)
-    if n == 0:
-        return (0.0, 1.0)
-    order = np.argsort(np.abs(d))
-    ranks = np.empty(n, dtype=np.float64)
-    ranks[order] = np.arange(1, n + 1)
-    _, counts = np.unique(np.abs(d), return_counts=True)
-    tie_correction = float(np.sum(counts**3 - counts)) if counts.size else 0.0
-    w_plus = float(ranks[d > 0].sum())
-    mu = n * (n + 1) / 4.0
-    sigma = np.sqrt(n * (n + 1) * (2 * n + 1) / 24.0 - tie_correction / 48.0)
-    if sigma <= 0:
-        return (w_plus, 1.0)
-    z = (w_plus - mu) / sigma
-    from math import erf, sqrt
-
-    p = 2.0 * (1.0 - 0.5 * (1.0 + erf(abs(z) / sqrt(2.0))))
-    return (w_plus, float(min(1.0, p)))
+    return _wilcoxon_normal_approx(a, b)

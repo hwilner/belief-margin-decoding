@@ -99,3 +99,32 @@ def test_candidate_id_extraction_does_not_depend_on_tuple_arity():
     cand_ids = [e[1] for e in encoded]
     assert len(cand_ids) == 1
     assert torch.equal(cand_ids[0], encoded[0][1])
+
+
+def test_normal_approximation_agrees_with_scipy():
+    """The SciPy-free fallback must agree with the exact test where SciPy exists.
+
+    The fallback is what produces the p-values on any machine without SciPy —
+    including the environment the recorded run was made in. If it were subtly
+    wrong, nobody would find out, because it is only used where the reference
+    implementation is absent.
+    """
+    scipy_stats = pytest.importorskip("scipy.stats")
+    from bmd.evaluate import _wilcoxon_normal_approx
+
+    rng = np.random.default_rng(20261102)
+    for trial in range(25):
+        n = 200
+        base = rng.binomial(1, 0.4, size=n).astype(float)
+        treated = np.where(rng.random(n) < 0.5, base, 1.0 - base)
+        if trial % 3 == 0:  # heavy ties
+            treated = np.round(treated, 0)
+        stat, p_approx = _wilcoxon_normal_approx(treated, base)
+        exact = scipy_stats.wilcoxon(treated, base, zero_method="wilcox", alternative="two-sided")
+        # The approximation is a normal approximation: it should agree on the
+        # decision, and be close in value for a non-degenerate sample.
+        if 1e-3 < exact.pvalue < 0.5:
+            assert p_approx == pytest.approx(float(exact.pvalue), rel=0.35), (
+                f"trial {trial}: approx {p_approx:.4f} vs exact {exact.pvalue:.4f}"
+            )
+        assert (p_approx < 0.05) == (float(exact.pvalue) < 0.05), f"trial {trial}: decision differs"
