@@ -111,7 +111,7 @@ support a belief claim, and the repository reports that as a result.
 > measured `||w|| ≈ 1.0e4` for a separable fit, which makes any hand-picked `alpha` meaningless.
 > Standardising decouples intervention strength from the arbitrary scale of the fitted direction.
 
-### The four intervention mechanisms `[C5, D5]`
+### The six intervention mechanisms `[C5, D5]`
 
 | Mechanism | What it does | Needs a re-run? |
 |---|---|---|
@@ -139,9 +139,10 @@ by the pilot.
 `bmd.matrix.run_matrix` computes both and writes one JSON file per arm to
 `results/ablation/<arm-label>.json`, plus a combined `results/phase0_summary.json`.
 
-### Fluency guard `[C7, D6]`
+### Fluency guard `[C7, D6]` — **specified, not yet implemented**
 
-Two guards are in place:
+Two guards are **specified** and are **not yet implemented**. They are recorded here so that the
+thresholds are fixed before they are first applied, which is the whole point of a pre-registration:
 
 - **ΔPPL** — perplexity of the steered continuation relative to the unsteered one, with a
   pre-registered ceiling of **+1.0**.
@@ -150,6 +151,31 @@ Two guards are in place:
 
 A configuration that fails the floor fails the claim, and the failure is reported rather than
 tuned around.
+
+> **Why they are not in the Phase-0 numbers.** The Phase-0 arms answer a multiple-choice question
+> by scoring three fixed candidate continuations. They do not produce free-form text, so there is
+> nothing for MAUVE or ΔPPL to score — the metrics do not apply to this measurement. Reporting a
+> ΔPPL of 0.0 for a method that never generated text would be a number with no meaning. The guard
+> belongs to the first arm that *does* generate text, and it is implemented there, not retro-fitted
+> here. Until then `docs/PROJECT.md` keeps task `C7` open.
+
+### Matched controls for the activation arms `[D7]`
+
+The matrix's `margin_shuffled` arm controls the *scoring* mechanisms. The `act` mechanism changes
+the forward pass and had no matched control inside the matrix, which is a real weakness: an
+activation-steering arm that "helps" is indistinguishable from generic confidence steering unless
+something of the same magnitude, in the same layer, is shown *not* to help.
+
+`src/run_controls.py` supplies the two standard controls at a chosen layer, matched in direction
+norm, layer and `alpha`:
+
+| control | direction | what it rules out |
+|---|---|---|
+| `act_random` | uniformly random unit direction | that *any* perturbation of the residual stream at that layer helps |
+| `act_reversed` | the negation of the fitted belief direction | that the effect is a generic confidence effect rather than a directional one |
+
+These are run after the matrix, at the layer the matrix identified as most promising, and are
+reported with the same statistics as every other arm.
 
 ### Statistics `[D6]`
 

@@ -147,7 +147,7 @@ MECHANISMS: tuple[str, ...]
 @dataclass
 class MatrixConfig:
     model_id: str = "Qwen/Qwen2.5-0.5B-Instruct"
-    n_items: int = 150
+    n_items: int = 200
     seed: int = 0
     layers: tuple[int, ...] = (4, 8, 12, 16, 20, 24)
     act_alphas: tuple[float, ...] = (1.0, 3.0)

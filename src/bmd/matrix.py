@@ -58,11 +58,11 @@ class MatrixConfig:
     """Configuration for the Phase-0 matrix."""
 
     model_id: str = "Qwen/Qwen2.5-0.5B-Instruct"
-    n_items: int = 150
+    n_items: int = 200
     seed: int = 0
     layers: tuple[int, ...] = (4, 8, 12, 16, 20, 24)
-    act_alphas: tuple[float, ...] = (1.0, 3.0)
-    score_alphas: tuple[float, ...] = (0.5, 1.0, 2.0)
+    act_alphas: tuple[float, ...] = (1.0,)
+    score_alphas: tuple[float, ...] = (0.25, 0.5, 1.0, 2.0, 4.0)
     probe_kind: str = "lda"
     out_dir: str = "results"
     device: str | None = None
