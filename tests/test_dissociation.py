@@ -149,6 +149,33 @@ def test_pairing_raw_indices_would_test_the_wrong_quantity():
 # ---------------------------------------------------------------------------
 
 
+def _find_l4_random_draw() -> Path:
+    """The layer-4 random-direction control arm, found by content.
+
+    The file name has changed once already (the layer is now part of it, so
+    that arms at different layers cannot overwrite each other), so the arm is
+    located by what it *is* -- a random control at layer 4 with the recorded
+    seed -- rather than by a hard-coded path.
+    """
+    controls = RESULTS / "controls"
+    candidates = []
+    for path in sorted(controls.glob("act_random*.json")):
+        data = json.loads(path.read_text())
+        arm = data.get("arm", {})
+        if arm.get("layer") != 4:
+            continue
+        if data.get("control_kind") != "random" and not path.name.startswith("act_random"):
+            continue
+        candidates.append((data.get("direction_seed"), path, data))
+    if not candidates:
+        raise AssertionError("no random-direction control arm at layer 4")
+    # Prefer the draw with the recorded seed 977; fall back to the only one.
+    for seed, path, _ in candidates:
+        if seed == 977:
+            return path
+    return candidates[0][1]
+
+
 @pytest.mark.skipif(
     not (RESULTS / "controls" / "act_real.json").exists(),
     reason="recorded Phase-0 control artefacts are not present",
@@ -161,7 +188,7 @@ def test_recorded_l4_real_vs_random_comparison_is_reproduced():
     correct = np.array([it.correct_index for it in items])
 
     real = json.loads((RESULTS / "controls" / "act_real.json").read_text())
-    rand = json.loads((RESULTS / "controls" / "act_random.json").read_text())
+    rand = json.loads(_find_l4_random_draw().read_text())
 
     rc = tool.correctness_vector(real["predictions"], correct)
     ac = tool.correctness_vector(rand["predictions"], correct)
