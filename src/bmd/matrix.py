@@ -95,10 +95,22 @@ class Arm:
         return {"mechanism": self.mechanism, "layer": self.layer, "alpha": self.alpha, "label": self.label}
 
 
-def build_arms(config: MatrixConfig) -> list[Arm]:
-    """Enumerate every arm of the matrix in a deterministic order."""
+def build_arms(config: MatrixConfig, n_model_layers: int | None = None) -> list[Arm]:
+    """Enumerate every arm of the matrix in a deterministic order.
+
+    ``n_model_layers`` is the number of decoder layers in the model. When it is
+    given, ``act`` arms are only produced for layers that a forward hook can
+    actually reach: the hook adds to the **input** of decoder layer ``L``, so
+    the last decoder layer's *output* — which is ``hidden_states[-1]`` — can be
+    probed and can carry a score-level intervention, but there is no decoder
+    layer after it whose input could be perturbed. A model with 24 decoder
+    layers therefore supports activation steering at layers 0..23 and read-out
+    at layers 0..24.
+    """
     arms: list[Arm] = [Arm("none", None, 0.0), Arm("prompt_oracle", None, 0.0)]
     for layer in config.layers:
+        if n_model_layers is not None and layer >= n_model_layers:
+            continue
         for alpha in config.act_alphas:
             arms.append(Arm("act", layer, alpha))
     for mech in ("margin", "logit", "margin_shuffled"):
@@ -108,9 +120,12 @@ def build_arms(config: MatrixConfig) -> list[Arm]:
     return arms
 
 
-def expected_arm_count(config: MatrixConfig) -> int:
+def expected_arm_count(config: MatrixConfig, n_model_layers: int | None = None) -> int:
     """Number of arms :func:`build_arms` produces, for the integrity check."""
-    n = 2 + len(config.layers) * len(config.act_alphas)
+    n = 2
+    n += len(config.act_alphas) * sum(
+        1 for layer in config.layers if n_model_layers is None or layer < n_model_layers
+    )
     n += 3 * len(config.layers) * len(config.score_alphas)
     return n
 
@@ -205,6 +220,16 @@ def run_matrix(config: MatrixConfig, verbose: bool = True) -> dict:
     model, tokenizer = load_model(config.model_id, config.device)
     device = str(next(model.parameters()).device)
     n_model_layers = len(decoder_layers(model))
+    # `output_hidden_states` yields n_model_layers + 1 tensors: the embedding
+    # output at index 0 and one per decoder layer. A layer index outside that
+    # range would fail deep inside the forward pass with an opaque IndexError.
+    max_read_layer = n_model_layers
+    bad = [layer for layer in layers if not (0 <= layer <= max_read_layer)]
+    if bad:
+        raise ValueError(
+            f"requested layers {bad} are outside the readable range 0..{max_read_layer} "
+            f"for a model with {n_model_layers} decoder layers"
+        )
     if verbose:
         print(f"[matrix] loaded on {device} ({n_model_layers} decoder layers)", flush=True)
 
@@ -305,8 +330,21 @@ def run_matrix(config: MatrixConfig, verbose: bool = True) -> dict:
     record(Arm("prompt_oracle", None, 0.0), oracle_logprobs.argmax(axis=1),
            {"note": "ORACLE belief stated in the prompt; upper bound"})
 
-    # activation steering arms: require re-running the model
-    for layer in layers:
+    # activation steering arms: require re-running the model.
+    # The hook adds to the INPUT of decoder layer L, so only layers that a
+    # decoder module exists for can be steered. The last decoder layer's
+    # output is still probed and still carries the score-level interventions.
+    act_layers = [layer for layer in layers if layer < n_model_layers]
+    skipped_act_layers = [layer for layer in layers if layer >= n_model_layers]
+    if skipped_act_layers and verbose:
+        print(
+            f"[matrix] no activation-steering arm at layer(s) {skipped_act_layers}: "
+            f"the model has {n_model_layers} decoder layers, and the hook perturbs the "
+            "input of a decoder layer. Those layers are still probed and still carry the "
+            "margin and logit arms.",
+            flush=True,
+        )
+    for layer in act_layers:
         sub = subspaces[layer]
         direction = _unit(sub.w)
         li = layers.index(layer)
@@ -369,6 +407,8 @@ def run_matrix(config: MatrixConfig, verbose: bool = True) -> dict:
         "device": device,
         "model_layers": n_model_layers,
         "exact_tokenisation": exact,
+        "n_model_layers": n_model_layers,
+        "act_layers_skipped": skipped_act_layers,
         "timing_sec": {"base_pass": round(base_pass_s, 1), "total": round(time.time() - t_start, 1)},
         "subspaces": {
             str(layer): {

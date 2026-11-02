@@ -50,3 +50,30 @@ def test_control_arm_is_present_for_every_scored_layer():
         assert f"margin_shuffled-L{layer}-a1" in labels
         assert f"margin-L{layer}-a1" in labels
         assert f"logit-L{layer}-a1" in labels
+
+
+def test_act_arms_stop_at_the_last_hookable_layer():
+    """A 24-layer model cannot be activation-steered at layer 24.
+
+    The hook adds to the *input* of a decoder layer, so the last decoder
+    layer's output (hidden_states[-1]) can be probed and can carry a
+    score-level intervention, but there is no decoder layer after it whose
+    input could be perturbed. The first version of the runner built an `act`
+    arm for every requested layer and crashed on the last one, after the
+    whole run had already been paid for.
+    """
+    config = MatrixConfig(layers=(4, 12, 24), act_alphas=(1.0,), score_alphas=(1.0,))
+    arms = build_arms(config, n_model_layers=24)
+    labels = {a.label for a in arms}
+    assert "act-L12-a1" in labels
+    assert "act-L24-a1" not in labels
+    # The score-level interventions are still available at the last layer.
+    assert "margin-L24-a1" in labels
+    assert "logit-L24-a1" in labels
+    assert "margin_shuffled-L24-a1" in labels
+
+
+def test_expected_arm_count_tracks_the_model_depth():
+    config = MatrixConfig(layers=(4, 12, 24), act_alphas=(1.0,), score_alphas=(1.0,))
+    assert expected_arm_count(config, n_model_layers=24) == len(build_arms(config, n_model_layers=24))
+    assert expected_arm_count(config, n_model_layers=25) == len(build_arms(config, n_model_layers=25))

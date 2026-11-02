@@ -90,8 +90,8 @@ def chart_read_bite(summary: dict) -> str:
     base_acc = arms["none"]["accuracy"]
     oracle_acc = arms["prompt_oracle"]["accuracy"]
 
-    W, H = 880, 470
-    ml, mr, mt, mb = 70, 250, 50, 60
+    W, H = 1000, 470
+    ml, mr, mt, mb = 70, 200, 62, 60
     pw, ph = W - ml - mr, H - mt - mb
 
     def x(layer: int) -> float:
@@ -156,7 +156,7 @@ def chart_read_bite(summary: dict) -> str:
         polyline([(layer, v) for layer, v, _ in bite], C_BITE)
 
     # legend
-    lx, ly = ml + pw + 130, mt + 6
+    lx, ly = ml + pw + 18, mt + 6
     p.append(f'<text x="{lx}" y="{ly}" font-size="12" font-weight="bold" fill="{C_TEXT}">Legend</text>')
     entries = [
         (C_READ, "read — probe held-out acc", None),
@@ -193,8 +193,8 @@ def chart_alpha_sweep(summary: dict) -> str:
     alphas = sorted({p["arm"].get("alpha") for p in arms.values() if p["arm"]["mechanism"] in {"margin", "logit"}})
     base_acc = arms["none"]["accuracy"]
 
-    W, H = 880, 460
-    ml, mr, mt, mb = 70, 210, 46, 60
+    W, H = 1000, 460
+    ml, mr, mt, mb = 70, 160, 58, 60
     pw, ph = W - ml - mr, H - mt - mb
     allv = [base_acc]
     for payload in arms.values():
@@ -282,7 +282,7 @@ def chart_arm_matrix(summary: dict) -> str:
     """A compact table-as-figure: every arm, its accuracy, and its p-value."""
     arms = summary["arms"]
     rows = sorted(arms.items(), key=lambda kv: -kv[1]["accuracy"])
-    W = 880
+    W = 1000
     rh = 20
     H = 70 + rh * len(rows) + 34
     p = [

@@ -53,8 +53,14 @@ REQUIRED_PATHS = [
     ".github/PULL_REQUEST_TEMPLATE.md",
 ]
 
-#: Tokens that must never appear inside a committed result file.
-FORBIDDEN_IN_RESULTS = ("NaN", "Infinity")
+#: Patterns that look like a *value* rather than a mention. "no NaN values
+#: were produced" is prose; "| NaN |" in a results table is a defect. Only the
+#: latter is a failure.
+FORBIDDEN_IN_RESULTS = (
+    re.compile(r"\|\s*(nan|-?inf(inity)?)\s*\|", re.IGNORECASE),
+    re.compile(r"=\s*(nan|-?inf(inity)?)\b", re.IGNORECASE),
+    re.compile(r":\s*(nan|-?inf(inity)?)\s*$", re.IGNORECASE | re.MULTILINE),
+)
 
 _BACKTICK_PATH = re.compile(r"`([A-Za-z0-9_./-]+\.(?:md|py|toml|txt|json|svg|yml|yaml|csv))`")
 _TABLE_ROW = re.compile(r"^\|")
@@ -118,9 +124,12 @@ def check_results_are_valid() -> tuple[bool, str]:
         if not path.is_file() or path.suffix not in {".md", ".json"}:
             continue
         text = path.read_text(errors="ignore")
-        for token in FORBIDDEN_IN_RESULTS:
-            if token in text:
-                offenders.append(f"{path.relative_to(ROOT)} contains {token!r}")
+        for pattern in FORBIDDEN_IN_RESULTS:
+            for match in pattern.finditer(text):
+                offenders.append(
+                    f"{path.relative_to(ROOT)} contains {match.group(0)!r}"
+                )
+                break
     if offenders:
         return False, "; ".join(offenders)
     return True, "no invalid numerics in results/"
